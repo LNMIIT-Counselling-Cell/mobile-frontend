@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import CollegeScreen from '../screens/CollegeScreen/CollegeScreen';
-import DetailsScreen from '../screens/DetailsScreen'
+import DetailsScreen from '../screens/LoginScreen'
 
 export default function CollegeTab() {
   const CollegeStack = createStackNavigator();

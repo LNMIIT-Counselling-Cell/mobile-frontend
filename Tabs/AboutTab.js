@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import AboutScreen from '../screens/AboutScreen/AboutScreen';
-import DetailsScreen from '../screens/DetailsScreen'
+import DetailsScreen from '../screens/LoginScreen'
 
 export default function AboutTab() {
   const AboutStack = createStackNavigator();

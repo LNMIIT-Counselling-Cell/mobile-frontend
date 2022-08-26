@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import GymkhanaScreen from '../screens/GymkhanaScreen/GymkhanaScreen';
-import DetailsScreen from '../screens/DetailsScreen'
+import DetailsScreen from '../screens/LoginScreen'
 
 export default function GymkhanaTab() {
   const GymkhanaStack = createStackNavigator();
