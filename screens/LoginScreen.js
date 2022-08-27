@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import {
   GoogleSignin,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
-import axios from 'axios';
+import { AuthContext } from '../components/Context';
 
 export default function LoginScreen({ navigation }) {
 
+  const { login, logout } = useContext(AuthContext)
 
-  const signOut = async () => {
+  const signOutFn = async () => {
     try {
+      logout()
       await GoogleSignin.signOut();
       console.log("ho gya sign out")
       // this.setState({ user: null }); // Remember to remove the user from your app's state as well
@@ -18,7 +20,6 @@ export default function LoginScreen({ navigation }) {
       console.error(error);
     }
   };
-
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -32,17 +33,10 @@ export default function LoginScreen({ navigation }) {
           GoogleSignin.hasPlayServices().then((hasPlayService) => {
             if (hasPlayService) {
               GoogleSignin.signIn().then((userInfo) => {
-                console.log(JSON.stringify(userInfo))
-
-
-                axios.post("http://192.168.72.252:5000/signup", { userInfo })
-                  .then((response) => {
-                    console.log(response.data)
-                  })
-
-
+                // console.log(JSON.stringify(userInfo))
+                login({ userInfo })
               }).catch((error) => {
-                console.log("ERROR IS: " + JSON.stringify(error));
+                // console.log("ERROR IS: " + JSON.stringify(error));
                 if (error.code === statusCodes.SIGN_IN_CANCELLED) {
                   // user cancelled the login flow
                   console.log("ERROR IS: SIGN_IN_CANCELLED")
@@ -67,11 +61,11 @@ export default function LoginScreen({ navigation }) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => signOut()}
+        onPress={() => signOutFn()}
       >
         <Text style={styles.login}>Sign out</Text>
       </TouchableOpacity>
-    </View>
+    </View >
   )
 }
 

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { GenerateOutpassApi } from '../../api/outpass/OutpassApi';
+import { AuthContext } from '../../components/Context';
 
 export default function OutpassScreen({ navigation }) {
 
@@ -11,38 +12,7 @@ export default function OutpassScreen({ navigation }) {
   const [fromTime, setFromTime] = useState('');
   const [toTime, setToTime] = useState('');
 
-
-  // useEffect(() => {
-  //   const res = GenerateOutpassApi("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY2OTYzZTM4ZjA4ZDFjMzhmNDFiZDIiLCJpYXQiOjE2NjEzNzM2ODF9.uetiJPz0-V24DpOIzfYr88MKnmJz90vYj75XgBzpUxw", "bh4", "D217", "Ghooma", "Car", "1930", "2230")
-  //   console.log("what --- ", res);
-  // })
-
-  const getdata = async () => {
-    const response = await fetch("http://127.0.0.1:5000/generateoutpass", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY2OTYzZTM4ZjA4ZDFjMzhmNDFiZDIiLCJpYXQiOjE2NjEzNzM2ODF9.uetiJPz0-V24DpOIzfYr88MKnmJz90vYj75XgBzpUxw',
-      },
-      body: JSON.stringify({
-        hostel: "BH2",
-        roomno: "D217",
-        purpose: "Ghooma",
-        transport: "Car",
-        from_time: "1630",
-        to_time: "1930"
-      })
-    })
-
-    const jsonData = await response.json()
-    console.log(jsonData)
-  }
-
-
-  useEffect(() => {
-    getdata()
-  }, [])
-
+  const { usrInfo } = useContext(AuthContext)
 
   return (
     <ScrollView>
@@ -53,7 +23,7 @@ export default function OutpassScreen({ navigation }) {
         </View>
 
         <View style={styles.form}>
-          <Text>Name : Sriraj Behera</Text>
+          <Text>Name : {usrInfo.userData.name}</Text>
           <View style={styles.item}>
             <Text>Hostel :</Text>
             <TextInput

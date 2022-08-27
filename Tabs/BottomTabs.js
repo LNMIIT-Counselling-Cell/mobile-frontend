@@ -10,7 +10,7 @@ import AboutTab from './AboutTab';
 export default function BottomTabs() {
   const Tab = createBottomTabNavigator();
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }} initialRouteName="Outpass">
+    <Tab.Navigator screenOptions={{ headerShown: false }} initialRouteName="OutpassTab">
       <Tab.Screen name="College" component={CollegeTab}
         options={{
           tabBarLabel: 'College',
@@ -68,7 +68,7 @@ export default function BottomTabs() {
           ),
         }}
       />
-      <Tab.Screen name="Outpass" component={OutpassTab}
+      <Tab.Screen name="OutpassTab" component={OutpassTab}
         options={{
           tabBarLabel: 'Outpass',
           tabBarIcon: ({ focused, color, size }) => (
