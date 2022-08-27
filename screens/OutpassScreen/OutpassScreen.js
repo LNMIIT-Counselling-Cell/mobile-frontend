@@ -1,18 +1,103 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { GenerateOutpassApi } from '../../api/outpass/OutpassApi';
 import { AuthContext } from '../../components/Context';
+import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
+import { Dropdown } from 'react-native-element-dropdown';
 
 export default function OutpassScreen({ navigation }) {
 
-  const [hostel, setHostel] = useState('');
   const [room, setRoom] = useState('');
   const [purpose, setPurpose] = useState('');
   const [transport, setTransport] = useState('');
-  const [fromTime, setFromTime] = useState('');
-  const [toTime, setToTime] = useState('');
 
   const { usrInfo } = useContext(AuthContext)
+
+  const [fromDate, setFromDate] = useState(new Date());
+  const [toDate, setToDate] = useState(new Date());
+
+  const onChangeFrom = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setFromDate(currentDate);
+  };
+
+  const onChangeTo = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setToDate(currentDate);
+  };
+
+  const showModeFrom = (currentMode) => {
+    DateTimePickerAndroid.open({
+      value: fromDate,
+      onChange: onChangeFrom,
+      mode: currentMode,
+      is24Hour: false,
+    });
+  };
+
+  const showModeTo = (currentMode) => {
+    DateTimePickerAndroid.open({
+      value: toDate,
+      onChange: onChangeTo,
+      mode: currentMode,
+      is24Hour: false,
+    });
+  };
+
+  // const showDatepicker = () => {
+  //   showMode('date');
+  // };
+
+  const showTimepickerFrom = () => {
+    showModeFrom('time');
+
+  };
+
+  const showTimepickerTo = () => {
+    showModeTo('time');
+  };
+
+  const formatAMPM = (date) => {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+
+  const [value, setValue] = useState(null);
+  const [isFocus, setIsFocus] = useState(false);
+
+  const resetForm = () => {
+    setValue(null);
+    setRoom('')
+    setPurpose('')
+    setTransport('')
+    setFromDate(new Date())
+    setToDate(new Date())
+  }
+
+  const data = [
+    { label: 'GH', value: '0' },
+    { label: 'BH 1', value: '1' },
+    { label: 'BH 2', value: '2' },
+    { label: 'BH 3', value: '3' },
+    { label: 'BH 4', value: '4' },
+  ];
+
+  const renderLabel = () => {
+    if (value || isFocus) {
+      return (
+        <Text style={[styles.label, isFocus && { color: 'blue' }]}>
+          Dropdown label
+        </Text>
+      );
+    }
+    return null;
+  };
 
   return (
     <ScrollView>
@@ -26,11 +111,37 @@ export default function OutpassScreen({ navigation }) {
           <Text>Name : {usrInfo.userData.name}</Text>
           <View style={styles.item}>
             <Text>Hostel :</Text>
-            <TextInput
-              style={styles.formInput}
-              value={hostel}
-              onChangeText={setHostel}
+            {/* {renderLabel()} */}
+            <Dropdown
+              style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
+              placeholderStyle={styles.placeholderStyle}
+              selectedTextStyle={styles.selectedTextStyle}
+              inputSearchStyle={styles.inputSearchStyle}
+              iconStyle={styles.iconStyle}
+              data={data}
+              search
+              maxHeight={300}
+              labelField="label"
+              valueField="value"
+              placeholder={!isFocus ? 'Select item' : '...'}
+              searchPlaceholder="Search..."
+              value={value}
+              onFocus={() => setIsFocus(true)}
+              onBlur={() => setIsFocus(false)}
+              onChange={item => {
+                setValue(item.value);
+                setIsFocus(false);
+              }}
+            // renderLeftIcon={() => (
+            //   <AntDesign
+            //     style={styles.icon}
+            //     color={isFocus ? 'blue' : 'black'}
+            //     name="Safety"
+            //     size={20}
+            //   />
+            // )}
             />
+
           </View>
           <View style={styles.item}>
             <Text>Room No :</Text>
@@ -58,25 +169,52 @@ export default function OutpassScreen({ navigation }) {
           </View>
           <View style={styles.item}>
             <Text>From Time :</Text>
-            <TextInput
-              style={styles.formInput}
-              value={fromTime}
-              onChangeText={setFromTime}
-            />
+            <View style={styles.timeBox}>
+              <Text>{formatAMPM(fromDate)}</Text>
+              <TouchableOpacity
+                onPress={showTimepickerFrom}
+              >
+                <Image
+                  source={require('../../assets/icons/outline_schedule_black_24dp.png')}
+                  style={{
+                    width: 24,
+                    height: 24,
+                  }} />
+              </TouchableOpacity>
+            </View>
+
           </View>
           <View style={styles.item}>
             <Text>To Time :</Text>
-            <TextInput
-              style={styles.formInput}
-              value={toTime}
-              onChangeText={setToTime}
-            />
+            <View style={styles.timeBox}>
+              <Text>{formatAMPM(toDate)}</Text>
+              <TouchableOpacity
+                onPress={showTimepickerTo}
+              >
+                <Image
+                  source={require('../../assets/icons/outline_schedule_black_24dp.png')}
+                  style={{
+                    width: 24,
+                    height: 24,
+                  }} />
+              </TouchableOpacity>
+            </View>
+
           </View>
           <View style={styles.itemReset}>
             <TouchableOpacity
               style={styles.resetBtn}
+              onPress={() => resetForm()}
             >
-              <Text>Reset</Text>
+              <View style={styles.resetBox}>
+                <Text>Reset</Text>
+                <Image
+                  source={require('../../assets/icons/outline_restart_alt_black_24dp.png')}
+                  style={{
+                    width: 24,
+                    height: 24,
+                  }} />
+              </View>
             </TouchableOpacity>
           </View>
         </View>
@@ -115,7 +253,7 @@ const styles = StyleSheet.create({
     width: '85%',
   },
   formInput: {
-    width: 200,
+    width: 160,
     marginHorizontal: 12,
     borderRadius: 5,
     backgroundColor: '#FFFFFF',
@@ -159,10 +297,63 @@ const styles = StyleSheet.create({
   },
   resetBtn: {
     backgroundColor: 'white',
-    width: '20%',
+    width: '25%',
     height: 25,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-  }
+  },
+  resetBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  timeBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '35%',
+    backgroundColor: 'white',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    marginHorizontal: 12,
+    borderRadius: 5,
+    paddingVertical: 5,
+  },
+  dropdown: {
+    height: 40,
+    // borderColor: 'gray',
+    // borderWidth: 0.5,
+    borderRadius: 5,
+    paddingHorizontal: 8,
+    width: 200,
+    backgroundColor: 'white',
+    marginHorizontal: 12,
+  },
+  icon: {
+    marginRight: 5,
+  },
+  label: {
+    position: 'absolute',
+    backgroundColor: 'white',
+    left: 22,
+    top: 8,
+    zIndex: 999,
+    paddingHorizontal: 8,
+    fontSize: 14,
+  },
+  placeholderStyle: {
+    fontSize: 16,
+  },
+  selectedTextStyle: {
+    fontSize: 16,
+  },
+  iconStyle: {
+    width: 20,
+    height: 20,
+  },
+  inputSearchStyle: {
+    height: 40,
+    fontSize: 16,
+  },
 });
