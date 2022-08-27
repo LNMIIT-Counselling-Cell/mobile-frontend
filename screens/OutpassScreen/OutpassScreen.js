@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
 import { GenerateOutpassApi } from '../../api/outpass/OutpassApi';
 import { AuthContext } from '../../components/Context';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
@@ -80,6 +80,15 @@ export default function OutpassScreen({ navigation }) {
     setToDate(new Date())
   }
 
+  const formData = {
+    hostel: value,
+    roomno: room,
+    purpose: purpose,
+    transport: transport,
+    fromTime: fromDate,
+    toTime: toDate
+  }
+
   const data = [
     { label: 'GH', value: '0' },
     { label: 'BH 1', value: '1' },
@@ -99,12 +108,34 @@ export default function OutpassScreen({ navigation }) {
     return null;
   };
 
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  let mm = today.getMonth() + 1; // Months start at 0!
+  let dd = today.getDate();
+
+  if (dd < 10) dd = '0' + dd;
+  if (mm < 10) mm = '0' + mm;
+
+  const formattedToday = dd + '-' + mm + '-' + yyyy;
+
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayName = days[new Date().getDay()];
+
+  const isFormValid = () => {
+    if (value !== null && room !== '' && purpose !== '' && transport !== '') {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.headingDayDate}>
-          <Text style={styles.headingDate}>24-08-2022</Text>
-          <Text style={styles.headingDay}>Wednesday</Text>
+          <Text style={styles.headingDate}>{formattedToday}</Text>
+          <Text style={styles.headingDay}>{dayName}</Text>
         </View>
 
         <View style={styles.form}>
@@ -221,7 +252,29 @@ export default function OutpassScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.gen}
-          onPress={() => navigation.push('Generated Outpass')}
+          onPress={() => {
+            if (isFormValid()) {
+              Alert.alert(
+                'Are you sure you want to proceed?',
+                `Outpass once generated can't be deleted!`,
+                [
+                  { text: 'Cancel' },
+                  { text: 'OK', onPress: () => navigation.navigate('Generated Outpass', { objData: formData }) } //code to navigate},
+                ],
+                { cancelable: false }
+              )
+            }
+            else {
+              Alert.alert(
+                'Oops!',
+                `Please enter all the required details to generate outpass.`,
+                [
+                  { text: 'Ok' },
+                ],
+                { cancelable: false }
+              )
+            }
+          }}
         >
           <Text style={styles.genText}>Generate Outpass</Text>
         </TouchableOpacity>
@@ -242,7 +295,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headingDayDate: {
-    marginVertical: 20
+    marginVertical: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   form: {
     backgroundColor: '#E8E7E7',
