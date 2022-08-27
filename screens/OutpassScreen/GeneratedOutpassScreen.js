@@ -51,7 +51,7 @@ export default function GeneratedOutpassScreen({ navigation, route }) {
               </View>
               <View style={styles.innerbox}>
                 <Text style={styles.primaryText}>From</Text>
-                <Text>: {formatAMPM(objData.fromTime)}</Text>
+                <Text>: {formatAMPM(objData.from_time)}</Text>
               </View>
             </View>
             <View style={styles.rightBox}>
@@ -61,7 +61,7 @@ export default function GeneratedOutpassScreen({ navigation, route }) {
               </View>
               <View style={styles.innerbox}>
                 <Text style={styles.primaryText}>To</Text>
-                <Text>: {formatAMPM(objData.toTime)}</Text>
+                <Text>: {formatAMPM(objData.to_time)}</Text>
               </View>
             </View>
           </View>

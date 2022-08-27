@@ -4,6 +4,8 @@ import { GenerateOutpassApi } from '../../api/outpass/OutpassApi';
 import { AuthContext } from '../../components/Context';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
 import { Dropdown } from 'react-native-element-dropdown';
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function OutpassScreen({ navigation }) {
 
@@ -85,8 +87,8 @@ export default function OutpassScreen({ navigation }) {
     roomno: room,
     purpose: purpose,
     transport: transport,
-    fromTime: fromDate,
-    toTime: toDate
+    from_time: fromDate,
+    to_time: toDate
   }
 
   const data = [
@@ -259,7 +261,11 @@ export default function OutpassScreen({ navigation }) {
                 `Outpass once generated can't be deleted!`,
                 [
                   { text: 'Cancel' },
-                  { text: 'OK', onPress: () => navigation.navigate('Generated Outpass', { objData: formData }) } //code to navigate},
+                  {
+                    text: 'OK', onPress: () => {
+                      navigation.navigate('Generated Outpass', { objData: formData })
+                    }
+                  }
                 ],
                 { cancelable: false }
               )
