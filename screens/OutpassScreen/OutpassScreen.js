@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
-import { GenerateOutpassApi } from '../../api/outpass/OutpassApi';
 import { AuthContext } from '../../components/Context';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
 import { Dropdown } from 'react-native-element-dropdown';
 import axios from 'axios';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  GoogleSignin
+} from '@react-native-google-signin/google-signin';
+import { getToken } from '../../utils/Token';
 
 export default function OutpassScreen({ navigation }) {
 
@@ -13,7 +15,7 @@ export default function OutpassScreen({ navigation }) {
   const [purpose, setPurpose] = useState('');
   const [transport, setTransport] = useState('');
 
-  const { usrInfo } = useContext(AuthContext)
+  const { usrInfo, userToken, logout } = useContext(AuthContext)
 
   const [fromDate, setFromDate] = useState(new Date());
   const [toDate, setToDate] = useState(new Date());
@@ -82,21 +84,12 @@ export default function OutpassScreen({ navigation }) {
     setToDate(new Date())
   }
 
-  const formData = {
-    hostel: value,
-    roomno: room,
-    purpose: purpose,
-    transport: transport,
-    from_time: fromDate,
-    to_time: toDate
-  }
-
   const data = [
-    { label: 'GH', value: '0' },
-    { label: 'BH 1', value: '1' },
-    { label: 'BH 2', value: '2' },
-    { label: 'BH 3', value: '3' },
-    { label: 'BH 4', value: '4' },
+    { label: 'GH', value: 'GH' },
+    { label: 'BH 1', value: 'BH 1' },
+    { label: 'BH 2', value: 'BH 2' },
+    { label: 'BH 3', value: 'BH 3' },
+    { label: 'BH 4', value: 'BH 4' },
   ];
 
   const renderLabel = () => {
@@ -131,6 +124,25 @@ export default function OutpassScreen({ navigation }) {
       return false
     }
   }
+
+  const bodyParameters = {
+    hostel: value,
+    roomno: room,
+    purpose: purpose,
+    transport: transport,
+    from_time: fromDate,
+    to_time: toDate
+  };
+
+  const signOutFn = async () => {
+    try {
+      await GoogleSignin.signOut();
+      console.log("ho gya sign out")
+      logout()
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <ScrollView>
@@ -262,8 +274,29 @@ export default function OutpassScreen({ navigation }) {
                 [
                   { text: 'Cancel' },
                   {
-                    text: 'OK', onPress: () => {
-                      navigation.navigate('Generated Outpass', { objData: formData })
+                    text: 'OK', onPress: async () => {
+                      const token = await getToken();
+                      await axios.post('http://192.168.72.252:5000/generateoutpass', bodyParameters, {
+                        headers: {
+                          'Authorization': `Bearer ${token}`,
+                        }
+                      })
+                        .then(response => {
+                          const formData = {
+                            hostel: value,
+                            roomno: room,
+                            purpose: purpose,
+                            transport: transport,
+                            from_time: fromDate,
+                            to_time: toDate,
+                            token: response.data.token
+                          }
+                          resetForm()
+                          navigation.navigate('Generated Outpass', { objData: formData })
+                        })
+                        .catch(err => {
+                          console.log("errors in response ", err);
+                        });
                     }
                   }
                 ],
@@ -286,9 +319,29 @@ export default function OutpassScreen({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.prev}
-          onPress={() => navigation.push('Previous Outpass')}
+          onPress={async () => {
+            const token = await getToken()
+            await axios.get('http://192.168.72.252:5000/previousoutpass', {
+              headers: {
+                'Authorization': `Bearer ${token}`,
+              }
+            })
+              .then(response => {
+                navigation.navigate('Previous Outpass', { objData: response.data.outpass_record })
+              })
+              .catch(err => {
+                console.log("errors in response ", err);
+              });
+          }}
         >
           <Text style={styles.prevText}>Previous Outpass</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.gen}
+          onPress={() => signOutFn()}
+        >
+          <Text>Sign out yaha se</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>

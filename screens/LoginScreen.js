@@ -1,15 +1,19 @@
-import React, { useState, useContext } from 'react'
-import { Text, View, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import React, { useState, useContext, useEffect } from 'react'
+import { Text, View, TouchableOpacity, StyleSheet, Alert, Button, Image } from 'react-native';
 import {
   GoogleSignin,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 import { AuthContext } from '../components/Context';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
+import { getToken } from '../utils/Token';
 
 export default function LoginScreen({ navigation }) {
 
   const { login, logout } = useContext(AuthContext)
   const [choice, setChoice] = useState("");
+  const [cnt, setCnt] = useState(0);
 
   const showAlert = (title, message, option) => {
     return Alert.alert(
@@ -44,16 +48,105 @@ export default function LoginScreen({ navigation }) {
     );
   };
 
-  const signInFn = () => {
+  useEffect(() => {
     GoogleSignin.configure({
-      androidClientId: '891305350714-8okde30dj2evetbp38vp5ofnk63qsn1n.apps.googleusercontent.com',
+      webClientId: '891305350714-becnblrdvdvu6og7qi46f919rckcuev8.apps.googleusercontent.com',
+      androidClientId: '891305350714-liornsh72r91g1vklnk4f38s85aphgt4.apps.googleusercontent.com',
       // iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',
+      offlineAccess: true,
+      forceCodeForRefreshToken: true,
     });
+    isSignedIn()
+  }, [])
+
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // let authUrl;
+
+  // const createGoogleAuthLink = async () => {
+  //   try {
+  //     const request = await fetch("http://192.168.72.252:5000/createAuthLink", {
+  //       method: "POST",
+  //     });
+  //     const response = await request.json();
+  //     // window.location.href = response.url;
+  //     console.log("createAuthLink ------ ", response);
+  //     console.log("createAuthLink url------ ", response.url);
+  //     const authUrl = response.url;
+  //     // redirect()
+
+  //     // const query = new URLSearchParams(new URL(authUrl));
+  //     // console.log("handleTokenFromQueryParams query--- ", query);
+  //     // const accessToken = query.getAll();
+  //     // console.log("handleTokenFromQueryParams actok--- ", accessToken);
+  //   } catch (error) {
+  //     console.log("createAuthLink| error", error);
+  //     // throw new Error("Issue with Login", error.message);
+  //   }
+  // };
+
+  const redirect = async (authCode) => {
+    try {
+      const request = await axios.post("http://192.168.72.252:5000/handleGoogleRedirect", {
+        code: authCode
+      });
+      const response = request.data;
+      console.log("redirect received ---- ", response);
+      const accessToken = response.accessToken;
+      console.log("redirect received atk ---- ", accessToken);
+      const refreshToken = response.refreshToken;
+      console.log("redirect received rtk ---- ", refreshToken);
+      const expirationDate = newExpirationDate();
+      console.log(" expiration Date  ", expirationDate);
+      if (accessToken && refreshToken) {
+        // storeTokenData(accessToken, refreshToken, expirationDate);
+        AsyncStorage.setItem("accessToken", accessToken);
+        AsyncStorage.setItem("refreshToken", refreshToken);
+        AsyncStorage.setItem("expirationDate", expirationDate);
+        let atk = await AsyncStorage.getItem("accessToken")
+        let rtk = await AsyncStorage.getItem("refreshToken")
+        let edt = await AsyncStorage.getItem("expirationDate")
+        console.log("Access token updated successfully ", atk)
+        console.log("Refresh token updated successfully ", rtk)
+        console.log("expirationDate updated successfully ", edt)
+        // setIsLoggedIn(true);
+      }
+      else {
+        console.log("idhar log huyA HAI yaaaaar bc")
+      }
+    } catch (error) {
+      console.log("redirect| error", error);
+    }
+  }
+
+  const newExpirationDate = () => {
+    var expiration = new Date();
+    expiration.setHours(expiration.getHours() + 1);
+    return expiration;
+  };
+
+  const tok = async () => {
+    try {
+      const token = await getToken()
+      console.log("accesstoken tok -------- ", token);
+    } catch (error) {
+      console.log("tok error", error);
+    }
+  }
+
+  const signInFn = () => {
     GoogleSignin.hasPlayServices().then((hasPlayService) => {
       if (hasPlayService) {
         GoogleSignin.signIn().then((userInfo) => {
-          // console.log(JSON.stringify(userInfo))
+          // let val = JSON.stringify(userInfo)
+          // console.log(val)
           login({ userInfo })
+          // { cnt === 0 ? {redirect(userInfo.serverAuthCode)} :  }
+          if (cnt === 0) {
+            redirect(userInfo.serverAuthCode)
+            cnt = cnt + 1;
+          }
+          // tok()
         }).catch((error) => {
           // console.log("ERROR IS: " + JSON.stringify(error));
           if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -80,11 +173,45 @@ export default function LoginScreen({ navigation }) {
     })
   }
 
+  const isSignedIn = async () => {
+    const isSignedIn = await GoogleSignin.isSignedIn();
+    console.log("isSignedIn: " + isSignedIn);
+    if (isSignedIn) {
+      getCurrentUserInfo()
+    } else {
+      console.log('Please Login')
+    }
+  };
+
+  const getCurrentUserInfo = async () => {
+    try {
+      const userInfo = await GoogleSignin.signInSilently();
+      // const utok1 = await GoogleSignin.getTokens()
+      // console.log('utok1 --- ', utok1);
+      // const userTok = await GoogleSignin.clearCachedAccessToken(utok1.accessToken)
+      // console.log('userTok --- ', userTok);
+      // const utok2 = await GoogleSignin.getTokens()
+      // console.log('utok2 --- ', utok2);
+      // const userInfo = await GoogleSignin.getCurrentUser();
+      console.log(JSON.stringify(userInfo));
+      login({ userInfo })
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_REQUIRED) {
+        // alert('User has not signed in yet');
+        console.log('User has not signed in yet-----------', error);
+      } else {
+        // alert("Something went wrong. Unable to get user's info");
+        console.log("Something went wrong. Unable to get user's info-----", error);
+      }
+    }
+  };
+
   const signOutFn = async () => {
     try {
-      logout()
+      // await GoogleSignin.revokeAccess();
       await GoogleSignin.signOut();
       console.log("ho gya sign out")
+      logout()
       // this.setState({ user: null }); // Remember to remove the user from your app's state as well
     } catch (error) {
       console.error(error);
@@ -92,25 +219,100 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <TouchableOpacity
+    <View style={styles.container}>
+      <View style={styles.textBox}>
+        <Text style={styles.headText}>The LNMIIT</Text>
+        <Text style={styles.subheadText}>Counselling and Guidance Cell</Text>
+      </View>
+
+      <View style={styles.containerBox}>
+        <Image source={require('../assets/images/ccell.png')} style={{
+          width: 150,
+          height: 150,
+          marginBottom: 50
+        }} />
+
+        <TouchableOpacity
+          style={styles.loginDomain}
+          onPress={() => signInFn()}
+        >
+          <Text style={styles.loginText}>Login with LNMIIT Domain ID</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.guestDomain}
+          onPress={() => showAlert("Under Development", "This page is under development. Please come back later!", "Ok")}
+        >
+          <Text style={styles.guestText}>Continue as Guest User</Text>
+        </TouchableOpacity>
+        <Text>For the students seeking admission</Text>
+      </View>
+      {/* <TouchableOpacity
         style={styles.login}
         onPress={() => signInFn()}
       >
         <Text>Sign In with Google</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
-      <TouchableOpacity
+      {/* <Button onPress={() => createGoogleAuthLink()} title="Login"></Button> */}
+      {/* <TouchableOpacity
         onPress={() => signOutFn()}
       >
         <Text style={styles.login}>Sign out</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View >
   )
 }
 
 const styles = StyleSheet.create({
-  login: {
-    backgroundColor: 'red',
-  }
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textBox: {
+    marginBottom: 50,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headText: {
+    fontSize: 18,
+  },
+  subheadText: {
+    fontSize: 24,
+  },
+  containerBox: {
+    width: '88%',
+    height: '50%',
+    backgroundColor: 'white',
+    borderRadius: 8,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loginDomain: {
+    backgroundColor: '#FFCBA6',
+    width: '85%',
+    height: 50,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginBottom: 20
+  },
+  loginText: {
+    color: '#FF6A00',
+  },
+  guestDomain: {
+    backgroundColor: '#C3B0FF',
+    width: '85%',
+    height: 50,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  guestText: {
+    color: '#551FFF',
+  },
 })

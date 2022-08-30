@@ -41,7 +41,7 @@ export default function GeneratedOutpassScreen({ navigation, route }) {
           <Image style={styles.image} source={require("../../assets/images/generated_outpass.png")} />
           <Text style={styles.outpassgen}>Outpass Generated</Text>
           <Text style={styles.uniqueText}>Your Unique Token Number</Text>
-          <Text style={styles.tokenText}>8473456324563</Text>
+          <Text style={styles.tokenText}>{objData.token}</Text>
 
           <View style={styles.box}>
             <View style={styles.leftBox}>
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   tokenText: {
-    fontSize: 32,
+    fontSize: 30,
   },
   box: {
     display: 'flex',

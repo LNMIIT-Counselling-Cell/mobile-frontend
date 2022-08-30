@@ -13,18 +13,17 @@ export const AuthProvider = ({ children }) => {
     setIsLoading(true);
     axios.post('http://192.168.72.252:5000/signup', { userInfo })
       .then((response) => {
-        console.log("response: ", response.data)
+        // console.log("response: ", response.data)
         const usrInfo = response.data;
         setUsrInfo(usrInfo);
-        setUserToken(usrInfo.userData.id);
+        setUserToken(userInfo.idToken);
         AsyncStorage.setItem('usrinfo', JSON.stringify(usrInfo));
-        AsyncStorage.setItem('usrtok', usrInfo.userData.id);
+        AsyncStorage.setItem('usrtok', userInfo.idToken);
 
-        console.log("user token----", usrInfo.userData.id); //
+        console.log("user token----", userInfo.idToken);
+        setIsLoading(false);
       })
       .catch(err => console.error("axios error: " + err))
-
-    setIsLoading(false);
   }
 
   const logout = () => {
@@ -48,7 +47,7 @@ export const AuthProvider = ({ children }) => {
       }
       setIsLoading(false)
     } catch (error) {
-      console.error(error); //
+      console.error(error);
     }
   }
 
