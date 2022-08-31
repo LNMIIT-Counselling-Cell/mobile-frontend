@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { Text, View, TouchableOpacity, StyleSheet, Alert, Button, Image } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native';
 import {
   GoogleSignin,
   statusCodes,
@@ -8,12 +8,14 @@ import { AuthContext } from '../components/Context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { getToken } from '../utils/Token';
+import { useTheme } from '@react-navigation/native';
 
 export default function LoginScreen({ navigation }) {
 
+  const { colors } = useTheme()
+
   const { login, logout } = useContext(AuthContext)
   const [choice, setChoice] = useState("");
-  const [cnt, setCnt] = useState(0);
 
   const showAlert = (title, message, option) => {
     return Alert.alert(
@@ -99,10 +101,9 @@ export default function LoginScreen({ navigation }) {
       const expirationDate = newExpirationDate();
       console.log(" expiration Date  ", expirationDate);
       if (accessToken && refreshToken) {
-        // storeTokenData(accessToken, refreshToken, expirationDate);
         AsyncStorage.setItem("accessToken", accessToken);
         AsyncStorage.setItem("refreshToken", refreshToken);
-        AsyncStorage.setItem("expirationDate", expirationDate);
+        AsyncStorage.setItem("expirationDate", JSON.stringify(expirationDate));
         let atk = await AsyncStorage.getItem("accessToken")
         let rtk = await AsyncStorage.getItem("refreshToken")
         let edt = await AsyncStorage.getItem("expirationDate")
@@ -134,6 +135,23 @@ export default function LoginScreen({ navigation }) {
     }
   }
 
+  const checkRedirected = async (userInfo) => {
+    try {
+      const check = await AsyncStorage.getItem("isRedirected")
+      console.log("check ------------ ", check)
+      if (check === null || check === undefined) {
+        console.log("Redirect true")
+        redirect(userInfo.serverAuthCode)
+        AsyncStorage.setItem("isRedirected", JSON.stringify(true))
+      }
+      else {
+        console.log("Redirect false")
+      }
+    } catch (error) {
+      console.error("check Redirect err --------- ", error)
+    }
+  }
+
   const signInFn = () => {
     GoogleSignin.hasPlayServices().then((hasPlayService) => {
       if (hasPlayService) {
@@ -142,29 +160,26 @@ export default function LoginScreen({ navigation }) {
           // console.log(val)
           login({ userInfo })
           // { cnt === 0 ? {redirect(userInfo.serverAuthCode)} :  }
-          if (cnt === 0) {
-            redirect(userInfo.serverAuthCode)
-            cnt = cnt + 1;
-          }
+          checkRedirected(userInfo)
           // tok()
         }).catch((error) => {
           // console.log("ERROR IS: " + JSON.stringify(error));
           if (error.code === statusCodes.SIGN_IN_CANCELLED) {
             // user cancelled the login flow
             console.log("ERROR IS: SIGN_IN_CANCELLED")
-            showAlert("Error", "SIGN_IN_CANCELLED", "Ok")
+            showAlert("Alert!", "Google Sign In Cancelled", "Ok")
           } else if (error.code === statusCodes.IN_PROGRESS) {
             // operation (e.g. sign in) is in progress already
             console.log("ERROR IS: IN_PROGRESS")
-            showAlert("Error", "IN_PROGRESS", "Ok")
+            showAlert("Alert!", "In Progress", "Ok")
           } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
             // play services not available or outdated
             console.log("ERROR IS: PLAY_SERVICES_NOT_AVAILABLE")
-            showAlert("Error", "PLAY_SERVICES_NOT_AVAILABLE", "Ok")
+            showAlert("Alert!", "Google Play Services is not available. Please install.", "Ok")
           } else {
             // some other error happened
             console.log("ERROR IS: lnmiit id se aao bhai")
-            showAlert("Error", "Login through lnmiit id only", "Ok")
+            showAlert("Alert!", "Login through LNMIIT ID only", "Ok")
           }
         })
       }
@@ -219,13 +234,13 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.textBox}>
-        <Text style={styles.headText}>The LNMIIT</Text>
-        <Text style={styles.subheadText}>Counselling and Guidance Cell</Text>
+        <Text style={[styles.headText, { color: colors.text }]}>The LNMIIT</Text>
+        <Text style={[styles.subheadText, { color: colors.text }]}>Counselling and Guidance Cell</Text>
       </View>
 
-      <View style={styles.containerBox}>
+      <View style={[styles.containerBox, { backgroundColor: colors.cardBG }]}>
         <Image source={require('../assets/images/ccell.png')} style={{
           width: 150,
           height: 150,
@@ -244,7 +259,7 @@ export default function LoginScreen({ navigation }) {
         >
           <Text style={styles.guestText}>Continue as Guest User</Text>
         </TouchableOpacity>
-        <Text>For the students seeking admission</Text>
+        <Text style={{ color: colors.text }}>For the students seeking admission</Text>
       </View>
       {/* <TouchableOpacity
         style={styles.login}
@@ -267,7 +282,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   textBox: {
     marginBottom: 50,
@@ -277,9 +292,11 @@ const styles = StyleSheet.create({
   },
   headText: {
     fontSize: 18,
+    fontFamily: 'Poppins-Medium',
   },
   subheadText: {
-    fontSize: 24,
+    fontSize: 20,
+    fontFamily: 'Poppins-Medium',
   },
   containerBox: {
     width: '88%',
@@ -302,6 +319,7 @@ const styles = StyleSheet.create({
   },
   loginText: {
     color: '#FF6A00',
+    fontFamily: 'Poppins-Medium',
   },
   guestDomain: {
     backgroundColor: '#C3B0FF',
@@ -314,5 +332,6 @@ const styles = StyleSheet.create({
   },
   guestText: {
     color: '#551FFF',
-  },
+    fontFamily: 'Poppins-Medium',
+  }
 })

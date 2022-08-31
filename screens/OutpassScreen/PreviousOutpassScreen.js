@@ -1,7 +1,10 @@
+import { useTheme } from '@react-navigation/native';
 import React from 'react'
 import { Text, View, StyleSheet, FlatList } from 'react-native';
 
 export default function PreviousOutpassScreen({ navigation, route }) {
+
+  const { colors } = useTheme()
 
   const { objData } = route.params
 
@@ -18,9 +21,9 @@ export default function PreviousOutpassScreen({ navigation, route }) {
   }
 
   const Item = ({ token, date }) => (
-    <View style={styles.item}>
-      <Text>{getDate(date)}</Text>
-      <Text>{token}</Text>
+    <View style={[styles.item, { backgroundColor: colors.cardBG }]}>
+      <Text style={{ color: colors.text }}>{getDate(date)}</Text>
+      <Text style={{ color: colors.text }}>{token}</Text>
     </View>
   );
 

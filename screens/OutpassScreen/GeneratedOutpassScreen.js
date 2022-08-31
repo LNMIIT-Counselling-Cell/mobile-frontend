@@ -1,7 +1,10 @@
+import { useTheme } from '@react-navigation/native';
 import React from 'react'
 import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
 
 export default function GeneratedOutpassScreen({ navigation, route }) {
+
+  const { colors } = useTheme()
 
   const { objData } = route.params
 
@@ -33,45 +36,45 @@ export default function GeneratedOutpassScreen({ navigation, route }) {
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.headingDayDate}>
-          <Text style={styles.headingDate}>{formattedToday}</Text>
-          <Text style={styles.headingDay}>{dayName}</Text>
+          <Text style={[styles.headingDate, { color: colors.text }]}>{formattedToday}</Text>
+          <Text style={[styles.headingDay, { color: colors.text }]}>{dayName}</Text>
         </View>
 
         <View style={styles.form}>
           <Image style={styles.image} source={require("../../assets/images/generated_outpass.png")} />
-          <Text style={styles.outpassgen}>Outpass Generated</Text>
-          <Text style={styles.uniqueText}>Your Unique Token Number</Text>
-          <Text style={styles.tokenText}>{objData.token}</Text>
+          <Text style={[styles.outpassgen, { color: colors.text }]}>Outpass Generated</Text>
+          <Text style={[styles.uniqueText, { color: colors.text }]}>Your Unique Token Number</Text>
+          <Text style={[styles.tokenText, { color: colors.text }]}>{objData.token}</Text>
 
           <View style={styles.box}>
             <View style={styles.leftBox}>
               <View style={styles.innerbox}>
-                <Text style={styles.primaryText}>Purpose</Text>
-                <Text>: {objData.purpose}</Text>
+                <Text style={[styles.primaryText, { color: colors.text }]}>Purpose</Text>
+                <Text style={{ color: colors.text }}>: {objData.purpose}</Text>
               </View>
               <View style={styles.innerbox}>
-                <Text style={styles.primaryText}>From</Text>
-                <Text>: {formatAMPM(objData.from_time)}</Text>
+                <Text style={[styles.primaryText, { color: colors.text }]}>From</Text>
+                <Text style={{ color: colors.text }}>: {formatAMPM(objData.from_time)}</Text>
               </View>
             </View>
             <View style={styles.rightBox}>
               <View style={styles.innerbox}>
-                <Text style={styles.primaryText}>Transport</Text>
-                <Text>: {objData.transport}</Text>
+                <Text style={[styles.primaryText, { color: colors.text }]}>Transport</Text>
+                <Text style={{ color: colors.text }}>: {objData.transport}</Text>
               </View>
               <View style={styles.innerbox}>
-                <Text style={styles.primaryText}>To</Text>
-                <Text>: {formatAMPM(objData.to_time)}</Text>
+                <Text style={[styles.primaryText, { color: colors.text }]}>To</Text>
+                <Text style={{ color: colors.text }}>: {formatAMPM(objData.to_time)}</Text>
               </View>
             </View>
           </View>
         </View>
 
         <View style={styles.rules}>
-          <Text>Rules & Regulations</Text>
-          <Text>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
-          <Text>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
-          <Text>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
+          <Text style={{ color: colors.text }}>Rules & Regulations</Text>
+          <Text style={{ color: colors.text }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
+          <Text style={{ color: colors.text }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
+          <Text style={{ color: colors.text }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
         </View>
       </View>
     </ScrollView>
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   tokenText: {
-    fontSize: 30,
+    fontSize: 34,
   },
   box: {
     display: 'flex',

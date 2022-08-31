@@ -1,24 +1,36 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Image, Alert, ActivityIndicator } from 'react-native';
 import { AuthContext } from '../../components/Context';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
 import { Dropdown } from 'react-native-element-dropdown';
 import axios from 'axios';
-import {
-  GoogleSignin
-} from '@react-native-google-signin/google-signin';
 import { getToken } from '../../utils/Token';
+import { useTheme } from '@react-navigation/native';
 
 export default function OutpassScreen({ navigation }) {
+
+  const { colors } = useTheme()
 
   const [room, setRoom] = useState('');
   const [purpose, setPurpose] = useState('');
   const [transport, setTransport] = useState('');
 
-  const { usrInfo, userToken, logout } = useContext(AuthContext)
+  const { usrInfo } = useContext(AuthContext)
 
   const [fromDate, setFromDate] = useState(new Date());
   const [toDate, setToDate] = useState(new Date());
+
+  const [isLoadingGen, setIsLoadingGen] = useState(false);
+  const [isLoadingPrev, setIsLoadingPrev] = useState(false);
+
+  // This function will be triggered when the button is pressed
+  const toggleLoadingGen = () => {
+    setIsLoadingGen(!isLoadingGen);
+  };
+
+  const toggleLoadingPrev = () => {
+    setIsLoadingPrev(!isLoadingPrev);
+  };
 
   const onChangeFrom = (event, selectedDate) => {
     const currentDate = selectedDate;
@@ -134,34 +146,24 @@ export default function OutpassScreen({ navigation }) {
     to_time: toDate
   };
 
-  const signOutFn = async () => {
-    try {
-      await GoogleSignin.signOut();
-      console.log("ho gya sign out")
-      logout()
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.headingDayDate}>
-          <Text style={styles.headingDate}>{formattedToday}</Text>
-          <Text style={styles.headingDay}>{dayName}</Text>
+          <Text style={[styles.headingDate, { color: colors.text }]}>{formattedToday}</Text>
+          <Text style={[styles.headingDay, { color: colors.text }]}>{dayName}</Text>
         </View>
 
-        <View style={styles.form}>
-          <Text>Name : {usrInfo.userData.name}</Text>
+        <View style={[styles.form, { backgroundColor: colors.cardBG }]}>
+          <Text style={[{ color: colors.text }]}>Name : {usrInfo.userData.name}</Text>
           <View style={styles.item}>
-            <Text>Hostel :</Text>
+            <Text style={[{ color: colors.text }]}>Hostel :</Text>
             {/* {renderLabel()} */}
             <Dropdown
-              style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
-              placeholderStyle={styles.placeholderStyle}
-              selectedTextStyle={styles.selectedTextStyle}
-              inputSearchStyle={styles.inputSearchStyle}
+              style={[styles.dropdown, isFocus && { borderColor: 'blue' }, { backgroundColor: colors.background }]}
+              placeholderStyle={[styles.placeholderStyle, { color: colors.text }]}
+              selectedTextStyle={[styles.selectedTextStyle, { color: colors.text }]}
+              inputSearchStyle={[styles.inputSearchStyle, { color: colors.text }]}
               iconStyle={styles.iconStyle}
               data={data}
               search
@@ -189,33 +191,33 @@ export default function OutpassScreen({ navigation }) {
 
           </View>
           <View style={styles.item}>
-            <Text>Room No :</Text>
+            <Text style={[{ color: colors.text }]}>Room No :</Text>
             <TextInput
-              style={styles.formInput}
+              style={[styles.formInput, { color: colors.text }, { backgroundColor: colors.background }]}
               value={room}
               onChangeText={setRoom}
             />
           </View>
           <View style={styles.item}>
-            <Text>Purpose :</Text>
+            <Text style={[{ color: colors.text }]}>Purpose :</Text>
             <TextInput
-              style={styles.formInput}
+              style={[styles.formInput, { color: colors.text }, { backgroundColor: colors.background }]}
               value={purpose}
               onChangeText={setPurpose}
             />
           </View>
           <View style={styles.item}>
-            <Text>Transport :</Text>
+            <Text style={[{ color: colors.text }]}>Transport :</Text>
             <TextInput
-              style={styles.formInput}
+              style={[styles.formInput, { color: colors.text }, { backgroundColor: colors.background }]}
               value={transport}
               onChangeText={setTransport}
             />
           </View>
           <View style={styles.item}>
-            <Text>From Time :</Text>
-            <View style={styles.timeBox}>
-              <Text>{formatAMPM(fromDate)}</Text>
+            <Text style={[{ color: colors.text }]}>From Time :</Text>
+            <View style={[styles.timeBox, { backgroundColor: colors.background }]}>
+              <Text style={[{ color: colors.text }]}>{formatAMPM(fromDate)}</Text>
               <TouchableOpacity
                 onPress={showTimepickerFrom}
               >
@@ -230,9 +232,9 @@ export default function OutpassScreen({ navigation }) {
 
           </View>
           <View style={styles.item}>
-            <Text>To Time :</Text>
-            <View style={styles.timeBox}>
-              <Text>{formatAMPM(toDate)}</Text>
+            <Text style={[{ color: colors.text }]}>To Time :</Text>
+            <View style={[styles.timeBox, { backgroundColor: colors.background }]}>
+              <Text style={[{ color: colors.text }]}>{formatAMPM(toDate)}</Text>
               <TouchableOpacity
                 onPress={showTimepickerTo}
               >
@@ -248,11 +250,11 @@ export default function OutpassScreen({ navigation }) {
           </View>
           <View style={styles.itemReset}>
             <TouchableOpacity
-              style={styles.resetBtn}
+              style={[styles.resetBtn, { backgroundColor: colors.background }]}
               onPress={() => resetForm()}
             >
               <View style={styles.resetBox}>
-                <Text>Reset</Text>
+                <Text style={[{ color: colors.text }]}>Reset</Text>
                 <Image
                   source={require('../../assets/icons/outline_restart_alt_black_24dp.png')}
                   style={{
@@ -275,6 +277,7 @@ export default function OutpassScreen({ navigation }) {
                   { text: 'Cancel' },
                   {
                     text: 'OK', onPress: async () => {
+                      toggleLoadingGen()
                       const token = await getToken();
                       await axios.post('http://192.168.72.252:5000/generateoutpass', bodyParameters, {
                         headers: {
@@ -292,9 +295,11 @@ export default function OutpassScreen({ navigation }) {
                             token: response.data.token
                           }
                           resetForm()
+                          setIsLoadingGen(false)
                           navigation.navigate('Generated Outpass', { objData: formData })
                         })
                         .catch(err => {
+                          setIsLoadingGen(false)
                           console.log("errors in response ", err);
                         });
                     }
@@ -315,11 +320,15 @@ export default function OutpassScreen({ navigation }) {
             }
           }}
         >
-          <Text style={styles.genText}>Generate Outpass</Text>
+          <View style={styles.btn}>
+            {isLoadingGen && <ActivityIndicator size="large" color="#FF6A00" />}
+            <Text style={styles.genText}> {isLoadingGen ? "Generating ..." : "Generate Outpass"}</Text>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.prev}
           onPress={async () => {
+            toggleLoadingPrev()
             const token = await getToken()
             await axios.get('http://192.168.72.252:5000/previousoutpass', {
               headers: {
@@ -327,21 +336,19 @@ export default function OutpassScreen({ navigation }) {
               }
             })
               .then(response => {
+                setIsLoadingPrev(false)
                 navigation.navigate('Previous Outpass', { objData: response.data.outpass_record })
               })
               .catch(err => {
+                setIsLoadingPrev(false)
                 console.log("errors in response ", err);
               });
           }}
         >
-          <Text style={styles.prevText}>Previous Outpass</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.gen}
-          onPress={() => signOutFn()}
-        >
-          <Text>Sign out yaha se</Text>
+          <View style={styles.btn}>
+            {isLoadingPrev && <ActivityIndicator size="large" color="#551FFF" />}
+            <Text style={styles.prevText}> {isLoadingPrev ? "Fetching ..." : "Previous Outpass"}</Text>
+          </View>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -392,7 +399,8 @@ const styles = StyleSheet.create({
     marginVertical: 14,
   },
   genText: {
-    color: '#FF6A00'
+    color: '#FF6A00',
+    fontFamily: 'Poppins-Medium',
   },
   prev: {
     backgroundColor: '#C3B0FF',
@@ -404,7 +412,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   prevText: {
-    color: '#551FFF'
+    color: '#551FFF',
+    fontFamily: 'Poppins-Medium',
+  },
+  btn: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   itemReset: {
     flexDirection: 'row-reverse',
