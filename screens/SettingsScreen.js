@@ -62,7 +62,7 @@ export const SettingsScreen = () => {
         >
           <View style={styles.btn}>
             {isLoadingSignout && <ActivityIndicator size="large" color="#551FFF" />}
-            <Text style={styles.logoutText}> {isLoadingSignout ? "Signing out ... ..." : "Sign Out"}</Text>
+            <Text style={styles.logoutText}> {isLoadingSignout ? "Signing out" : "Sign Out"}</Text>
           </View>
         </TouchableOpacity>
       </View>

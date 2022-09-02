@@ -161,6 +161,7 @@ export default function LoginScreen({ navigation }) {
           login({ userInfo })
           // { cnt === 0 ? {redirect(userInfo.serverAuthCode)} :  }
           checkRedirected(userInfo)
+          // redirect(userInfo.serverAuthCode)
           // tok()
         }).catch((error) => {
           // console.log("ERROR IS: " + JSON.stringify(error));
@@ -184,6 +185,7 @@ export default function LoginScreen({ navigation }) {
         })
       }
     }).catch((e) => {
+      showAlert("Alert!", "Error - " + JSON.stringify(e), "Ok")
       console.log("ERROR IS: " + JSON.stringify(e));
     })
   }
