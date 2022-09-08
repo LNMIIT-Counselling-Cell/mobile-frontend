@@ -10,7 +10,7 @@ import AboutTab from './AboutTab';
 export default function BottomTabs() {
   const Tab = createBottomTabNavigator();
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+    <Tab.Navigator screenOptions={{ headerShown: false }} initialRouteName="College">
       <Tab.Screen name="College" component={CollegeTab}
         options={{
           tabBarLabel: 'College',
