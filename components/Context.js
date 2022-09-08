@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = ({ userInfo }) => {
     setIsLoading(true);
-    axios.post('http://192.168.72.252:5000/signup', { userInfo })
+    axios.post('http://192.168.167.252:5000/signup', { userInfo })
       .then((response) => {
         // console.log("response: ", response.data)
         const usrInfo = response.data;

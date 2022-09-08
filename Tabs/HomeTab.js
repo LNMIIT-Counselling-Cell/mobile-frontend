@@ -4,8 +4,12 @@ import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import DetailsScreen from '../screens/LoginScreen'
 import { SettingsScreen } from '../screens/SettingsScreen';
 import Header from '../components/Header';
+import { MenuScreen } from '../screens/HomeScreen/MenuScreen';
+import { TimeTableScreen } from '../screens/HomeScreen/TimeTableScreen';
+import { TodayEventScreen } from '../screens/HomeScreen/TodayEventScreen';
+import { CounsellingProcessScreen } from '../screens/HomeScreen/CounsellingProcessScreen';
 
-export default function HomeTab() {
+export default function HomeTab({ navigation }) {
   const HomeStack = createStackNavigator();
   return (
     <HomeStack.Navigator>
@@ -16,6 +20,18 @@ export default function HomeTab() {
         headerTitleAlign: 'center',
       }} />
       <HomeStack.Screen name="Settings" component={SettingsScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <HomeStack.Screen name="Menus" component={MenuScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <HomeStack.Screen name="Time Tables" component={TimeTableScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <HomeStack.Screen name="Today's Events" component={TodayEventScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <HomeStack.Screen name="Counselling Process" component={CounsellingProcessScreen} options={{
         headerTitleAlign: 'center',
       }} />
     </HomeStack.Navigator>

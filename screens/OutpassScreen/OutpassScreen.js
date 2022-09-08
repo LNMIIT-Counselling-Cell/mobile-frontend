@@ -279,7 +279,7 @@ export default function OutpassScreen({ navigation }) {
                     text: 'OK', onPress: async () => {
                       toggleLoadingGen()
                       const token = await getToken();
-                      await axios.post('http://192.168.72.252:5000/generateoutpass', bodyParameters, {
+                      await axios.post('http://192.168.167.252:5000/generateoutpass', bodyParameters, {
                         headers: {
                           'Authorization': `Bearer ${token}`,
                         }
@@ -330,7 +330,7 @@ export default function OutpassScreen({ navigation }) {
           onPress={async () => {
             toggleLoadingPrev()
             const token = await getToken()
-            await axios.get('http://192.168.72.252:5000/previousoutpass', {
+            await axios.get('http://192.168.167.252:5000/previousoutpass', {
               headers: {
                 'Authorization': `Bearer ${token}`,
               }

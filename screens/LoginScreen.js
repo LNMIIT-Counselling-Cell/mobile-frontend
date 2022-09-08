@@ -89,7 +89,7 @@ export default function LoginScreen({ navigation }) {
 
   const redirect = async (authCode) => {
     try {
-      const request = await axios.post("http://192.168.72.252:5000/handleGoogleRedirect", {
+      const request = await axios.post("http://192.168.167.252:5000/handleGoogleRedirect", {
         code: authCode
       });
       const response = request.data;

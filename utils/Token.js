@@ -48,7 +48,7 @@ const tokenExpired = async () => {
 const getValidTokenFromServer = async (refreshToken) => {
   // get new token from server with refresh token
   try {
-    const request = await fetch("http://192.168.72.252:5000/getValidToken", {
+    const request = await fetch("http://192.168.167.252:5000/getValidToken", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
