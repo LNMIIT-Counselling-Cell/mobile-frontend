@@ -26,42 +26,63 @@ export default function ScitechCouncilScreen({ navigation }) {
       <View style={styles.cardView}>
         <TouchableOpacity
           style={styles.card1}
+          onPress={() => {
+            navigation.navigate('Astronomy Club')
+          }}
         >
           <Image source={require('../../assets/scitech/astro.png')} />
           <Text style={styles.card1Text}>Astronomy Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
+          onPress={() => {
+            navigation.navigate('Cybros')
+          }}
         >
           <Image source={require('../../assets/scitech/cybros.png')} />
           <Text style={styles.card2Text}>Cybros</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
+          onPress={() => {
+            navigation.navigate('Debsoc')
+          }}
         >
           <Image source={require('../../assets/scitech/debsoc.png')} />
           <Text style={styles.card3Text}>Debsoc</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card4}
+          onPress={() => {
+            navigation.navigate('Phoenix')
+          }}
         >
           <Image source={require('../../assets/scitech/phoenix.png')} />
           <Text style={styles.card4Text}>Phoenix</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card1}
+          onPress={() => {
+            navigation.navigate('E-Cell')
+          }}
         >
           <Image source={require('../../assets/scitech/e_cell.png')} />
           <Text style={styles.card1Text}>E-Cell</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
+          onPress={() => {
+            navigation.navigate('Quizzinga')
+          }}
         >
           <Image source={require('../../assets/scitech/quizzinga.png')} />
           <Text style={styles.card2Text}>Quizzinga</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
+          onPress={() => {
+            navigation.navigate('Cipher')
+          }}
         >
           <Image source={require('../../assets/scitech/cipher.png')} />
           <Text style={styles.card3Text}>Cipher</Text>

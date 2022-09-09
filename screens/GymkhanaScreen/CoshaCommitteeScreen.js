@@ -10,15 +10,15 @@ export default function CoshaCommitteeScreen({ navigation }) {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
-        <Image source={require('../../assets/images/gymkhana.png')} style={styles.image} />
-        <Text style={[styles.aboutText, { color: colors.text }]}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour).</Text>
+        <Image source={require('../../assets/images/cosha.png')} style={styles.image} />
+        <Text style={[styles.aboutText, { color: colors.text }]}>A college is composed of many things: students, professors, academic blocks, hostels, mess etc. For the proper functioning of everything lying beneath the biosphere of Hostels, Mess and Canteen, Committee of Students for Hostel Affairs (COSHA) is the way to go. COSHA supervises all matters of common interest to the Hostels, whilst handling queries, complaints and suggestions regarding Mess and Canteen. Be it improving the mess menu, lodging a complaint regarding canteen shops, or raising a query related to the habitable conditions of hostels; Cosha is inculcated with the responsibility of being the voice of students and relaying their valid concerns to the higher authorities. A meeting of COSHA is chaired by the President, and consists of the Convenor of COSHA, Hall Representatives and Chief Warden/Wardens. In a meeting, COSHA puts forward the students’ candid views and tries to establish a common ground. COSHA believes in eliminating all complaints, relaying constructive suggestions and maintaining transparency at all fronts.</Text>
       </View>
 
-      <PersonCard name={"Poojan Gadhiya"} position={"President"} />
+      {/* <PersonCard name={"Poojan Gadhiya"} position={"President"} />
       <PersonCard name={"Tanay Khandelwal"} position={"Finance Convener"} />
-      <PersonCard name={"Om Abash Jha"} position={"Vice-President"} />
+      <PersonCard name={"Om Abash Jha"} position={"Vice-President"} /> */}
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.topCard}
       >
         <Text style={styles.topCardText}>Presidential Council</Text>
@@ -49,7 +49,7 @@ export default function CoshaCommitteeScreen({ navigation }) {
           <Image source={require('../../assets/images/mess_menu.png')} />
           <Text style={styles.card4Text}>COSHA Committee</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
 
     </ScrollView>
   );

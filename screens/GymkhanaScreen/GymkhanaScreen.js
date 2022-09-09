@@ -20,9 +20,6 @@ export default function GymkhanaScreen({ navigation }) {
 
       <TouchableOpacity
         style={styles.topCard}
-        onPress={() => {
-          navigation.navigate('Presidential Council')
-        }}
       >
         <Text style={styles.topCardText}>Presidential Council</Text>
       </TouchableOpacity>
@@ -61,7 +58,7 @@ export default function GymkhanaScreen({ navigation }) {
             navigation.navigate('COSHA Committee')
           }}
         >
-          <Image source={require('../../assets/images/mess_menu.png')} />
+          <Image source={require('../../assets/images/cosha.png')} />
           <Text style={styles.card4Text}>COSHA Committee</Text>
         </TouchableOpacity>
       </View>

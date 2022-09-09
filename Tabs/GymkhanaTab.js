@@ -18,6 +18,13 @@ import { MediaCellScreen } from '../screens/GymkhanaScreen/MediaCellScreen';
 import { RenditionScreen } from '../screens/GymkhanaScreen/RenditionScreen';
 import { SankalpScreen } from '../screens/GymkhanaScreen/SankalpScreen';
 import { VignetteScreen } from '../screens/GymkhanaScreen/VignetteScreen';
+import { AstronomyScreen } from '../screens/GymkhanaScreen/AstronomyScreen';
+import { CybrosScreen } from '../screens/GymkhanaScreen/CybrosScreen';
+import { DebsocScreen } from '../screens/GymkhanaScreen/DebsocScreen';
+import { PhoenixScreen } from '../screens/GymkhanaScreen/PhoenixScreen';
+import { EcellScreen } from '../screens/GymkhanaScreen/EcellScreen';
+import { QuizzingaScreen } from '../screens/GymkhanaScreen/QuizzingaScreen';
+import { CipherScreen } from '../screens/GymkhanaScreen/CipherScreen';
 
 export default function GymkhanaTab() {
   const GymkhanaStack = createStackNavigator();
@@ -72,6 +79,27 @@ export default function GymkhanaTab() {
         headerTitleAlign: 'center',
       }} />
       <GymkhanaStack.Screen name="Vignette, The Art Club" component={VignetteScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Astronomy Club" component={AstronomyScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Cybros" component={CybrosScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Debsoc" component={DebsocScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Phoenix" component={PhoenixScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="E-Cell" component={EcellScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Quizzinga" component={QuizzingaScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Cipher" component={CipherScreen} options={{
         headerTitleAlign: 'center',
       }} />
     </GymkhanaStack.Navigator>
