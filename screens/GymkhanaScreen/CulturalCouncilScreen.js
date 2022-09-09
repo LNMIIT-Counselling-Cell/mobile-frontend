@@ -26,60 +26,90 @@ export default function CulturalCouncilScreen({ navigation }) {
       <View style={styles.cardView}>
         <TouchableOpacity
           style={styles.card1}
+          onPress={() => {
+            navigation.navigate('Aaveg, The Nukkad Mandali')
+          }}
         >
           <Image source={require('../../assets/cult/aaveg.png')} />
           <Text style={styles.card1Text}>Aaveg, The Nukkad Mandali</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
+          onPress={() => {
+            navigation.navigate('Capriccio, The Music Club')
+          }}
         >
           <Image source={require('../../assets/cult/capriccio.png')} />
           <Text style={styles.card2Text}>Capriccio, The Music Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
+          onPress={() => {
+            navigation.navigate('Eminence, The Fashion Club')
+          }}
         >
           <Image source={require('../../assets/cult/eminence.png')} />
           <Text style={styles.card3Text}>Eminence, The Fashion Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card4}
+          onPress={() => {
+            navigation.navigate('Imagination')
+          }}
         >
           <Image source={require('../../assets/cult/imagination.png')} />
           <Text style={styles.card4Text}>Imagination</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card1}
+          onPress={() => {
+            navigation.navigate('Insignia, The Dance Club')
+          }}
         >
           <Image source={require('../../assets/cult/insignia.png')} />
           <Text style={styles.card1Text}>Insignia, The Dance Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
+          onPress={() => {
+            navigation.navigate('Literary Committee')
+          }}
         >
           <Image source={require('../../assets/cult/LC.png')} />
           <Text style={styles.card2Text}>Literary Committee</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
+          onPress={() => {
+            navigation.navigate('Media Cell')
+          }}
         >
           <Image source={require('../../assets/cult/media_cell.png')} />
           <Text style={styles.card3Text}>Media Cell</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card4}
+          onPress={() => {
+            navigation.navigate('Rendition, The Dramatics Club')
+          }}
         >
           <Image source={require('../../assets/cult/rendition.png')} />
           <Text style={styles.card4Text}>Rendition, The Dramatics Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card1}
+          onPress={() => {
+            navigation.navigate('Sankalp Club')
+          }}
         >
           <Image source={require('../../assets/cult/sankalp.png')} />
           <Text style={styles.card1Text}>Sankalp Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
+          onPress={() => {
+            navigation.navigate('Vignette, The Art Club')
+          }}
         >
           <Image source={require('../../assets/cult/vignette.png')} />
           <Text style={styles.card2Text}>Vignette, The Art Club</Text>
