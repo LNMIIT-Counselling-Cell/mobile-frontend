@@ -1,9 +1,13 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import GymkhanaScreen from '../screens/GymkhanaScreen/GymkhanaScreen';
-import DetailsScreen from '../screens/LoginScreen'
 import { SettingsScreen } from '../screens/SettingsScreen';
 import Header from '../components/Header';
+import PresidentialCouncilScreen from '../screens/GymkhanaScreen/PresidentialCouncilScreen';
+import CulturalCouncilScreen from '../screens/GymkhanaScreen/CulturalCouncilScreen';
+import ScitechCouncilScreen from '../screens/GymkhanaScreen/ScitechCouncilScreen';
+import SportsCouncilScreen from '../screens/GymkhanaScreen/SportsCouncilScreen';
+import CoshaCommitteeScreen from '../screens/GymkhanaScreen/CoshaCommitteeScreen';
 
 export default function GymkhanaTab() {
   const GymkhanaStack = createStackNavigator();
@@ -12,10 +16,22 @@ export default function GymkhanaTab() {
       <GymkhanaStack.Screen name="Student's Gymkhana" component={GymkhanaScreen} options={{
         headerTitle: () => <Header title={"Student's Gymkhana"} />
       }} />
-      <GymkhanaStack.Screen name="Details" component={DetailsScreen} options={{
+      <GymkhanaStack.Screen name="Settings" component={SettingsScreen} options={{
         headerTitleAlign: 'center',
       }} />
-      <GymkhanaStack.Screen name="Settings" component={SettingsScreen} options={{
+      <GymkhanaStack.Screen name="Presidential Council" component={PresidentialCouncilScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Cultural Council" component={CulturalCouncilScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Science & Technology Council" component={ScitechCouncilScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Sports Council" component={SportsCouncilScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="COSHA Committee" component={CoshaCommitteeScreen} options={{
         headerTitleAlign: 'center',
       }} />
     </GymkhanaStack.Navigator>

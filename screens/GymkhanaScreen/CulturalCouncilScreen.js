@@ -3,66 +3,86 @@ import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { PersonCard } from '../../components/PersonCard';
 
-export default function GymkhanaScreen({ navigation }) {
+export default function CulturalCouncilScreen({ navigation }) {
 
   const { colors } = useTheme()
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
-        <Image source={require('../../assets/images/gymkhana.png')} style={styles.image} />
+        <Image source={require('../../assets/images/cultural_council.png')} style={styles.image} />
         <Text style={[styles.aboutText, { color: colors.text }]}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour).</Text>
       </View>
 
-      <PersonCard name={"Poojan Gadhiya"} position={"President"} />
-      <PersonCard name={"Tanay Khandelwal"} position={"Finance Convener"} />
-      <PersonCard name={"Om Abash Jha"} position={"Vice-President"} />
+      <PersonCard name={"Sarthak Goyal"} position={"General secretary"} />
+      <PersonCard name={"Diya Rajwanshi"} position={"Associate General Secretary"} />
 
       <TouchableOpacity
         style={styles.topCard}
-        onPress={() => {
-          navigation.navigate('Presidential Council')
-        }}
       >
-        <Text style={styles.topCardText}>Presidential Council</Text>
+        <Text style={styles.topCardText}>Vivacity</Text>
       </TouchableOpacity>
 
       <View style={styles.cardView}>
         <TouchableOpacity
           style={styles.card1}
-          onPress={() => {
-            navigation.navigate('Cultural Council')
-          }}
         >
-          <Image source={require('../../assets/images/cultural_council.png')} />
-          <Text style={styles.card1Text}>Cultural Council</Text>
+          <Image source={require('../../assets/cult/aaveg.png')} />
+          <Text style={styles.card1Text}>Aaveg, The Nukkad Mandali</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
-          onPress={() => {
-            navigation.navigate('Science & Technology Council')
-          }}
         >
-          <Image source={require('../../assets/images/scitech_council.png')} />
-          <Text style={styles.card2Text}>Science & Technology Council</Text>
+          <Image source={require('../../assets/cult/capriccio.png')} />
+          <Text style={styles.card2Text}>Capriccio, The Music Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
-          onPress={() => {
-            navigation.navigate('Sports Council')
-          }}
         >
-          <Image source={require('../../assets/images/sports_council.png')} />
-          <Text style={styles.card3Text}>Sports Council</Text>
+          <Image source={require('../../assets/cult/eminence.png')} />
+          <Text style={styles.card3Text}>Eminence, The Fashion Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card4}
-          onPress={() => {
-            navigation.navigate('COSHA Committee')
-          }}
         >
-          <Image source={require('../../assets/images/mess_menu.png')} />
-          <Text style={styles.card4Text}>COSHA Committee</Text>
+          <Image source={require('../../assets/cult/imagination.png')} />
+          <Text style={styles.card4Text}>Imagination</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card1}
+        >
+          <Image source={require('../../assets/cult/insignia.png')} />
+          <Text style={styles.card1Text}>Insignia, The Dance Club</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card2}
+        >
+          <Image source={require('../../assets/cult/LC.png')} />
+          <Text style={styles.card2Text}>Literary Committee</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card3}
+        >
+          <Image source={require('../../assets/cult/media_cell.png')} />
+          <Text style={styles.card3Text}>Media Cell</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card4}
+        >
+          <Image source={require('../../assets/cult/rendition.png')} />
+          <Text style={styles.card4Text}>Rendition, The Dramatics Club</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card1}
+        >
+          <Image source={require('../../assets/cult/sankalp.png')} />
+          <Text style={styles.card1Text}>Sankalp Club</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card2}
+        >
+          <Image source={require('../../assets/cult/vignette.png')} />
+          <Text style={styles.card2Text}>Vignette, The Art Club</Text>
         </TouchableOpacity>
       </View>
 

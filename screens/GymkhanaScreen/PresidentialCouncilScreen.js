@@ -3,7 +3,7 @@ import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { PersonCard } from '../../components/PersonCard';
 
-export default function GymkhanaScreen({ navigation }) {
+export default function PresidentialCouncilScreen({ navigation }) {
 
   const { colors } = useTheme()
 
@@ -20,9 +20,6 @@ export default function GymkhanaScreen({ navigation }) {
 
       <TouchableOpacity
         style={styles.topCard}
-        onPress={() => {
-          navigation.navigate('Presidential Council')
-        }}
       >
         <Text style={styles.topCardText}>Presidential Council</Text>
       </TouchableOpacity>
@@ -30,36 +27,24 @@ export default function GymkhanaScreen({ navigation }) {
       <View style={styles.cardView}>
         <TouchableOpacity
           style={styles.card1}
-          onPress={() => {
-            navigation.navigate('Cultural Council')
-          }}
         >
           <Image source={require('../../assets/images/cultural_council.png')} />
           <Text style={styles.card1Text}>Cultural Council</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
-          onPress={() => {
-            navigation.navigate('Science & Technology Council')
-          }}
         >
           <Image source={require('../../assets/images/scitech_council.png')} />
           <Text style={styles.card2Text}>Science & Technology Council</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
-          onPress={() => {
-            navigation.navigate('Sports Council')
-          }}
         >
           <Image source={require('../../assets/images/sports_council.png')} />
           <Text style={styles.card3Text}>Sports Council</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card4}
-          onPress={() => {
-            navigation.navigate('COSHA Committee')
-          }}
         >
           <Image source={require('../../assets/images/mess_menu.png')} />
           <Text style={styles.card4Text}>COSHA Committee</Text>
