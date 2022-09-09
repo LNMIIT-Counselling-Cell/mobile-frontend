@@ -10,44 +10,61 @@ export default function ScitechCouncilScreen({ navigation }) {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
-        <Image source={require('../../assets/images/gymkhana.png')} style={styles.image} />
+        <Image source={require('../../assets/images/cultural_council.png')} style={styles.image} />
         <Text style={[styles.aboutText, { color: colors.text }]}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour).</Text>
       </View>
 
-      <PersonCard name={"Poojan Gadhiya"} position={"President"} />
-      <PersonCard name={"Tanay Khandelwal"} position={"Finance Convener"} />
-      <PersonCard name={"Om Abash Jha"} position={"Vice-President"} />
+      <PersonCard name={"Ayush Sharma"} position={"General secretary"} />
+      <PersonCard name={"Muskan Singla"} position={"Associate General Secretary"} />
 
       <TouchableOpacity
         style={styles.topCard}
       >
-        <Text style={styles.topCardText}>Presidential Council</Text>
+        <Text style={styles.topCardText}>Plinth</Text>
       </TouchableOpacity>
 
       <View style={styles.cardView}>
         <TouchableOpacity
           style={styles.card1}
         >
-          <Image source={require('../../assets/images/cultural_council.png')} />
-          <Text style={styles.card1Text}>Cultural Council</Text>
+          <Image source={require('../../assets/scitech/astro.png')} />
+          <Text style={styles.card1Text}>Astronomy Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
         >
-          <Image source={require('../../assets/images/scitech_council.png')} />
-          <Text style={styles.card2Text}>Science & Technology Council</Text>
+          <Image source={require('../../assets/scitech/cybros.png')} />
+          <Text style={styles.card2Text}>Cybros</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
         >
-          <Image source={require('../../assets/images/sports_council.png')} />
-          <Text style={styles.card3Text}>Sports Council</Text>
+          <Image source={require('../../assets/scitech/debsoc.png')} />
+          <Text style={styles.card3Text}>Debsoc</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card4}
         >
-          <Image source={require('../../assets/images/mess_menu.png')} />
-          <Text style={styles.card4Text}>COSHA Committee</Text>
+          <Image source={require('../../assets/scitech/phoenix.png')} />
+          <Text style={styles.card4Text}>Phoenix</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card1}
+        >
+          <Image source={require('../../assets/scitech/e_cell.png')} />
+          <Text style={styles.card1Text}>E-Cell</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card2}
+        >
+          <Image source={require('../../assets/scitech/quizzinga.png')} />
+          <Text style={styles.card2Text}>Quizzinga</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card3}
+        >
+          <Image source={require('../../assets/scitech/cipher.png')} />
+          <Text style={styles.card3Text}>Cipher</Text>
         </TouchableOpacity>
       </View>
 
