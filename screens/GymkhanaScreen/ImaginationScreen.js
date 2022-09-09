@@ -33,10 +33,10 @@ export const ImaginationScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>IMAGINATION is the photography and cinematography club of The LNM Institute of Information Technology,The club primarily covers any event by capturing them in photo and video formats. It consists of skillful and talented individuals who are extremely passionate in the domains of photography and cinematography. These members are selected after a thorough assessment of their skills. Imagination has four domains: Photography and Photo-editing, Cinematography and Video-editing, Graphics Designing, & Content Writing. The club conducts various events and competitions such as Through the lens, Click Start, Photowalk, workshops, Kalakriti, FMC, etc to upskill its members and also other students can exercise their creativity through these.The club also conducts various workshops like photo editing, video editing, and graphic designing. Anyone who wishes to showcase their talents can participate in the events and workshops.</Text>
       </View>
 
-      <PersonCard name={"Harshini Aggarwal"} position={"Coordinator"} />
-      <PersonCard name={"Harshita Ghatiya"} position={"Coordinator"} />
-      <PersonCard name={"Jatin Sharma"} position={"Coordinator"} />
-      <PersonCard name={"Prit Suvagiya"} position={"Coordinator"} />
+      <PersonCard name={"Harshini Aggarwal"} position={"Coordinator"} phone="+919664328160" email={"20uec056@lnmiit.ac.in"} />
+      <PersonCard name={"Harshita Ghatiya"} position={"Coordinator"} phone="+919993227261" email={"20uec060@lnmiit.ac.in"} />
+      <PersonCard name={"Jatin Sharma"} position={"Coordinator"} phone="+918278637830" email={"20ucc054@lnmiit.ac.in"} />
+      <PersonCard name={"Prit Suvagiya"} position={"Coordinator"} phone="+917016534092" email={"20ucc080@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

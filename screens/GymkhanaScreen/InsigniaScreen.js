@@ -33,8 +33,8 @@ export const InsigniaScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>INSIGNIA, was founded by our seniors of the Y11 batch to provide an opportunity to better the dancer in students through constant engagement and to encourage participation in dance events irrespective of the student's degree of talent. We hereby focus on building team coordination, discipline, and individual confidence to bring out the best in our members because winning is not important, shining is! The dance club is one of the most happening clubs of LNMIIT and it helps students stay fit, socialize and learn creative skills through dance. Time management, team management, and mind-body relationship are just to name a few. We adhere and persevere until we conquer! The students who have participated in other colleges have brought glory to our college in various performances, be it solo, group, duo, or dance battles and we continue to strive for more. Our motto? Practice like you never won and perform like you never lost.This is why everyone comprising our team wears an insignia of hard work, dedication, and pure love for dance!</Text>
       </View>
 
-      <PersonCard name={"Anit Mehta"} position={"Coordinator"} />
-      <PersonCard name={"Nikita Saboo"} position={"Coordinator"} />
+      <PersonCard name={"Anit Mehta"} position={"Coordinator"} phone="+919829664944" email={"19ume038@lnmiit.ac.in"} />
+      <PersonCard name={"Nikita Saboo"} position={"Coordinator"} phone="+919521128477" email={"19dcs012@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

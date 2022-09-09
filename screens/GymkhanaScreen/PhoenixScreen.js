@@ -45,8 +45,8 @@ export const PhoenixScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Phoenix is the club where practicality comes most into reality. Manifesting 2-D designs into 3-D working machinery of various types. The collective knowledge of the latest technology is vast, with in-depth information about various aspects. The Hardware division conducts spectacular events like RC planes, Drone Building, Torque, LFR, and ROBOWAR. It gives you a chance to play with circuits and motors with a child's curiosity. The Software division ventures into domains like AI, ML, Web, Android Development, and more. One should never miss the workshops and events conducted by this division. The Quarks division is the most diverse and inclusive having Content Writing, Graphic Designing, Video Editing and management under its name. Get ready to manage colossal events and make visually depicting posters and videos. Above all, Phoenix plays a significant role in organizing the events in Plinth.</Text>
       </View>
 
-      <PersonCard name={"Lakshay Setia"} position={"Coordinator"} />
-      <PersonCard name={"Prajwal Chittora"} position={"Coordinator"} />
+      <PersonCard name={"Lakshay Setia"} position={"Coordinator"} phone="+918968442211" email={"20ucs105@lnmiit.ac.in"} />
+      <PersonCard name={"Prajwal Chittora"} position={"Coordinator"} phone="+916367981595" email={"20uec093@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

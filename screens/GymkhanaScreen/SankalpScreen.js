@@ -33,12 +33,12 @@ export const SankalpScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Sankalp, The Social club of LNMIIT Jaipur, laid its foundation on the stiff rocks of helping and giving our valuables and necessities despite being a person who expects to get something in return. Here we work on social causes associated with the college mess workers, problems faced by people in the village near campus, and organizing self-growth and learning sessions for club dignitaries. Events such as 'Sahyog' , 'Make A Meal' and 'Janmashtami Celebration' are some campus events celebrated and organized with full enthusiasm and excitement. At last, be a person with a strong will for contribution.</Text>
       </View>
 
-      <PersonCard name={"Dhruv Sharma"} position={"Coordinator"} />
-      <PersonCard name={"Lakshya Gupta"} position={"Coordinator"} />
-      <PersonCard name={"Manan Badaya"} position={"Coordinator"} />
-      <PersonCard name={"Muskan Singla"} position={"Coordinator"} />
-      <PersonCard name={"Saurabh Sharma"} position={"Coordinator"} />
-      <PersonCard name={"Shubham Bansal"} position={"Coordinator"} />
+      <PersonCard name={"Dhruv Sharma"} position={"Coordinator"} phone="+919173176850" email={"20ucc038@lnmiit.ac.in"} />
+      <PersonCard name={"Lakshya Gupta"} position={"Coordinator"} phone="+917878209385" email={"20uec075@lnmiit.ac.in"} />
+      <PersonCard name={"Manan Badaya"} position={"Coordinator"} phone="+916377774832" email={"20ucs109@lnmiit.ac.in"} />
+      <PersonCard name={"Muskan Singla"} position={"Coordinator"} phone="+918377089610" email={"20ucc068@lnmiit.ac.in"} />
+      <PersonCard name={"Saurabh Sharma"} position={"Coordinator"} phone="+918769643607" email={"20ucs176@lnmiit.ac.in"} />
+      <PersonCard name={"Shubham Bansal"} position={"Coordinator"} phone="+917737278724" email={"20uec127@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

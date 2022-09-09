@@ -36,10 +36,10 @@ export const AstronomyScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>The Astronomy Club promotes the interest of students towards the awe-inspiring field of Astronomy and space exploration while striving to increase the craze about the various fields enclosed within. It is one of the most active clubs in LNMIIT. With creative and enthusiastic minds in the club, we try to come up with highly entertaining events for everyone, time to time. With our wide-ranging events throughout the year, we try to keep folks entertained. Afterall that's what college life is, a bit of entertainment, going in hand with academics.</Text>
       </View>
 
-      <PersonCard name={"Abhishek Suman"} position={"Coordinator"} />
-      <PersonCard name={"Mudit Choudhary"} position={"Coordinator"} />
-      <PersonCard name={"Radhika Agarwal"} position={"Coordinator"} />
-      <PersonCard name={"Shubhankar Bhatt"} position={"Coordinator"} />
+      <PersonCard name={"Abhishek Suman"} position={"Coordinator"} phone="+918114589602" email={"20ucs007@lnmiit.ac.in"} />
+      <PersonCard name={"Mudit Choudhary"} position={"Coordinator"} phone="+917840054325" email={"20ucc067@lnmiit.ac.in"} />
+      <PersonCard name={"Radhika Agarwal"} position={"Coordinator"} phone="+917451847047" email={"20ucc083@lnmiit.ac.in"} />
+      <PersonCard name={"Shubhankar Bhatt"} position={"Coordinator"} phone="+919997078807" email={"20uec129@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

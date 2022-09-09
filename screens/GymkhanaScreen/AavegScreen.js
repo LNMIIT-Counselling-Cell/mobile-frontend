@@ -39,10 +39,10 @@ export const AavegScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Nukkad Natak or Street theater is a form of theatrical performance in outdoor public spaces without a specific paying audience. It is one of the oldest forms of theater used to spread awareness on societal issues. Our club AAVEG - Nukkad Mandli brings you the real side of what nukkad natak exactly is; everything from loud monologues, moving slogans, powerful expressions and captivating music. It is a beautiful way of connecting with people and enlightening them about the issues that we are facing as a society. Our club has raised awareness on topics like body shaming, male/female sexual abuse, rights of LGBTQ community, menstruation, reservation and many more among common people. Over the years, our club has contributed to the society by performing at various locations like World Trade Park, Jaipur (WTP). We have also participated and even won in inter-college competitions of IIT Roorkee, Manipal University Jaipur and many more. Not just that, Aaveg is not only a club, it's a family! Hours and hours of relentless practice, tons of laughter, excitement and a little bit of nervousness have given us the bond that we will cherish for life.</Text>
       </View>
 
-      <PersonCard name={"Chintan S Makhijani"} position={"Coordinator"} />
-      <PersonCard name={"Mayank Vyas"} position={"Coordinator"} />
-      <PersonCard name={"Muskan Maheshwari"} position={"Coordinator"} />
-      <PersonCard name={"Pratyush Chahar"} position={"Coordinator"} />
+      <PersonCard name={"Chintan S Makhijani"} position={"Coordinator"} phone="+918866941609" email={"19ucc138@lnmiit.ac.in"} />
+      <PersonCard name={"Mayank Vyas"} position={"Coordinator"} phone="+919111607272" email={"19uec065@lnmiit.ac.in"} />
+      <PersonCard name={"Muskan Maheshwari"} position={"Coordinator"} phone="+917023125605" email={"19ucc146@lnmiit.ac.in"} />
+      <PersonCard name={"Pratyush Chahar"} position={"Coordinator"} phone="+917078827666" email={"19ucs043@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

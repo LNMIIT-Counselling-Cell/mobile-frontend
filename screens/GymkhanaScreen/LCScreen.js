@@ -33,9 +33,9 @@ export const LCScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>A club that provides literary enthusiasts with a platform to explore, expand, and exhilarate their psyches with literature and thoughts from the old worlds to the new. A club that draws out the orator, writer, and philosopher in you. A club that brings out the various sides and looks of a writer listener or a person who is sound in terms of knowledge acquainted with literature. Through our various activities and events, we tend to make a creative person a more creative and ingenious one, thus enhancing the on-stage prowess of the person. A club that offers opportunities to appreciate different types of literature and increase their own literary skills. This Literary Club aims at not only refining the literary skills of the students but also developing their logic and curiosity to know more and instil in them the confidence to speak well.</Text>
       </View>
 
-      <PersonCard name={"Ayush Verma"} position={"Coordinator"} />
-      <PersonCard name={"Chiroshree Tiwari"} position={"Coordinator"} />
-      <PersonCard name={"Sparsh Kumar"} position={"Coordinator"} />
+      <PersonCard name={"Ayush Verma"} position={"Coordinator"} phone="+919993859792" email={"20ucc031@lnmiit.ac.in"} />
+      <PersonCard name={"Chiroshree Tiwari"} position={"Coordinator"} phone="+917014694294" email={"20ucs058@lnmiit.ac.in"} />
+      <PersonCard name={"Sparsh Kumar"} position={"Coordinator"} phone="+919457790878" email={"20uec133@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

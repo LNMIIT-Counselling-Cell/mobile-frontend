@@ -34,8 +34,8 @@ export const RenditionScreen = () => {
         </Text>
       </View>
 
-      <PersonCard name={"Anukriti Srivastava"} position={"Coordinator"} />
-      <PersonCard name={"Pratyush Srivastava"} position={"Coordinator"} />
+      <PersonCard name={"Anukriti Srivastava"} position={"Coordinator"} phone="+917014575185" email={"20uec027@lnmiit.ac.in"} />
+      <PersonCard name={"Pratyush Srivastava"} position={"Coordinator"} phone="+919654590406" email={"20ucc079@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

@@ -29,12 +29,12 @@ export const QuizzingaScreen = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
-        <Image source={require('../../assets/cult/insignia.png')} style={styles.image} />
+        <Image source={require('../../assets/scitech/quizzinga.png')} style={styles.image} />
         <Text style={[styles.aboutText, { color: colors.text }]}>Quizzinga is a sheltering tree for individuals harbouring weird facts or having a knack of a specific topic. It is the holy shrine for enthusiasts of anime, sports, biz, cinema, history etc. and serves as a commonplace for geeks to share their interests through quizzing. Being the official quizzing body of LNMIIT, Quizzinga is inculcated with the responsibility of riveting students’ interest in quizzing. It organises events such as First Blood: The Freshers’ Quiz, Mega Quiz, Topic Specific Insta Quizzes and club quizzes for its members. Furthermore, Quizzinga takes the responsibility of holding IPL and Football Auction: adrenaline packed events for strategists to build their own cricket/football team. Dubbed as the club of “national calibre”, Quizzinga has amassed a massive reach by being National Champions in 2019 and National Runner-Ups in 2022 at Tata Crucibles: The Campus Business Quiz. It has also been the winner of inter-college quiz events of MNIT, DAIICT, SRCC, IITD and finished FIRST in SNU InQube 2021.</Text>
       </View>
 
-      <PersonCard name={"Aditya Singh"} position={"Coordinator"} />
-      <PersonCard name={"Md. Raiyan Athar"} position={"Coordinator"} />
+      <PersonCard name={"Aditya Singh"} position={"Coordinator"} phone="+918210933558" email={"20uec008@lnmiit.ac.in"}/>
+      <PersonCard name={"Md. Raiyan Athar"} position={"Coordinator"} phone="+918210149662" email={"20ume027@lnmiit.ac.in"}/>
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

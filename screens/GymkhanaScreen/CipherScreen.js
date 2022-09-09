@@ -29,14 +29,14 @@ export const CipherScreen = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
-        <Image source={require('../../assets/cult/insignia.png')} style={styles.image} />
+        <Image source={require('../../assets/scitech/cipher.png')} style={styles.image} />
         <Text style={[styles.aboutText, { color: colors.text }]}>With the aim of the betterment of the college community, the motive of this club is to bring awareness about the ongoing threats in the Cyber Security world and prevention methods against adversaries and how Blockchain Technology can be used for securing it to the next level. The club’s motive is to create a healthy and knowledgeable environment and achieve various goals listed below that would enhance your performance: To cultivate CyberSecurity and Blockchain culture amongst the students, Introducing the concepts of Smart contracts, Blockchain Technology & Web3, Introducing students to Ethical and Competitive Hacking. CYBER SECURITY AND BLOCKCHAIN are upcoming fields with varied and exciting opportunities. CIPHER will help you dive in and grab the opportunities. It will also create a platform where you can solve problems and have discussions about the same.</Text>
       </View>
 
-      <PersonCard name={"Ketan Jakhar"} position={"Coordinator"} />
-      <PersonCard name={"Vinay Sharma"} position={"Coordinator"} />
-      <PersonCard name={"Viren Saroha"} position={"Coordinator"} />
-      <PersonCard name={"Meet Patel"} position={"Coordinator"} />
+      <PersonCard name={"Ketan Jakhar"} position={"Coordinator"} phone="+919461721651" email={"19ucc020@lnmiit.ac.in"}/>
+      <PersonCard name={"Vinay Sharma"} position={"Coordinator"} phone="+919549178651" email={"19ume011@lnmiit.ac.in"}/>
+      <PersonCard name={"Viren Saroha"} position={"Coordinator"} phone="+919306555214" email={"19ucs152@lnmiit.ac.in"}/>
+      <PersonCard name={"Meet Patel"} position={"Coordinator"} phone="+917041813479" email={"19ume020@lnmiit.ac.in"}/>
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

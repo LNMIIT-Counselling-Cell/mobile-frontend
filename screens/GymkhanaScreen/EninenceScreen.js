@@ -33,8 +33,8 @@ export const EminenceScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>‘Fashion is about dressing according to what’s fashionable. Style is more about being yourself.’ —Oscar de la RentaEminence. Fashion club of The LNMIIT believes in this excerpt from a saying by the legendary Oscar de la Renta and although being a fashion club, style, personality, liveliness and creativity are the club’s four central pillars.You can opt your heart’s desire from ramp walking, make-up, fashion designing and demonstrate your outstanding abilities through talent and self-confidence amalgamation. The vibrant Vogue Fashion Week in Vivacity, and events like gusto pivot more around your confidence and attitude, than what you wear. Organising Rubaroo, the fresher's night, gives you power to avail your aesthetic minds and compose one of your most memorable of days. The club rejoices in portraying vehemence for showing off your best while giving credence to the flaws which never lets its fire and fierceness to cease.</Text>
       </View>
 
-      <PersonCard name={"Prabhav Jain"} position={"Coordinator"} />
-      <PersonCard name={"Khushi Tiwari"} position={"Coordinator"} />
+      <PersonCard name={"Prabhav Jain"} position={"Coordinator"} phone="+917088772441" email={"20ucc074@lnmiit.ac.in"} />
+      <PersonCard name={"Khushi Tiwari"} position={"Coordinator"} phone="+916376492639" email={"20ucs097@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

@@ -1,8 +1,8 @@
 import { useTheme } from '@react-navigation/native'
 import React from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-export const PersonCard = ({ name, position }) => {
+export const PersonCard = ({ name, position, phone, email }) => {
 
   const { colors } = useTheme()
 
@@ -15,11 +15,17 @@ export const PersonCard = ({ name, position }) => {
       <View style={styles.cta}>
         <TouchableOpacity
           style={styles.ctaicon}
+          onPress={() => {
+            Linking.openURL(`tel:${phone}`)
+          }}
         >
           <Image source={require('../assets/images/call.png')} />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.ctaicon}
+          onPress={() => {
+            Linking.openURL(`mailto:${email}`)
+          }}
         >
           <Image source={require('../assets/images/gmail.png')} />
         </TouchableOpacity>

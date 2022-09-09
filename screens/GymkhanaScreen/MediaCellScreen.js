@@ -33,10 +33,10 @@ export const MediaCellScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>The Media Cell is the media body of LNMIIT who have their eyes and ears everywhere, looking to grasp the most important information; even from the most obscure events. Along with the singularly given responsibility of training anchors and hosts for all the events around the college, the Media Cell calls upon external guidance and internal sessions that train students in general communication and soft skills. Hosting a plethora of flagship events every year has become a part and parcel of the Media Cell. With storytellers, creators, artists, speakers, they are one of the most vibrant body on the campus with the ability to really do EVERYTHING.</Text>
       </View>
 
-      <PersonCard name={"Akshat Upadhyay"} position={"Coordinator"} />
-      <PersonCard name={"Ananya Nautiyal"} position={"Coordinator"} />
-      <PersonCard name={"Anuj Mantri"} position={"Coordinator"} />
-      <PersonCard name={"Himanshi Rangnani"} position={"Coordinator"} />
+      <PersonCard name={"Akshat Upadhyay"} position={"Coordinator"} phone="+919876543212" email={"20ucc122@lnmiit.ac.in"} />
+      <PersonCard name={"Ananya Nautiyal"} position={"Coordinator"} phone="+919876543212" email={"20uec018@lnmiit.ac.in"} />
+      <PersonCard name={"Anuj Mantri"} position={"Coordinator"} phone="+919876543212" email={"20ucc019@lnmiit.ac.in"} />
+      <PersonCard name={"Himanshi Rangnani"} position={"Coordinator"} phone="+919876543212" email={"20ucs079@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

@@ -33,8 +33,8 @@ export const VignetteScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Vignette - The LNMIIT Art & Craft Club is responsible for creating an extravagant environment. Creativity is what the Art Club nurtures. It intensifies the beauty of normality into something appreciable. One of the most active clubs of the Cultural Council, Art Club organizes art events throughout the session to bring out the talent in every possible way. From displaying artistic talent to decorating the college for the fests and events to bring the set aura, there isn't a moment when the art club fails to showcase its talent. The club also organizes intra-college events like Art Attack, T-shirt Painting, Face Painting, and more. These events are in the form of competitions where you can showcase your talent and artistic skills on paper, canvas, t-shirt, or even on your face. There are no limitations while being creative; the club flaunts its artwork in various fields like 3-D art, Sketching, Painting, and many more. The club welcomes everyone who aspires to be an artist, where your creative mind can put ideas into reality.</Text>
       </View>
 
-      <PersonCard name={"Aashi Bansal"} position={"Coordinator"} />
-      <PersonCard name={"Bhavya Gupta"} position={"Coordinator"} />
+      <PersonCard name={"Aashi Bansal"} position={"Coordinator"} phone="+918302053097" email={"20ucs003@lnmiit.ac.in"} />
+      <PersonCard name={"Bhavya Gupta"} position={"Coordinator"} phone="+917073335504" email={"20uec044@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 
