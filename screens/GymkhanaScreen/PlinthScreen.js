@@ -4,39 +4,37 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import { PersonCard } from '../../components/PersonCard';
 import CarouselCards from '../../components/CarouselCards';
 
-export const MediaCellScreen = () => {
+export const PlinthScreen = () => {
 
   const { colors } = useTheme()
 
   const imgData = [
     {
-      imgsrc: require('../../assets/cult_clubs/media_cell/1.jpeg')
+      imgsrc: require('../../assets/scitech/1.jpeg')
     },
     {
-      imgsrc: require('../../assets/cult_clubs/media_cell/2.jpg')
+      imgsrc: require('../../assets/scitech/2.jpeg')
     },
     {
-      imgsrc: require('../../assets/cult_clubs/media_cell/3.jpg')
+      imgsrc: require('../../assets/scitech/3.jpeg')
     },
     {
-      imgsrc: require('../../assets/cult_clubs/media_cell/4.jpg')
+      imgsrc: require('../../assets/scitech/4.jpeg')
     },
     {
-      imgsrc: require('../../assets/cult_clubs/media_cell/5.jpg')
+      imgsrc: require('../../assets/scitech/5.jpeg')
     }
   ]
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
-        <Image source={require('../../assets/cult/media_cell.png')} style={styles.image} />
-        <Text style={[styles.aboutText, { color: colors.text }]}>The Media Cell is the media body of LNMIIT who have their eyes and ears everywhere, looking to grasp the most important information; even from the most obscure events. Along with the singularly given responsibility of training anchors and hosts for all the events around the college, the Media Cell calls upon external guidance and internal sessions that train students in general communication and soft skills. Hosting a plethora of flagship events every year has become a part and parcel of the Media Cell. With storytellers, creators, artists, speakers, they are one of the most vibrant body on the campus with the ability to really do EVERYTHING.</Text>
+        <Image source={require('../../assets/scitech/plinth.png')} style={styles.image} />
+        <Text style={[styles.aboutText, { color: colors.text }]}>PLINTH is the annual Techno-Management Literary fest of The LNMIIT. It is one of the exquisite platforms which help students plunge bring out the creativity skills and for all to witness one of the most beautiful and breath-taking amalgamations PLINTH organizes various events related to ROBOTIX, CYBERNETRIX, Literature and Business. Plinth for the past years has served to be the ideal destination for the millennials to learn, create and experience the beauty of technology. It proudly encompasses and transcends the boundaries of science and technology, providing its audience a completely indelible experience. This festival comprises of a plethora of events as well as talks by eminent personalities in the field of science, technology and management. A wide range of competitions in diverse fields besides exhibitions, workshops and fun challenges tempt a really big number of participants from across the length and breadth of the country. In a nutshell, PLINTH 2023 promises to keep participants from all walks and tastes occupied for an awe-in-spring and absolutely overwhelming. 2-day experience.</Text>
       </View>
 
-      <PersonCard name={"Akshat Upadhyay"} position={"Coordinator"} phone="+918299859990" email={"20ucc122@lnmiit.ac.in"} />
-      <PersonCard name={"Ananya Nautiyal"} position={"Coordinator"} phone="+919636057198" email={"20uec018@lnmiit.ac.in"} />
-      <PersonCard name={"Anuj Mantri"} position={"Coordinator"} phone="+918669400756" email={"20ucc019@lnmiit.ac.in"} />
-      <PersonCard name={"Himanshi Rangnani"} position={"Coordinator"} phone="+918769364291" email={"20ucs079@lnmiit.ac.in"} />
+      <PersonCard name={"Gunit Varshney"} position={"Fest Head"} phone="+918875510652" email={"19ucs188@lnmiit.ac.in"} />
+      <PersonCard name={"Raja Singh"} position={"Fest Head"} phone="+919680372941" email={"19ucc019@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 

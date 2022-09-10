@@ -11,14 +11,17 @@ export default function ScitechCouncilScreen({ navigation }) {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
         <Image source={require('../../assets/images/scitech_council.png')} style={styles.image} />
-        <Text style={[styles.aboutText, { color: colors.text }]}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour).</Text>
+        <Text style={[styles.aboutText, { color: colors.text }]}>The Council concentrates on imparting students with knowledge that is beyond the academic curriculum. It aims at stimulating the technical mindset of the students and carries out activities like Workshops, Competitions and Recreational events to provide all students with hands-on experience as well as practical knowledge through the following clubs: Cybros, Phoenix, E-cell, Astronomy Club, Debate Society, Quizzinga, and Cipher. The Council thus believes that student organizations are a great way for a student to meet new people, broaden their knowledge and skills, and enrich their college experience. It is not only in charge of the technical aspects of events, but it also ensures that they operate smoothly and efficiently.</Text>
       </View>
 
-      <PersonCard name={"Ayush Sharma"} position={"General secretary"} />
-      <PersonCard name={"Muskan Singla"} position={"Associate General Secretary"} />
+      <PersonCard name={"Ayush Sharma"} position={"General secretary"} phone="+919460257928" email={"gsec.science@lnmiit.ac.in"} />
+      <PersonCard name={"Muskan Singla"} position={"Associate General Secretary"} phone="+918377089610" email={"20ucc068@lnmiit.ac.in"} />
 
       <TouchableOpacity
         style={styles.topCard}
+        onPress={() => {
+          navigation.navigate('Plinth')
+        }}
       >
         <Text style={styles.topCardText}>Plinth</Text>
       </TouchableOpacity>

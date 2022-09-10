@@ -25,6 +25,9 @@ import { PhoenixScreen } from '../screens/GymkhanaScreen/PhoenixScreen';
 import { EcellScreen } from '../screens/GymkhanaScreen/EcellScreen';
 import { QuizzingaScreen } from '../screens/GymkhanaScreen/QuizzingaScreen';
 import { CipherScreen } from '../screens/GymkhanaScreen/CipherScreen';
+import { VivacityScreen } from '../screens/GymkhanaScreen/VivacityScreen';
+import { PlinthScreen } from '../screens/GymkhanaScreen/PlinthScreen';
+import { DespoScreen } from '../screens/GymkhanaScreen/DespoScreen';
 
 export default function GymkhanaTab() {
   const GymkhanaStack = createStackNavigator();
@@ -100,6 +103,15 @@ export default function GymkhanaTab() {
         headerTitleAlign: 'center',
       }} />
       <GymkhanaStack.Screen name="Cipher" component={CipherScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Vivacity" component={VivacityScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Plinth" component={PlinthScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Desportivos" component={DespoScreen} options={{
         headerTitleAlign: 'center',
       }} />
     </GymkhanaStack.Navigator>

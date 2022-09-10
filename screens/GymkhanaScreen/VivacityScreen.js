@@ -4,7 +4,7 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import { PersonCard } from '../../components/PersonCard';
 import CarouselCards from '../../components/CarouselCards';
 
-export const MediaCellScreen = () => {
+export const VivacityScreen = () => {
 
   const { colors } = useTheme()
 
@@ -29,18 +29,16 @@ export const MediaCellScreen = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
-        <Image source={require('../../assets/cult/media_cell.png')} style={styles.image} />
-        <Text style={[styles.aboutText, { color: colors.text }]}>The Media Cell is the media body of LNMIIT who have their eyes and ears everywhere, looking to grasp the most important information; even from the most obscure events. Along with the singularly given responsibility of training anchors and hosts for all the events around the college, the Media Cell calls upon external guidance and internal sessions that train students in general communication and soft skills. Hosting a plethora of flagship events every year has become a part and parcel of the Media Cell. With storytellers, creators, artists, speakers, they are one of the most vibrant body on the campus with the ability to really do EVERYTHING.</Text>
+        <Image source={require('../../assets/cult/vivacity.png')} style={styles.image} />
+        <Text style={[styles.aboutText, { color: colors.text }]}>Vivacity in its existence stood to justify itself as one of the liveliest and most animated jubilations that youth has ever experienced. Embarked upon in 2007, today the cultural management festival has snowballed to the popularity of gigantic proportions, all of which can be attributed to the acuminous student committee that has piloted this fest in its odyssey so far. It juxtaposes several dances, music, dramatics, literature, and fashion events with informal fun events, authorized workshops, exhibitions, and gaming challenges. The brimming talents judged by distinguished virtuosos contend their way to winning titanic prizes.</Text>
       </View>
 
-      <PersonCard name={"Akshat Upadhyay"} position={"Coordinator"} phone="+918299859990" email={"20ucc122@lnmiit.ac.in"} />
-      <PersonCard name={"Ananya Nautiyal"} position={"Coordinator"} phone="+919636057198" email={"20uec018@lnmiit.ac.in"} />
-      <PersonCard name={"Anuj Mantri"} position={"Coordinator"} phone="+918669400756" email={"20ucc019@lnmiit.ac.in"} />
-      <PersonCard name={"Himanshi Rangnani"} position={"Coordinator"} phone="+918769364291" email={"20ucs079@lnmiit.ac.in"} />
+      <PersonCard name={"Sagar Sheoran"} position={"Fest Head"} phone="+917727839857" email={"19ucc071@lnmiit.ac.in"} />
+      <PersonCard name={"Piyush Jhawar"} position={"Fest Head"} phone="+918302465700" email={"19uec037@lnmiit.ac.in"} />
 
-      <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
+      {/* <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text> */}
 
-      <CarouselCards data={imgData} />
+      {/* <CarouselCards data={imgData} /> */}
 
       <View style={styles.connectBox}>
         <Text style={[styles.headerText, { color: colors.text }]}>Connect with us</Text>

@@ -11,14 +11,17 @@ export default function SportsCouncilScreen({ navigation }) {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
         <Image source={require('../../assets/images/sports_council.png')} style={styles.image} />
-        <Text style={[styles.aboutText, { color: colors.text }]}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour).</Text>
+        <Text style={[styles.aboutText, { color: colors.text }]}>The LNMIIT Sports Council works towards instilling a subtle sports culture among students by organizing and promoting various outdoor and indoor sport events. The council is responsible for all the decision making involving the sports inventory of the institute. Various events are organized throughout the year which includes, LNMIIT Premier League, LNMIIT Football League, LNMIIT Volleyball League. Inter- year and inter-hostel tournaments are also organized to boost unanimity via the means of sports. We also organize awareness and celebratory events like the Yoga-day, Sports day and Run for unity. Any student can become a part of this recreational and competitive sports program, irrespective of any prior experience in the game. Students are encouraged to participate in regional and national level competitions and are accordingly trained. The main target of the Sports Council is to develop an active, healthy, and fit society through sports and physical activities.</Text>
       </View>
 
-      <PersonCard name={"Pratik Aswani"} position={"General secretary"} />
-      <PersonCard name={"Tanya Agarwal"} position={"Associate General Secretary"} />
+      <PersonCard name={"Pratik Aswani"} position={"General secretary"} phone="+919799816014" email={"gsec.sports@lnmiit.ac.in"} />
+      <PersonCard name={"Tanya Agarwal"} position={"Associate General Secretary"} phone="+916386084572" email={"20ucs208@lnmiit.ac.in"} />
 
       <TouchableOpacity
         style={styles.topCard}
+        onPress={() => {
+          navigation.navigate('Desportivos')
+        }}
       >
         <Text style={styles.topCardText}>Desportivos</Text>
       </TouchableOpacity>

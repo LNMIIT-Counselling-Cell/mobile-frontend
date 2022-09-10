@@ -14,9 +14,9 @@ export default function GymkhanaScreen({ navigation }) {
         <Text style={[styles.aboutText, { color: colors.text }]}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour).</Text>
       </View>
 
-      <PersonCard name={"Poojan Gadhiya"} position={"President"} />
-      <PersonCard name={"Tanay Khandelwal"} position={"Finance Convener"} />
-      <PersonCard name={"Om Abash Jha"} position={"Vice-President"} />
+      <PersonCard name={"Poojan Gadhiya"} position={"President"} phone="+917016940547" email={"gym.president@lnmiit.ac.in"} />
+      <PersonCard name={"Tanay Khandelwal"} position={"Finance Convener"} phone="+919782283212" email={"19ucs051@lnmiit.ac.in"} />
+      <PersonCard name={"Om Abash Jha"} position={"Vice-President"} phone="+917722808382" email={"gym.vicepresident@lnmiit.ac.in"} />
 
       <TouchableOpacity
         style={styles.topCard}
@@ -49,7 +49,7 @@ export default function GymkhanaScreen({ navigation }) {
             navigation.navigate('Sports Council')
           }}
         >
-          <Image source={require('../../assets/images/sports_council.png')} />
+          <Image source={require('../../assets/images/sports_council.png')} style={{width: '50%', height:'40%'}} />
           <Text style={styles.card3Text}>Sports Council</Text>
         </TouchableOpacity>
         <TouchableOpacity
