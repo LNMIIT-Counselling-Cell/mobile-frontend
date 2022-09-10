@@ -22,16 +22,25 @@ export default function CollegeScreen({ navigation }) {
         <View style={styles.subsection}>
           <TouchableOpacity
             style={styles.quick1}
+            onPress={() => {
+              navigation.navigate('Holiday Calendar')
+            }}
           >
             <Text style={styles.q1Text}>Holiday Calendar</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick2}
+            onPress={() => {
+              navigation.navigate('Bus Time Table')
+            }}
           >
             <Text style={styles.q2Text}>Bus Time Table</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick3}
+            onPress={() => {
+              navigation.navigate('Mess Menu')
+            }}
           >
             <Text style={styles.q3Text}>Mess Menu</Text>
           </TouchableOpacity>

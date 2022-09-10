@@ -1,23 +1,32 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-export const MenuScreen = () => {
+export const MenuScreen = ({ navigation }) => {
   return (
     <View style={styles.menuScreen}>
       <TouchableOpacity
         style={styles.quick1}
+        onPress={() => {
+          navigation.navigate('Mess Menu')
+        }}
       >
         <Image source={require('../../assets/images/mess_menu.png')} />
         <Text style={styles.q1Text}>Mess Menu</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.quick2}
+        onPress={() => {
+          navigation.navigate('Bazinga Menu')
+        }}
       >
         <Image source={require('../../assets/images/bazzinga.png')} />
         <Text style={styles.q2Text}>Bazinga</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.quick3}
+        onPress={() => {
+          navigation.navigate('The Food Barn Menu')
+        }}
       >
         <Image source={require('../../assets/images/tfb.png')} />
         <Text style={styles.q3Text}>The Food barn</Text>
