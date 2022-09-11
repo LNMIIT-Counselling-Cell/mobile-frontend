@@ -56,21 +56,33 @@ export default function CollegeScreen({ navigation }) {
         <View style={styles.subsection}>
           <TouchableOpacity
             style={styles.quick1}
+            onPress={() => {
+              navigation.navigate('Important Contacts')
+            }}
           >
             <Text style={styles.q1Text}>Important Contacts</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick2}
+            onPress={() => {
+              navigation.navigate('Head of Departments')
+            }}
           >
             <Text style={styles.q2Text}>HoDs</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick3}
+            onPress={() => {
+              navigation.navigate('Head of Sections')
+            }}
           >
             <Text style={styles.q3Text}>Head of Sections</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick4}
+            onPress={() => {
+              navigation.navigate('Hostel Contacts')
+            }}
           >
             <Text style={styles.q4Text}>Hostel Contacts</Text>
           </TouchableOpacity>

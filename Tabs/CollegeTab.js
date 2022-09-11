@@ -6,6 +6,10 @@ import Header from '../components/Header';
 import { HolidayCalenderScreen } from '../screens/CollegeScreen/HolidayCalenderScreen';
 import { MessMenuScreen } from '../screens/CollegeScreen/MessMenuScreen';
 import { BusTimeTableScreen } from '../screens/CollegeScreen/BusTimeTableScreen';
+import { HeadOfDepartmentScreen } from '../screens/CollegeScreen/HeadOfDepartmentScreen';
+import { HeadOfSectionScreen } from '../screens/CollegeScreen/HeadOfSectionScreen';
+import { HostelContactsScreen } from '../screens/CollegeScreen/HostelContactScreen';
+import { ImportantContactsScreen } from '../screens/CollegeScreen/ImportantContactsScreen';
 
 export default function CollegeTab() {
   const CollegeStack = createStackNavigator();
@@ -24,6 +28,18 @@ export default function CollegeTab() {
         headerTitleAlign: 'center',
       }} />
       <CollegeStack.Screen name="Bus Time Table" component={BusTimeTableScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <CollegeStack.Screen name="Important Contacts" component={ImportantContactsScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <CollegeStack.Screen name="Head of Departments" component={HeadOfDepartmentScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <CollegeStack.Screen name="Head of Sections" component={HeadOfSectionScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <CollegeStack.Screen name="Hostel Contacts" component={HostelContactsScreen} options={{
         headerTitleAlign: 'center',
       }} />
     </CollegeStack.Navigator>
