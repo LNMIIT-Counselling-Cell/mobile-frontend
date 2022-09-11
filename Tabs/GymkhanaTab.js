@@ -28,6 +28,7 @@ import { CipherScreen } from '../screens/GymkhanaScreen/CipherScreen';
 import { VivacityScreen } from '../screens/GymkhanaScreen/VivacityScreen';
 import { PlinthScreen } from '../screens/GymkhanaScreen/PlinthScreen';
 import { DespoScreen } from '../screens/GymkhanaScreen/DespoScreen';
+import { DevelopersScreen } from '../screens/DevelopersScreen';
 
 export default function GymkhanaTab() {
   const GymkhanaStack = createStackNavigator();
@@ -37,6 +38,9 @@ export default function GymkhanaTab() {
         headerTitle: () => <Header title={"Student's Gymkhana"} />
       }} />
       <GymkhanaStack.Screen name="Settings" component={SettingsScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <GymkhanaStack.Screen name="Meet our Developers" component={DevelopersScreen} options={{
         headerTitleAlign: 'center',
       }} />
       <GymkhanaStack.Screen name="Presidential Council" component={PresidentialCouncilScreen} options={{

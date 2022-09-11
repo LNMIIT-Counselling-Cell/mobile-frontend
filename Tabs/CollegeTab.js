@@ -10,6 +10,7 @@ import { HeadOfDepartmentScreen } from '../screens/CollegeScreen/HeadOfDepartmen
 import { HeadOfSectionScreen } from '../screens/CollegeScreen/HeadOfSectionScreen';
 import { HostelContactsScreen } from '../screens/CollegeScreen/HostelContactScreen';
 import { ImportantContactsScreen } from '../screens/CollegeScreen/ImportantContactsScreen';
+import { DevelopersScreen } from '../screens/DevelopersScreen';
 
 export default function CollegeTab() {
   const CollegeStack = createStackNavigator();
@@ -19,6 +20,9 @@ export default function CollegeTab() {
         headerTitle: () => <Header title={"College Administration"} />
       }} />
       <CollegeStack.Screen name="Settings" component={SettingsScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <CollegeStack.Screen name="Meet our Developers" component={DevelopersScreen} options={{
         headerTitleAlign: 'center',
       }} />
       <CollegeStack.Screen name="Holiday Calendar" component={HolidayCalenderScreen} options={{

@@ -5,6 +5,7 @@ import GeneratedOutpassScreen from '../screens/OutpassScreen/GeneratedOutpassScr
 import PreviousOutpassScreen from '../screens/OutpassScreen/PreviousOutpassScreen';
 import Header from '../components/Header';
 import { SettingsScreen } from '../screens/SettingsScreen';
+import { DevelopersScreen } from '../screens/DevelopersScreen';
 
 export default function OutpassTab({ navigation }) {
   const OutpassStack = createStackNavigator();
@@ -20,6 +21,9 @@ export default function OutpassTab({ navigation }) {
         headerTitleAlign: 'center',
       }} />
       <OutpassStack.Screen name="Settings" component={SettingsScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <OutpassStack.Screen name="Meet our Developers" component={DevelopersScreen} options={{
         headerTitleAlign: 'center',
       }} />
     </OutpassStack.Navigator>

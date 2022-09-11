@@ -10,6 +10,7 @@ import { CounsellingProcessScreen } from '../screens/HomeScreen/CounsellingProce
 import { MessMenuScreen } from '../screens/HomeScreen/MessMenuScreen';
 import { BazingaMenuScreen } from '../screens/HomeScreen/BazingaMenuScreen';
 import { TFBMenuScreen } from '../screens/HomeScreen/TFBMenuScreen';
+import { DevelopersScreen } from '../screens/DevelopersScreen';
 
 export default function HomeTab({ navigation }) {
   const HomeStack = createStackNavigator();
@@ -19,6 +20,9 @@ export default function HomeTab({ navigation }) {
         headerTitle: () => <Header title={"Home"} />
       }} />
       <HomeStack.Screen name="Settings" component={SettingsScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <HomeStack.Screen name="Meet our Developers" component={DevelopersScreen} options={{
         headerTitleAlign: 'center',
       }} />
       <HomeStack.Screen name="Menus" component={MenuScreen} options={{

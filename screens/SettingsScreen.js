@@ -5,7 +5,7 @@ import { AuthContext } from '../components/Context';
 import { useTheme } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export const SettingsScreen = () => {
+export const SettingsScreen = ({ navigation }) => {
 
   const NativeTheme = useTheme();
   const { colors } = useTheme();
@@ -48,6 +48,19 @@ export const SettingsScreen = () => {
         >
           <View style={styles.btn}>
             <Text style={styles.saveText}> {NativeTheme.dark ? "Enable Light Theme" : "Enable Dark Theme"}</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.themeBox}>
+        <Text style={[styles.themeText, { color: colors.text }]}>About the Developers</Text>
+        <TouchableOpacity
+          style={styles.dev}
+          onPress={() => {
+            navigation.navigate('Meet our Developers')
+          }}
+        >
+          <View style={styles.btn}>
+            <Text style={styles.devText}>Meet the Team</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -109,6 +122,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 14,
   },
+  dev: {
+    backgroundColor: '#A6E6FF',
+    width: '100%',
+    height: 50,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginVertical: 14,
+  },
   logout: {
     backgroundColor: '#C3B0FF',
     width: '100%',
@@ -121,6 +144,10 @@ const styles = StyleSheet.create({
   },
   saveText: {
     color: '#FF6A00',
+    fontFamily: 'Poppins-Medium',
+  },
+  devText: {
+    color: '#00B7FE',
     fontFamily: 'Poppins-Medium',
   },
   logoutText: {
