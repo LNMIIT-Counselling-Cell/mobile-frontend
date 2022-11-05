@@ -12,10 +12,10 @@ export const HostelContactsScreen = () => {
       emailId: "chief-warden@lnmiit.ac.in"
     },
     {
-      name: "Dr. Pomita Ghoshal",
+      name: "Dr. Joyeeta Singha",
       post: "Warden GH",
-      phno: '+917597492213',
-      emailId: "pghoshal@lnmiit.ac.in"
+      phno: '01413526157',
+      emailId: "warden-gh@lnmiit.ac.in"
     },
     {
       name: "Ramswaroop Sharma",

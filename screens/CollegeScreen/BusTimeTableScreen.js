@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, Dimensions, View } from 'react-native';
 import Pdf from 'react-native-pdf';
+import { useTheme } from '@react-navigation/native';
 
 export const BusTimeTableScreen = () => {
+
+  const { colors } = useTheme()
 
   const source = { uri: 'bundle-assets://pdf/bus_time_table_aug_2022.pdf' };
 
@@ -22,7 +25,7 @@ export const BusTimeTableScreen = () => {
         onPressLink={(uri) => {
           console.log(`Link pressed: ${uri}`);
         }}
-        style={styles.pdf} />
+        style={[styles.pdf, { backgroundColor: colors.cardBG }]} />
     </View>
   )
 }

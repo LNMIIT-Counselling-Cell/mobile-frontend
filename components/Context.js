@@ -2,12 +2,11 @@ import React, { createContext, useEffect, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { DarkTheme, DefaultTheme, useTheme } from '@react-navigation/native';
+import { Appearance, StatusBar } from 'react-native';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-
-  const NativeTheme = useTheme();
 
   const [isLoading, setIsLoading] = useState(false);
   const [userToken, setUserToken] = useState(null);
@@ -15,9 +14,11 @@ export const AuthProvider = ({ children }) => {
 
   const [isDarkTheme, setIsDarkTheme] = useState(false)
 
+  const [systheme, setSysTheme] = useState('0');
+
   const login = ({ userInfo }) => {
     setIsLoading(true);
-    axios.post('http://192.168.167.252:5000/signup', { userInfo })
+    axios.post('https://ccelltestapi.herokuapp.com/signup', { userInfo })
       .then((response) => {
         // console.log("response: ", response.data)
         const usrInfo = response.data;
@@ -40,6 +41,7 @@ export const AuthProvider = ({ children }) => {
     setUserToken(null)
     AsyncStorage.removeItem('usrinfo')
     AsyncStorage.removeItem('usrtok')
+    AsyncStorage.removeItem('isRedirected')
     setIsLoading(false);
   }
 
@@ -69,7 +71,9 @@ export const AuthProvider = ({ children }) => {
       background: '#F0F0F0',
       card: '#F5F5F7',
       text: '#000000',
-      cardBG: '#E8E7E7'
+      cardBG: '#E8E7E7',
+      iconColor:'#666666',
+      iconActiveColor:"#000000",
     },
   }
 
@@ -81,9 +85,46 @@ export const AuthProvider = ({ children }) => {
       background: '#3E3A66',
       card: '#2F2B54',
       text: '#FFFFFF',
-      cardBG: '#5D5986'
+      cardBG: '#5D5986',
+      iconColor:'#BBBBBB',
+      iconActiveColor:"#FFFFFF",
     },
   }
+
+  const checkTheme = async () => {
+    let currTheme;
+    try {
+      currTheme = await AsyncStorage.getItem('systheme');
+      if (currTheme === undefined || currTheme === null) {
+        setSysTheme('0');
+        currTheme = '0';
+        AsyncStorage.setItem('systheme', currTheme);
+      }
+    } catch (error) {
+      console.error('Error theme', error);
+    }
+    setSysTheme(currTheme);
+    if (currTheme !== '0') {
+      if (currTheme === '1') {
+        setIsDarkTheme(false);
+      }
+      else {
+        setIsDarkTheme(true);
+      }
+    }
+    else {
+      const scheme = Appearance.getColorScheme();
+      if (scheme === 'light') {
+        setIsDarkTheme(false);
+      }
+      else {
+        setIsDarkTheme(true);
+      }
+    }
+
+  }
+  isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+  isDarkTheme ? StatusBar.setBarStyle('light-content') : StatusBar.setBarStyle('dark-content');
 
   const theme = isDarkTheme ? CustomDarkTheme : CustomDefaultTheme;
 
@@ -92,30 +133,15 @@ export const AuthProvider = ({ children }) => {
     AsyncStorage.setItem("isDarkTheme", JSON.stringify(isDarkTheme))
   }
 
-  const check = async () => {
-    try {
-      const isDarkTheme = JSON.parse(await AsyncStorage.getItem("isDarkTheme"))
-      console.log("isDarkTheme: " + isDarkTheme)
-      if (isDarkTheme === null || isDarkTheme === undefined) {
-        if (NativeTheme.dark) {
-          toggleTheme(false)
-        }
-        else {
-          toggleTheme(true)
-        }
-      }
-    } catch (error) {
-      console.error("check theme error -- ", error)
-    }
-  }
-
-  // check()
   useEffect(() => {
+    checkTheme()
+    isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+    isDarkTheme ? StatusBar.setBarStyle('light-content') : StatusBar.setBarStyle('dark-content');
     isLoggedIn()
   }, [])
 
   return (
-    <AuthContext.Provider value={{ login, logout, isLoading, userToken, usrInfo, toggleTheme, theme }}>
+    <AuthContext.Provider value={{ login, logout, isLoading, userToken, usrInfo, toggleTheme, theme, checkTheme, systheme, isDarkTheme }}>
       {children}
     </AuthContext.Provider>
   )

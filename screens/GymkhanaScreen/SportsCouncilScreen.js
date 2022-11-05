@@ -17,57 +17,78 @@ export default function SportsCouncilScreen({ navigation }) {
       <PersonCard name={"Pratik Aswani"} position={"General secretary"} phone="+919799816014" email={"gsec.sports@lnmiit.ac.in"} />
       <PersonCard name={"Tanya Agarwal"} position={"Associate General Secretary"} phone="+916386084572" email={"20ucs208@lnmiit.ac.in"} />
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.topCard}
         onPress={() => {
           navigation.navigate('Desportivos')
         }}
       >
         <Text style={styles.topCardText}>Desportivos</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <View style={styles.cardView}>
         <TouchableOpacity
           style={styles.card1}
+          onPress={() => {
+            navigation.navigate('Badminton')
+          }}
         >
           <Image source={require('../../assets/sports/badminton.png')} />
           <Text style={styles.card1Text}>Badminton</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
+          onPress={() => {
+            navigation.navigate('Chess')
+          }}
         >
           <Image source={require('../../assets/sports/chess.png')} />
           <Text style={styles.card2Text}>Chess</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
+          onPress={() => {
+            navigation.navigate('Volleyball')
+          }}
         >
           <Image source={require('../../assets/sports/volleyball.png')} />
           <Text style={styles.card3Text}>Volleyball</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card4}
+          onPress={() => {
+            navigation.navigate('Cricket')
+          }}
         >
           <Image source={require('../../assets/sports/cricket.png')} />
           <Text style={styles.card4Text}>Cricket</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card1}
+          onPress={() => {
+            navigation.navigate('Basketball')
+          }}
         >
           <Image source={require('../../assets/sports/basketball.png')} />
           <Text style={styles.card1Text}>Basketball</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
+          onPress={() => {
+            navigation.navigate('Football')
+          }}
         >
           <Image source={require('../../assets/sports/football.png')} />
           <Text style={styles.card2Text}>Football</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
+          onPress={() => {
+            navigation.navigate('Kabaddi')
+          }}
         >
-          <Image source={require('../../assets/sports/kabbadi.png')} />
-          <Text style={styles.card3Text}>Kabbadi</Text>
+          <Image source={require('../../assets/sports/kabaddi.png')} />
+          <Text style={styles.card3Text}>Kabaddi</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card4}
@@ -77,18 +98,27 @@ export default function SportsCouncilScreen({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card1}
+          onPress={() => {
+            navigation.navigate('Squash')
+          }}
         >
           <Image source={require('../../assets/sports/squash.png')} />
           <Text style={styles.card1Text}>Squash</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
+          onPress={() => {
+            navigation.navigate('Tennis')
+          }}
         >
           <Image source={require('../../assets/sports/tennis.png')} />
           <Text style={styles.card2Text}>Tennis</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
+          onPress={() => {
+            navigation.navigate('Table Tennis')
+          }}
         >
           <Image source={require('../../assets/sports/table_tennis.png')} />
           <Text style={styles.card3Text}>Table Tennis</Text>
@@ -120,7 +150,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },
@@ -131,7 +160,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 10,
-    borderRadius: 8,
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   topCardText: {
     color: '#3A8A38',
@@ -144,11 +181,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   card1: {
     backgroundColor: '#FFCBA6',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -156,6 +193,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card1Text: {
     color: '#FF6A00',
@@ -167,7 +213,7 @@ const styles = StyleSheet.create({
   },
   card2: {
     backgroundColor: '#C3B0FF',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -175,6 +221,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card2Text: {
     color: '#551FFF',
@@ -186,7 +241,7 @@ const styles = StyleSheet.create({
   },
   card3: {
     backgroundColor: '#A6E6FF',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -194,6 +249,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card3Text: {
     color: '#00B7FE',
@@ -205,7 +269,7 @@ const styles = StyleSheet.create({
   },
   card4: {
     backgroundColor: '#FEB2C3',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -213,6 +277,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card4Text: {
     color: '#FD2254',

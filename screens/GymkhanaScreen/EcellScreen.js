@@ -8,11 +8,10 @@ export const EcellScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/scitech_clubs/ecell/1.jpeg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.scitech.ecell;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -21,8 +20,8 @@ export const EcellScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Future builders that are interested in learning about entrepreneurship, cryptocurrency, the stock market, web3, and several other fields come to this location for all of their learnings. They seek guidance in 5 major domains being event planning, marketing, management, sponsorship, content creation and designing which add up to create a well verse soft skill development and a variety of other subjects, all of which contribute to a child's holistic development and help him grow into a multi-talented adult.The exclusive club at our campus that collaborates with several Tech colleges across India is E-Cell, with its collaboration with Entrepreneurship Development Cell, IIT Roorkee, serving as a prominent example. We organize and participate in various funding events and interact closely with startup founders and make our members understand the crucial stages of start-up ecosystem.</Text>
       </View>
 
+      <PersonCard name={"Sarthak Kapoor"} position={"Coordinator"} phone="+919838333480" email={"20uec115@lnmiit.ac.in"} />
       <PersonCard name={"Vaishvi Bansal"} position={"Coordinator"} phone="+918000768730" email={"20uec143@lnmiit.ac.in"} />
-      <PersonCard name={"Sarthak Kapoor"} position={"Coordinator"} phone="+919571485158" email={"20uec115@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 
@@ -61,11 +60,10 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   },
   image: {
-    width: 80,
+    width: 150,
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

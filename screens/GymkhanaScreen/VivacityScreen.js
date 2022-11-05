@@ -8,23 +8,10 @@ export const VivacityScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/1.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/3.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/4.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/5.jpg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.vivacity;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -33,12 +20,12 @@ export const VivacityScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Vivacity in its existence stood to justify itself as one of the liveliest and most animated jubilations that youth has ever experienced. Embarked upon in 2007, today the cultural management festival has snowballed to the popularity of gigantic proportions, all of which can be attributed to the acuminous student committee that has piloted this fest in its odyssey so far. It juxtaposes several dances, music, dramatics, literature, and fashion events with informal fun events, authorized workshops, exhibitions, and gaming challenges. The brimming talents judged by distinguished virtuosos contend their way to winning titanic prizes.</Text>
       </View>
 
-      <PersonCard name={"Sagar Sheoran"} position={"Fest Head"} phone="+917727839857" email={"19ucc071@lnmiit.ac.in"} />
       <PersonCard name={"Piyush Jhawar"} position={"Fest Head"} phone="+918302465700" email={"19uec037@lnmiit.ac.in"} />
+      <PersonCard name={"Sagar Sheoran"} position={"Fest Head"} phone="+917727839857" email={"19ucc071@lnmiit.ac.in"} />
 
-      {/* <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text> */}
+      <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 
-      {/* <CarouselCards data={imgData} /> */}
+      <CarouselCards data={imgData} />
 
       <View style={styles.connectBox}>
         <Text style={[styles.headerText, { color: colors.text }]}>Connect with us</Text>
@@ -77,7 +64,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

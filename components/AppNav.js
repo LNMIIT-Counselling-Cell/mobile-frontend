@@ -1,14 +1,14 @@
-import React, { useContext, useEffect } from 'react'
-import { NavigationContainer, useTheme } from '@react-navigation/native';
+import React, { useContext } from 'react'
+import { NavigationContainer } from '@react-navigation/native';
 import BottomTabs from '../Tabs/BottomTabs';
 import LoginScreen from '../screens/LoginScreen';
 import { AuthContext } from './Context';
 import { View, ActivityIndicator } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createStackNavigator } from '@react-navigation/stack';
+import { GuestUserScreen } from '../screens/GuestUserScreen';
+
 
 export const AppNav = () => {
-
-  const NativeTheme = useTheme()
 
   const { isLoading, userToken, theme } = useContext(AuthContext)
 
@@ -20,28 +20,28 @@ export const AppNav = () => {
     )
   }
 
-  const check = async () => {
-    try {
-      const isDarkTheme = JSON.parse(await AsyncStorage.getItem("isDarkTheme"))
-      console.log("isDarkTheme: " + isDarkTheme)
-      if (isDarkTheme === null || isDarkTheme === undefined) {
-        if (NativeTheme.dark) {
-          toggleTheme(false)
-        }
-        else {
-          toggleTheme(true)
-        }
-      }
-    } catch (error) {
-      console.error("check theme error -- ", error)
-    }
+  function AuthTab() {
+    const AuthStack = createStackNavigator();
+    return (
+      <AuthStack.Navigator
+        screenOptions={{
+          presentation: 'modal',
+        }}
+      >
+        <AuthStack.Screen name="Auth" component={LoginScreen} options={{
+          headerTitleAlign: 'center',
+          headerShown: false
+        }} />
+        <AuthStack.Screen name="Guest User" component={GuestUserScreen} options={{
+          headerTitleAlign: 'center',
+        }} />
+      </AuthStack.Navigator>
+    )
   }
-
-  // check()
 
   return (
     <NavigationContainer theme={theme}>
-      {userToken !== null ? <BottomTabs /> : <LoginScreen />}
+      {userToken !== null ? <BottomTabs /> : <AuthTab />}
     </NavigationContainer>
   )
 }

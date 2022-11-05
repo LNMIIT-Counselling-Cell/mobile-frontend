@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   quick1: {
     backgroundColor: '#FFCBA6',
-    width: 150,
+    width: '40%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   quick2: {
     backgroundColor: '#C3B0FF',
-    width: 150,
+    width: '40%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   quick3: {
     backgroundColor: '#A6E6FF',
-    width: 150,
+    width: '40%',
     height: 200,
     display: 'flex',
     alignItems: 'center',

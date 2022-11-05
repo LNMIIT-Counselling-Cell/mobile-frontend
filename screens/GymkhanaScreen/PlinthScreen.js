@@ -8,23 +8,10 @@ export const PlinthScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/scitech/1.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/scitech/2.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/scitech/3.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/scitech/4.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/scitech/5.jpeg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.plinth;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -77,7 +64,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

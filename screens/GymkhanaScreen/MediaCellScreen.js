@@ -8,23 +8,10 @@ export const MediaCellScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/1.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/3.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/4.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/media_cell/5.jpg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.cult.media_cell;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -79,7 +66,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

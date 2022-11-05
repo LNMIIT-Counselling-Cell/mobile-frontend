@@ -89,7 +89,7 @@ export default function LoginScreen({ navigation }) {
 
   const redirect = async (authCode) => {
     try {
-      const request = await axios.post("http://192.168.167.252:5000/handleGoogleRedirect", {
+      const request = await axios.post("https://ccelltestapi.herokuapp.com/handleGoogleRedirect", {
         code: authCode
       });
       const response = request.data;
@@ -156,11 +156,13 @@ export default function LoginScreen({ navigation }) {
     GoogleSignin.hasPlayServices().then((hasPlayService) => {
       if (hasPlayService) {
         GoogleSignin.signIn().then((userInfo) => {
-          // let val = JSON.stringify(userInfo)
-          // console.log(val)
+          let val = JSON.stringify(userInfo)
+          console.log(val)
           login({ userInfo })
+          console.log('1 done')
           // { cnt === 0 ? {redirect(userInfo.serverAuthCode)} :  }
           checkRedirected(userInfo)
+          console.log('2 done')
           // redirect(userInfo.serverAuthCode)
           // tok()
         }).catch((error) => {
@@ -179,7 +181,7 @@ export default function LoginScreen({ navigation }) {
             showAlert("Alert!", "Google Play Services is not available. Please install.", "Ok")
           } else {
             // some other error happened
-            console.log("ERROR IS: lnmiit id se aao bhai")
+            console.log("ERROR IS: lnmiit id se aao bhai - ", error)
             showAlert("Alert!", "Login through LNMIIT ID only", "Ok")
           }
         })
@@ -257,25 +259,14 @@ export default function LoginScreen({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.guestDomain}
-          onPress={() => showAlert("Under Development", "This page is under development. Please come back later!", "Ok")}
+          onPress={() => {
+            navigation.navigate("Guest User")
+          }}
         >
           <Text style={styles.guestText}>Continue as Guest User</Text>
         </TouchableOpacity>
         <Text style={{ color: colors.text }}>For the students seeking admission</Text>
       </View>
-      {/* <TouchableOpacity
-        style={styles.login}
-        onPress={() => signInFn()}
-      >
-        <Text>Sign In with Google</Text>
-      </TouchableOpacity> */}
-
-      {/* <Button onPress={() => createGoogleAuthLink()} title="Login"></Button> */}
-      {/* <TouchableOpacity
-        onPress={() => signOutFn()}
-      >
-        <Text style={styles.login}>Sign out</Text>
-      </TouchableOpacity> */}
     </View >
   )
 }

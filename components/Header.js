@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation, useTheme } from '@react-navigation/native';
+import CustomIcon from './CustomIcon'
 
 export default function Header({ title }) {
 
@@ -10,9 +11,9 @@ export default function Header({ title }) {
   return (
     <View style={styles.header}>
       <TouchableOpacity>
-        <Image source={require('../assets/logos/ccell.png')} style={{
-          width: 24,
-          height: 24
+        <Image source={require('../assets/images/ccell.png')} style={{
+          width: 32,
+          height: 32
         }} />
       </TouchableOpacity>
       <View>
@@ -23,10 +24,10 @@ export default function Header({ title }) {
           navigation.navigate("Settings")
         }}
       >
-        <Image source={require('../assets/icons/settings.png')} style={{
-          width: 24,
-          height: 24
-        }} />
+        <CustomIcon
+          name={'settings'}
+          size={24}
+          color={colors.iconActiveColor} />
       </TouchableOpacity>
     </View>
   )

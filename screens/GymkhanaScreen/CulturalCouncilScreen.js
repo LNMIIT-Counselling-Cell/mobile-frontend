@@ -11,20 +11,27 @@ export default function CulturalCouncilScreen({ navigation }) {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
         <Image source={require('../../assets/images/cultural_council.png')} style={styles.image} />
-        <Text style={[styles.aboutText, { color: colors.text }]}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour).</Text>
+        <Text style={[styles.aboutText, { color: colors.text }]}>The Cultural Society of LNMIIT keeps the vibe and enthusiasm alive on the campus. It is a student body responsible for all the cultural events in the institute
+          around the year. It is the functional body for organizing a plethora of events, club
+          activities, and workshops throughout the year. Here, the like-minded gather to
+          work in unison towards a specific goal and to provide the students with the
+          opportunity and platform to learn, enjoy and showcase their talents and hard work -
+          be it getting out a magazine or putting together a one-hour concert, a DJ night or in
+          the fields of dance, drama, music, fashion or running health awareness
+          programmes, cleanliness and donation drives for the poor and the needy.</Text>
       </View>
 
       <PersonCard name={"Sarthak Goyal"} position={"General secretary"} phone="+918690001213" email={"gsec.cultural@lnmiit.ac.in"} />
       <PersonCard name={"Diya Rajwanshi"} position={"Associate General Secretary"} phone="+916375334432" email={"20ucs067@lnmiit.ac.in"} />
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.topCard}
         onPress={() => {
           navigation.navigate('Vivacity')
         }}
       >
         <Text style={styles.topCardText}>Vivacity</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <View style={styles.cardView}>
         <TouchableOpacity
@@ -57,65 +64,74 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card4}
           onPress={() => {
+            navigation.navigate('Fundoo Club')
+          }}
+        >
+          <Image source={require('../../assets/cult/fundoo.png')} style={styles.orgIcon} />
+          <Text style={styles.card4Text}>Fundoo Club</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card1}
+          onPress={() => {
             navigation.navigate('Imagination')
           }}
         >
           <Image source={require('../../assets/cult/imagination.png')} />
-          <Text style={styles.card4Text}>Imagination</Text>
+          <Text style={styles.card1Text}>Imagination</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.card1}
+          style={styles.card2}
           onPress={() => {
             navigation.navigate('Insignia, The Dance Club')
           }}
         >
           <Image source={require('../../assets/cult/insignia.png')} />
-          <Text style={styles.card1Text}>Insignia, The Dance Club</Text>
+          <Text style={styles.card2Text}>Insignia, The Dance Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.card2}
+          style={styles.card3}
           onPress={() => {
             navigation.navigate('Literary Committee')
           }}
         >
           <Image source={require('../../assets/cult/LC.png')} />
-          <Text style={styles.card2Text}>Literary Committee</Text>
+          <Text style={styles.card3Text}>Literary Committee</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.card3}
+          style={styles.card4}
           onPress={() => {
             navigation.navigate('Media Cell')
           }}
         >
           <Image source={require('../../assets/cult/media_cell.png')} />
-          <Text style={styles.card3Text}>Media Cell</Text>
+          <Text style={styles.card4Text}>Media Cell</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.card4}
+          style={styles.card1}
           onPress={() => {
             navigation.navigate('Rendition, The Dramatics Club')
           }}
         >
           <Image source={require('../../assets/cult/rendition.png')} />
-          <Text style={styles.card4Text}>Rendition, The Dramatics Club</Text>
+          <Text style={styles.card1Text}>Rendition, The Dramatics Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.card1}
+          style={styles.card2}
           onPress={() => {
             navigation.navigate('Sankalp Club')
           }}
         >
           <Image source={require('../../assets/cult/sankalp.png')} />
-          <Text style={styles.card1Text}>Sankalp Club</Text>
+          <Text style={styles.card2Text}>Sankalp Club</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.card2}
+          style={styles.card3}
           onPress={() => {
             navigation.navigate('Vignette, The Art Club')
           }}
         >
           <Image source={require('../../assets/cult/vignette.png')} />
-          <Text style={styles.card2Text}>Vignette, The Art Club</Text>
+          <Text style={styles.card3Text}>Vignette, The Art Club</Text>
         </TouchableOpacity>
       </View>
 
@@ -138,7 +154,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },
@@ -149,7 +164,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 10,
-    borderRadius: 8,
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   topCardText: {
     color: '#3A8A38',
@@ -162,11 +185,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   card1: {
     backgroundColor: '#FFCBA6',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -174,6 +197,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card1Text: {
     color: '#FF6A00',
@@ -185,7 +217,7 @@ const styles = StyleSheet.create({
   },
   card2: {
     backgroundColor: '#C3B0FF',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -193,6 +225,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card2Text: {
     color: '#551FFF',
@@ -204,7 +245,7 @@ const styles = StyleSheet.create({
   },
   card3: {
     backgroundColor: '#A6E6FF',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -212,6 +253,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card3Text: {
     color: '#00B7FE',
@@ -223,7 +273,7 @@ const styles = StyleSheet.create({
   },
   card4: {
     backgroundColor: '#FEB2C3',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -231,6 +281,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card4Text: {
     color: '#FD2254',
@@ -240,4 +299,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontFamily: 'Poppins-Medium',
   },
+  orgIcon: {
+    width: 85,
+    height: 64,
+  }
 })

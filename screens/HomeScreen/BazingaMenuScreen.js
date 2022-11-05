@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, Dimensions, View } from 'react-native';
 import Pdf from 'react-native-pdf';
+import { useTheme } from '@react-navigation/native';
 
 export const BazingaMenuScreen = () => {
+
+  const { colors } = useTheme()
 
   const source = { uri: 'bundle-assets://pdf/bazinga_menu.pdf' };
 
@@ -22,7 +25,7 @@ export const BazingaMenuScreen = () => {
         onPressLink={(uri) => {
           console.log(`Link pressed: ${uri}`);
         }}
-        style={styles.pdf} />
+        style={[styles.pdf, { backgroundColor: colors.cardBG }]} />
     </View>
   )
 }

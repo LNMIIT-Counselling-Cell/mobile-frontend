@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Image, Alert, ActivityIndicator } from 'react-native';
+import React, { useState, useContext } from 'react'
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Alert, ActivityIndicator } from 'react-native';
 import { AuthContext } from '../../components/Context';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
-import { Dropdown } from 'react-native-element-dropdown';
 import axios from 'axios';
 import { getToken } from '../../utils/Token';
 import { useTheme } from '@react-navigation/native';
+import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
+import CustomIcon from '../../components/CustomIcon';
 
 export default function OutpassScreen({ navigation }) {
 
@@ -84,36 +85,35 @@ export default function OutpassScreen({ navigation }) {
     return strTime;
   }
 
-  const [value, setValue] = useState(null);
-  const [isFocus, setIsFocus] = useState(false);
+  const [hostel, setHostel] = useState(null);
 
-  const resetForm = () => {
-    setValue(null);
-    setRoom('')
-    setPurpose('')
-    setTransport('')
-    setFromDate(new Date())
-    setToDate(new Date())
-  }
+  // const resetForm = () => {
+  //   setHostel(null);
+  //   setRoom('')
+  //   setPurpose('')
+  //   setTransport('')
+  //   setFromDate(new Date())
+  //   setToDate(new Date())
+  // }
 
-  const data = [
-    { label: 'GH', value: 'GH' },
-    { label: 'BH 1', value: 'BH 1' },
-    { label: 'BH 2', value: 'BH 2' },
-    { label: 'BH 3', value: 'BH 3' },
-    { label: 'BH 4', value: 'BH 4' },
-  ];
+  // const data = [
+  //   { label: 'GH', value: 'GH' },
+  //   { label: 'BH 1', value: 'BH 1' },
+  //   { label: 'BH 2', value: 'BH 2' },
+  //   { label: 'BH 3', value: 'BH 3' },
+  //   { label: 'BH 4', value: 'BH 4' },
+  // ];
 
-  const renderLabel = () => {
-    if (value || isFocus) {
-      return (
-        <Text style={[styles.label, isFocus && { color: 'blue' }]}>
-          Dropdown label
-        </Text>
-      );
-    }
-    return null;
-  };
+  // const renderLabel = () => {
+  //   if (value || isFocus) {
+  //     return (
+  //       <Text style={[styles.label, isFocus && { color: 'blue' }]}>
+  //         Dropdown label
+  //       </Text>
+  //     );
+  //   }
+  //   return null;
+  // };
 
   const today = new Date();
   const yyyy = today.getFullYear();
@@ -129,7 +129,7 @@ export default function OutpassScreen({ navigation }) {
   const dayName = days[new Date().getDay()];
 
   const isFormValid = () => {
-    if (value !== null && room !== '' && purpose !== '' && transport !== '') {
+    if (hostel !== null && room !== '' && purpose !== '' && transport !== '') {
       return true
     }
     else {
@@ -138,13 +138,56 @@ export default function OutpassScreen({ navigation }) {
   }
 
   const bodyParameters = {
-    hostel: value,
+    hostel: hostel,
     roomno: room,
     purpose: purpose,
     transport: transport,
     from_time: fromDate,
     to_time: toDate
   };
+
+  const staticData = [
+    {
+      id: 0,
+      size: 25,
+      fillColor: "#FFCBA6",
+      unfillColor: "#FFFFFF",
+      text: "BH1",
+      textStyle: [styles.checkBoxText, StyleSheet.create({ color: colors.text })]
+    },
+    {
+      id: 1,
+      size: 25,
+      fillColor: "#C3B0FF",
+      unfillColor: "#FFFFFF",
+      text: "BH2",
+      textStyle: [styles.checkBoxText, StyleSheet.create({ color: colors.text })]
+    },
+    {
+      id: 2,
+      size: 25,
+      fillColor: "#A6E6FF",
+      unfillColor: "#FFFFFF",
+      text: "BH3",
+      textStyle: [styles.checkBoxText, StyleSheet.create({ color: colors.text })]
+    },
+    {
+      id: 3,
+      size: 25,
+      fillColor: "#FEB2C3",
+      unfillColor: "#FFFFFF",
+      text: "BH4",
+      textStyle: [styles.checkBoxText, StyleSheet.create({ color: colors.text })]
+    },
+    {
+      id: 4,
+      size: 25,
+      fillColor: "#47F4BC",
+      unfillColor: "#FFFFFF",
+      text: "GH",
+      textStyle: [styles.checkBoxText, StyleSheet.create({ color: colors.text })]
+    },
+  ];
 
   return (
     <ScrollView>
@@ -159,8 +202,19 @@ export default function OutpassScreen({ navigation }) {
           <View style={styles.item}>
             <Text style={[{ color: colors.text }]}>Hostel :</Text>
             {/* {renderLabel()} */}
-            <Dropdown
-              style={[styles.dropdown, isFocus && { borderColor: 'blue' }, { backgroundColor: colors.background }]}
+
+            <BouncyCheckboxGroup
+              data={staticData}
+              style={styles.checkBoxes}
+              checkboxProps={styles.checkstyle}
+              onChange={(selectedItem) => {
+                setHostel(selectedItem.text)
+                console.log("SelectedItem: ", selectedItem.text);
+              }}
+            />
+
+            {/* <Dropdown
+              style={[styles.dropdown, { backgroundColor: colors.cardBG }]}
               placeholderStyle={[styles.placeholderStyle, { color: colors.text }]}
               selectedTextStyle={[styles.selectedTextStyle, { color: colors.text }]}
               inputSearchStyle={[styles.inputSearchStyle, { color: colors.text }]}
@@ -187,7 +241,7 @@ export default function OutpassScreen({ navigation }) {
             //     size={20}
             //   />
             // )}
-            />
+            /> */}
 
           </View>
           <View style={styles.item}>
@@ -221,12 +275,10 @@ export default function OutpassScreen({ navigation }) {
               <TouchableOpacity
                 onPress={showTimepickerFrom}
               >
-                <Image
-                  source={require('../../assets/icons/outline_schedule_black_24dp.png')}
-                  style={{
-                    width: 24,
-                    height: 24,
-                  }} />
+                <CustomIcon
+                  name={'clock'}
+                  size={24}
+                  color={colors.iconActiveColor} />
               </TouchableOpacity>
             </View>
 
@@ -238,17 +290,15 @@ export default function OutpassScreen({ navigation }) {
               <TouchableOpacity
                 onPress={showTimepickerTo}
               >
-                <Image
-                  source={require('../../assets/icons/outline_schedule_black_24dp.png')}
-                  style={{
-                    width: 24,
-                    height: 24,
-                  }} />
+                <CustomIcon
+                  name={'clock'}
+                  size={24}
+                  color={colors.iconActiveColor} />
               </TouchableOpacity>
             </View>
 
           </View>
-          <View style={styles.itemReset}>
+          {/* <View style={styles.itemReset}>
             <TouchableOpacity
               style={[styles.resetBtn, { backgroundColor: colors.background }]}
               onPress={() => resetForm()}
@@ -263,7 +313,7 @@ export default function OutpassScreen({ navigation }) {
                   }} />
               </View>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
 
         <TouchableOpacity
@@ -279,14 +329,14 @@ export default function OutpassScreen({ navigation }) {
                     text: 'OK', onPress: async () => {
                       toggleLoadingGen()
                       const token = await getToken();
-                      await axios.post('http://192.168.167.252:5000/generateoutpass', bodyParameters, {
+                      await axios.post('https://ccelltestapi.herokuapp.com/generateoutpass', bodyParameters, {
                         headers: {
                           'Authorization': `Bearer ${token}`,
                         }
                       })
                         .then(response => {
                           const formData = {
-                            hostel: value,
+                            hostel: hostel,
                             roomno: room,
                             purpose: purpose,
                             transport: transport,
@@ -294,7 +344,6 @@ export default function OutpassScreen({ navigation }) {
                             to_time: toDate,
                             token: response.data.token
                           }
-                          resetForm()
                           setIsLoadingGen(false)
                           navigation.navigate('Generated Outpass', { objData: formData })
                         })
@@ -330,7 +379,7 @@ export default function OutpassScreen({ navigation }) {
           onPress={async () => {
             toggleLoadingPrev()
             const token = await getToken()
-            await axios.get('http://192.168.167.252:5000/previousoutpass', {
+            await axios.get('https://ccelltestapi.herokuapp.com/previousoutpass', {
               headers: {
                 'Authorization': `Bearer ${token}`,
               }
@@ -410,6 +459,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    marginBottom: 20,
   },
   prevText: {
     color: '#551FFF',
@@ -485,5 +535,21 @@ const styles = StyleSheet.create({
   inputSearchStyle: {
     height: 40,
     fontSize: 16,
+  },
+  checkBoxes: {
+    // flexDirection: "column",
+    margin: 20,
+    marginVertical: 0,
+    width: 200,
+    flexWrap: "wrap",
+    // height: 150,
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+  },
+  checkstyle: {
+    paddingVertical: 10,
+  },
+  checkBoxText: {
+    textDecorationLine: "none",
   },
 });

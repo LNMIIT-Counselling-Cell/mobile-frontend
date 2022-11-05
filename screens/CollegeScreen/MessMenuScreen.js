@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleSheet, Dimensions, View } from 'react-native';
 import Pdf from 'react-native-pdf';
+import { useTheme } from '@react-navigation/native';
 
 export const MessMenuScreen = () => {
 
-  const source = { uri: 'bundle-assets://pdf/mess_menu_jun_2022.pdf' };
+  const { colors } = useTheme()
+
+  const source = { uri: 'bundle-assets://pdf/mess_menu.pdf' };
 
   return (
     <View style={styles.container}>
@@ -22,7 +25,7 @@ export const MessMenuScreen = () => {
         onPressLink={(uri) => {
           console.log(`Link pressed: ${uri}`);
         }}
-        style={styles.pdf} />
+        style={[styles.pdf, { backgroundColor: colors.cardBG }]} />
     </View>
   )
 }

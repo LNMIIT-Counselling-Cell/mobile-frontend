@@ -8,23 +8,10 @@ export const DebsocScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/scitech_clubs/debsoc/1.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/debsoc/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/debsoc/3.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/debsoc/4.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/debsoc/5.jpg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.scitech.debsoc;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -33,8 +20,8 @@ export const DebsocScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Lord Byron once said, "Those who will not reason are bigots, those who cannot are fools, and those who dare not, are slaves."  We believe you come as a learner to the world and live as a person in society. The person in you should be robust to reason and realize the arguments.To inculcate reasoning and unleash the master within, The LNMIIT has a sigma debating club, The Debate Society. DebSoc has always been the charm for debaters with the best in professional suites and orators. The society strives to develop a rational personality among the students by harmoniously promoting debates and discussions in the form of MUNs, Group Discussions, Parliamentary Debates, and Extempores. Acknowledging the value of exposure and dialogue, the DebSoc is one of its kind to mold you as a conclusive lawyer of words.</Text>
       </View>
 
-      <PersonCard name={"Divyanshi Gautam"} position={"Coordinator"} phone="+919462421299" email={"20ucs066@lnmiit.ac.in"} />
       <PersonCard name={"Arjun Saxena"} position={"Coordinator"} phone="+919571485158" email={"20ucc021@lnmiit.ac.in"} />
+      <PersonCard name={"Divyanshi Gautam"} position={"Coordinator"} phone="+919462421299" email={"20ucs066@lnmiit.ac.in"} />
       <PersonCard name={"Saumya Kalra"} position={"Coordinator"} phone="+916375548121" email={"20uec119@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
@@ -78,7 +65,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

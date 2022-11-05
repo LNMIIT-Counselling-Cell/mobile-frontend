@@ -30,6 +30,7 @@ build/
 local.properties
 *.iml
 *.hprof
+app/release
 
 # node.js
 #
@@ -61,3 +62,5 @@ buck-out/
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+
+android/app/release

@@ -1,13 +1,13 @@
 import React from 'react'
-import { Button, Image, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
-export default function AboutScreen({ navigation }) {
+export default function AboutScreen() {
 
   const { colors } = useTheme()
 
   const dirText2 = `
-  Counselling and Guidance Cell to help you navigate your college campus and uncover the answers to possibly all the questions you might have regarding your day-to-day life on campus. The app provides a complete set of information about Institute resources, academic programs, campus life, rules of behavior and the plethora of co-curricular activities that are an integral part of your identity as an LNMIIT student.
+  The C-Cell application has been designed by the LNMIIT Counselling and Guidance Cell to help you navigate your college campus and uncover the answers to possibly all the questions you might have regarding your day-to-day life on campus. The app provides a complete set of information about Institute resources, academic programs, campus life, rules of behavior and the plethora of co-curricular activities that are an integral part of your identity as an LNMIIT student.
 
   I hope this user-friendly app proves to be a one-stop solution for your information needs.
 
@@ -16,7 +16,7 @@ export default function AboutScreen({ navigation }) {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.ccellgrp}>
-        <Image source={require('../../assets/images/aboutus.png')} />
+        <Image source={require('../../assets/images/aboutus.jpg')} style={styles.headerImg} />
       </View>
       <View style={styles.ccellicon}>
         <Image source={require('../../assets/images/ccell.png')} style={styles.ccelliconimg} />
@@ -30,7 +30,7 @@ export default function AboutScreen({ navigation }) {
 
       <View style={styles.cardBox}>
         <View style={styles.card}>
-          <Image source={require('../../assets/images/neev_nagvani.png')} />
+          <Image source={require('../../assets/images/neev_nagvani.jpeg')} style={styles.cordiImg} />
           <Text style={[styles.nameText, { color: '#FF6A00' }]}>Neev Nagvani</Text>
           <View style={styles.cardCTA}>
             <TouchableOpacity
@@ -50,7 +50,7 @@ export default function AboutScreen({ navigation }) {
           </View>
         </View>
         <View style={[styles.card, { backgroundColor: '#C3B0FF', borderRadius: 8 }]}>
-          <Image source={require('../../assets/images/prerna_sharma.png')} />
+          <Image source={require('../../assets/images/prerna_sharma.jpg')} style={styles.cordiImg} />
           <Text style={[styles.nameText, { color: '#551FFF' }]}>Prerna Sharma</Text>
           <View style={styles.cardCTA}>
             <TouchableOpacity
@@ -70,7 +70,7 @@ export default function AboutScreen({ navigation }) {
           </View>
         </View>
         <View style={[styles.card, { backgroundColor: '#FEB2C3', borderRadius: 8 }]}>
-          <Image source={require('../../assets/images/vansh_mahajan.png')} />
+          <Image source={require('../../assets/images/vansh_mahajan.jpeg')} style={styles.cordiImg} />
           <Text style={[styles.nameText, { color: '#FD2254' }]}>Vansh Mahajan</Text>
           <View style={styles.cardCTA}>
             <TouchableOpacity
@@ -94,7 +94,7 @@ export default function AboutScreen({ navigation }) {
       <Text style={[styles.headerTextmsg, { color: colors.text }]}>Convener's Message</Text>
       <View style={styles.director}>
         <View style={styles.dirTextBox}>
-          <Text style={[styles.dirText1, { color: colors.text }]}>Welcome to a meaningful and rewarding experience at the LNM Institute of Information Technology, Jaipur. As you embark on your journey as an LNMIITian, you and your family are full of excitement and hope, as well as a range of queries and concerns in your mind. The C-Cell application has been designed by the LNMIIT.</Text>
+          <Text style={[styles.dirText1, { color: colors.text }]}>Welcome to a meaningful and rewarding experience at the LNM Institute of Information Technology, Jaipur. As you embark on your journey as an LNMIITian, you and your family are full of excitement and hope, as well as a range of queries and concerns in your mind.</Text>
         </View>
         <View style={styles.dirsection}>
           <Image source={require('../../assets/images/usha_maam.png')} style={styles.dirimg} />
@@ -102,6 +102,68 @@ export default function AboutScreen({ navigation }) {
         </View>
       </View>
       <Text style={[styles.dirText2, { color: colors.text }]}>{dirText2}</Text>
+
+      <Text style={[styles.headerTextmsg, { color: colors.text }]}>Mentors - Y19</Text>
+
+      <View style={styles.cardBoxMentor}>
+        <View style={[styles.cardMentor, { backgroundColor: '#C3B0FF', borderRadius: 8 }]}>
+          <Image source={require('../../assets/images/diya_pathak.jpg')} style={styles.cordiImg} />
+          <Text style={[styles.nameText, { color: '#551FFF' }]}>Diya Pathak</Text>
+          <View style={styles.cardCTA}>
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL(`tel: +919548873987`)
+              }}
+            >
+              <Image source={require('../../assets/images/call.png')} style={styles.ctaicon} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL(`mailto: 19ucs032@lnmiit.ac.in`)
+              }}
+            >
+              <Image source={require('../../assets/images/gmail.png')} style={styles.ctaicon} />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.cardMentor}>
+          <Image source={require('../../assets/images/lavish_somvanshi.jpg')} style={styles.cordiImg} />
+          <Text style={[styles.nameText, { color: '#FF6A00' }]}>Lavish Somvanshi</Text>
+          <View style={styles.cardCTA}>
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL(`tel: +916376143382`)
+              }}
+            >
+              <Image source={require('../../assets/images/call.png')} style={styles.ctaicon} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL(`mailto: 19ucc080@lnmiit.ac.in`)
+              }}
+            >
+              <Image source={require('../../assets/images/gmail.png')} style={styles.ctaicon} />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+      </View>
+
+      <Text style={[styles.headerTextmsg, { color: colors.text }]}>Associate Coordinators - Y20</Text>
+      <View style={styles.accCordi}>
+        <View style={styles.leftBox}>
+          <Text style={[styles.textLeft, { color: colors.text }]}>Arjun Saxena</Text>
+          <Text style={[styles.textLeft, { color: colors.text }]}>Ishan Sharma</Text>
+          <Text style={[styles.textLeft, { color: colors.text }]}>Ishan Vadalia</Text>
+          <Text style={[styles.textLeft, { color: colors.text }]}>Krishna Kulshreshtha</Text>
+        </View>
+        <View>
+          <Text style={{ color: colors.text }}>Sriraj Behera</Text>
+          <Text style={{ color: colors.text }}>Varad Nandanwankar</Text>
+          <Text style={{ color: colors.text }}>Yash Pachauri</Text>
+          <Text style={{ color: colors.text }}>Yash Saraswat</Text>
+        </View>
+      </View>
     </ScrollView>
   );
 }
@@ -109,6 +171,11 @@ export default function AboutScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
+  },
+  headerImg: {
+    height: 100,
+    width: '100%',
+    borderRadius: 8
   },
   ccellgrp: {
     display: 'flex',
@@ -131,16 +198,15 @@ const styles = StyleSheet.create({
     left: 125,
   },
   lnmiittext: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: 'Poppins-Medium'
   },
   ccellText: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'Poppins-Medium',
     lineHeight: 16,
   },
   maintext: {
-    textAlign: 'justify',
     position: 'relative',
     bottom: 50,
   },
@@ -180,9 +246,19 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     height: 155,
   },
+  cardMentor: {
+    backgroundColor: '#FFCBA6',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    width: '35%',
+    borderRadius: 8,
+    paddingVertical: 10,
+    height: 155,
+  },
   nameText: {
     fontSize: 12,
-    fontWeight: 'bold',
+    fontWeight: '400',
   },
   cardCTA: {
     display: 'flex',
@@ -211,11 +287,9 @@ const styles = StyleSheet.create({
     width: '65%',
   },
   dirText1: {
-    textAlign: 'justify',
     paddingRight: 10,
   },
   dirText2: {
-    textAlign: 'justify',
     marginBottom: 10,
     position: 'relative',
     bottom: 10,
@@ -224,5 +298,31 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 10,
     fontWeight: 'bold',
+  },
+  cordiImg: {
+    width: 85,
+    height: 85,
+    borderRadius: 50,
+    // paddingHorizontal: 10,
+  },
+  accCordi: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 25,
+  },
+  leftBox: {
+    marginRight: 15,
+  },
+  textLeft: {
+    textAlign: 'right',
+  },
+  cardBoxMentor: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginBottom: 20,
   }
 })

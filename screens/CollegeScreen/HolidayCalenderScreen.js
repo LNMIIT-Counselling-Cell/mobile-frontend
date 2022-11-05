@@ -1,8 +1,11 @@
+import { useTheme } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Dimensions, View } from 'react-native';
 import Pdf from 'react-native-pdf';
 
 export const HolidayCalenderScreen = () => {
+
+  const { colors } = useTheme()
 
   const source = { uri: 'bundle-assets://pdf/holiday_calendar_2022.pdf' };
 
@@ -22,7 +25,7 @@ export const HolidayCalenderScreen = () => {
         onPressLink={(uri) => {
           console.log(`Link pressed: ${uri}`);
         }}
-        style={styles.pdf} />
+        style={[styles.pdf, { backgroundColor: colors.cardBG }]} />
     </View>
   )
 }

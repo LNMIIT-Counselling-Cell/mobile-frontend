@@ -46,6 +46,9 @@ export default function CollegeScreen({ navigation }) {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick4}
+            onPress={() => {
+              navigation.navigate('Standard Operating Procedures')
+            }}
           >
             <Text style={styles.q4Text}>SOPs</Text>
           </TouchableOpacity>
@@ -93,21 +96,33 @@ export default function CollegeScreen({ navigation }) {
         <View style={styles.subsection}>
           <TouchableOpacity
             style={styles.quick1}
+            onPress={() => {
+              navigation.navigate("Campus Area Map")
+            }}
           >
             <Text style={styles.q1Text}>Campus Map</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick2}
+            onPress={() => {
+              navigation.navigate("Academic Area Map")
+            }}
           >
             <Text style={styles.q2Text}>Academic Area Map</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick3}
+            onPress={() => {
+              navigation.navigate("Curriculum (B. Tech. & M. Tech.)")
+            }}
           >
             <Text style={styles.q3Text}>Curriculum</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quick4}
+            onPress={() => {
+              navigation.navigate("Important Links")
+            }}
           >
             <Text style={styles.q4Text}>Important Links</Text>
           </TouchableOpacity>
@@ -228,13 +243,12 @@ const styles = StyleSheet.create({
   },
   dirTextBox: {
     width: '65%',
+    flex: 1,
   },
   dirText1: {
-    textAlign: 'justify',
     paddingRight: 10,
   },
   dirText2: {
-    textAlign: 'justify',
     marginBottom: 10,
   },
   dirname: {

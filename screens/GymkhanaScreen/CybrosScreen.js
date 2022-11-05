@@ -8,23 +8,10 @@ export const CybrosScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/scitech_clubs/cybros/1.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/cybros/2.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/cybros/3.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/cybros/4.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/cybros/5.jpeg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.scitech.cybros;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -33,8 +20,8 @@ export const CybrosScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Cybros is a core hub for programmers aiming to keep the booming “coding culture” of LNMIIT reigning. The official coding club, Cybros is composed of top prolific coders whose binding power has rendered many unfathomable achievements. Cybros nurtures and guides fresher batches by forming a spirit of Competitive Programming from the first semester itself. Furthermore, it organises CyTalks which behaves as a multifaceted offline event posing as a resource-packed programming workshop, a motivational chat, or a mentoring session.It is also notorious for holding many contests like CodeLNM: an intra-college contest enjoying mighty participation, and weekly contest series like Placement Series and Beginners Series aimed at senior batches and beginners respectively. In Addition, CyHub — Cybros’ Codeforces group is a one-stop destination for topic-specific resources and archives of the previous contests held. In a nutshell, Cybros acts like a web interlinking enthusiastic learners at LNMIIT and scooping them into the realm of programming.</Text>
       </View>
 
-      <PersonCard name={"Harsh Dhingra"} position={"Coordinator"} phone="+918769359530" email={"19ucc029@lnmiit.ac.in"} />
       <PersonCard name={"Anshul Garg"} position={"Coordinator"} phone="+919205287611" email={"19ucc006@lnmiit.ac.in"} />
+      <PersonCard name={"Harsh Dhingra"} position={"Coordinator"} phone="+918769359530" email={"19ucc029@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 
@@ -77,7 +64,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

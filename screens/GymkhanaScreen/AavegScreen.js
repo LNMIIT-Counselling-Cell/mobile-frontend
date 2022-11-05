@@ -6,31 +6,12 @@ import CarouselCards from '../../components/CarouselCards';
 
 export const AavegScreen = () => {
 
-  const { colors } = useTheme()
+  const imgData = require("../../assets/json/global.json").organization_img.cult.aaveg;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/cult_clubs/aaveg/1.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/aaveg/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/aaveg/3.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/aaveg/4.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/aaveg/5.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/aaveg/6.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/aaveg/7.jpeg')
-    }
-  ]
+  const { colors } = useTheme()
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -85,7 +66,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

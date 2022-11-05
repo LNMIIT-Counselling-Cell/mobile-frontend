@@ -1,14 +1,44 @@
-import { useTheme } from '@react-navigation/native'
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from 'react';
+import { StyleSheet, Dimensions, View } from 'react-native';
+import Pdf from 'react-native-pdf';
+import { useTheme } from '@react-navigation/native';
 
 export const CounsellingProcessScreen = () => {
 
   const { colors } = useTheme()
 
+  const source = { uri: 'bundle-assets://pdf/CounsellingProcess.pdf' };
+
   return (
-    <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-      <Text style={{ color: colors.text }}>Coming Soon!</Text>
+    <View style={styles.container}>
+      <Pdf
+        source={source}
+        onLoadComplete={(numberOfPages, filePath) => {
+          console.log(`Number of pages: ${numberOfPages}`);
+        }}
+        onPageChanged={(page, numberOfPages) => {
+          console.log(`Current page: ${page}`);
+        }}
+        onError={(error) => {
+          console.log(error);
+        }}
+        onPressLink={(uri) => {
+          console.log(`Link pressed: ${uri}`);
+        }}
+        style={[styles.pdf, { backgroundColor: colors.cardBG }]} />
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  pdf: {
+    flex: 1,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+  }
+});

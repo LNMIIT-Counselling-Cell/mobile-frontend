@@ -1,16 +1,17 @@
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import React, { useContext, useState } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, ScrollView } from 'react-native'
 import { AuthContext } from '../components/Context';
 import { useTheme } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
+import VersionInfo from 'react-native-version-info';
 
 export const SettingsScreen = ({ navigation }) => {
 
-  const NativeTheme = useTheme();
   const { colors } = useTheme();
 
-  const { logout, toggleTheme } = useContext(AuthContext)
+  const { logout, checkTheme, systheme } = useContext(AuthContext)
   const [isLoadingSignout, setIsLoadingSignout] = useState(false);
 
   const toggleLoadingSignOut = () => {
@@ -29,72 +30,124 @@ export const SettingsScreen = ({ navigation }) => {
     }
   };
 
+  const staticData = [
+    {
+      id: 1,
+      size: 25,
+      fillColor: "#47F4BC",
+      unfillColor: "#FFFFFF",
+      text: "Light",
+      textStyle: [styles.checkBoxText, StyleSheet.create({ color: colors.text })]
+    },
+    {
+      id: 2,
+      size: 25,
+      fillColor: "#47F4BC",
+      unfillColor: "#FFFFFF",
+      text: "Dark",
+      textStyle: [styles.checkBoxText, StyleSheet.create({ color: colors.text })]
+    },
+    {
+      id: 0,
+      size: 25,
+      fillColor: "#47F4BC",
+      unfillColor: "#FFFFFF",
+      text: "System",
+      textStyle: [styles.checkBoxText, StyleSheet.create({ color: colors.text })]
+    }
+  ];
+
+  const setSystemTheme = async (theme) => {
+    try {
+      await AsyncStorage.setItem('systheme', theme)
+      checkTheme()
+    } catch (error) {
+      console.error('Error setting ---- ', error)
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <View style={styles.themeBox}>
-        <Text style={[styles.themeText, { color: colors.text }]}>Theme Management</Text>
-        <TouchableOpacity
-          style={styles.save}
-          onPress={() => {
-            if (NativeTheme.dark) {
-              AsyncStorage.setItem("isDarkTheme", JSON.stringify(false))
-              toggleTheme(false)
-            }
-            else {
-              AsyncStorage.setItem("isDarkTheme", JSON.stringify(true))
-              toggleTheme(true)
-            }
-          }}
-        >
-          <View style={styles.btn}>
-            <Text style={styles.saveText}> {NativeTheme.dark ? "Enable Light Theme" : "Enable Dark Theme"}</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.themeBox}>
-        <Text style={[styles.themeText, { color: colors.text }]}>About the Developers</Text>
-        <TouchableOpacity
-          style={styles.dev}
-          onPress={() => {
-            navigation.navigate('Meet our Developers')
-          }}
-        >
-          <View style={styles.btn}>
-            <Text style={styles.devText}>Meet the Team</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.themeBox}>
-        <Text style={[styles.themeText, { color: colors.text }]}>Logout</Text>
-        <TouchableOpacity
-          style={styles.logout}
-          onPress={() => {
-            toggleLoadingSignOut()
-            signOutFn()
-          }}
-        >
-          <View style={styles.btn}>
-            {isLoadingSignout && <ActivityIndicator size="large" color="#551FFF" />}
-            <Text style={styles.logoutText}> {isLoadingSignout ? "Signing out" : "Sign Out"}</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.themeBox}>
+          <Text style={[styles.themeText, { color: colors.text }]}>Theme Management</Text>
+          <BouncyCheckboxGroup
+            initial={parseInt(systheme)}
+            data={staticData}
+            style={styles.checkBoxes}
+            checkboxProps={styles.checkstyle}
+            onChange={(selectedItem) => {
+              let selectedTheme = '0';
+              if (selectedItem.text === 'Light') {
+                selectedTheme = '1';
+              }
+              else if (selectedItem.text === 'Dark') {
+                selectedTheme = '2';
+              }
+              else {
+                selectedTheme = '0';
+              }
+              setSystemTheme(selectedTheme)
+            }}
+          />
+        </View>
+        <View style={styles.themeBox}>
+          <Text style={[styles.themeText, { color: colors.text }]}>About the Developers</Text>
+          <TouchableOpacity
+            style={styles.dev}
+            onPress={() => {
+              navigation.navigate('Meet our Developers')
+            }}
+          >
+            <View style={styles.btn}>
+              <Text style={styles.devText}>Meet the Team</Text>
+            </View>
+          </TouchableOpacity>
+          <Text style={[styles.themeText, { color: colors.text }]}>Open Source Libraries</Text>
+          <TouchableOpacity
+            style={styles.lib}
+            onPress={() => {
+              navigation.navigate('Open Source Libraries')
+            }}
+          >
+            <View style={styles.btn}>
+              <Text style={styles.libText}>List of Magical Libraries</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.themeBox}>
+          <Text style={[styles.themeText, { color: colors.text }]}>Logout</Text>
+          <TouchableOpacity
+            style={styles.logout}
+            onPress={() => {
+              toggleLoadingSignOut()
+              signOutFn()
+            }}
+          >
+            <View style={styles.btn}>
+              {isLoadingSignout && <ActivityIndicator size="large" color="#551FFF" />}
+              <Text style={styles.logoutText}> {isLoadingSignout ? "Signing out" : "Sign Out"}</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
 
-      <View style={styles.themeBox}>
-        <Text style={[styles.themeText, { color: colors.text }]}>Need Help?</Text>
-        <Text style={[styles.versionText, { color: colors.text }]}>Contact C-Cell</Text>
-      </View>
+        <View style={styles.themeBox}>
+          <Text style={[styles.themeText, { color: colors.text }]}>Need Help?</Text>
+          <Text style={[styles.versionText, { color: colors.text }]}>Contact C-Cell</Text>
+        </View>
 
-      <View style={styles.themeBox}>
-        <Text style={[styles.themeText, { color: colors.text }]}>Report an app issue?</Text>
-        <Text style={[styles.versionText, { color: colors.text }]}>Contact developer</Text>
-      </View>
+        <View style={styles.themeBox}>
+          <Text style={[styles.themeText, { color: colors.text }]}>Report an app issue?</Text>
+          <Text style={[styles.versionText, { color: colors.text }]}>Contact Developer</Text>
+        </View>
 
-      <View style={styles.themeBox}>
-        <Text style={[styles.themeText, { color: colors.text }]}>App Version</Text>
-        <Text style={[styles.versionText, { color: colors.text }]}>1.0.1 v6 alpha (pre production)</Text>
+        <View style={styles.themeBox}>
+          <Text style={[styles.themeText, { color: colors.text }]}>App Version</Text>
+          {/* <Text style={[styles.versionText, { color: colors.text }]}>1.0.1 v4 beta (pre production)</Text> */}
+          <Text style={[styles.versionText, { color: colors.text }]}>{VersionInfo.appVersion} v{VersionInfo.buildVersion}</Text>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
@@ -123,7 +176,17 @@ const styles = StyleSheet.create({
     marginVertical: 14,
   },
   dev: {
-    backgroundColor: '#A6E6FF',
+    backgroundColor: '#FFCBA6',
+    width: '100%',
+    height: 50,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginVertical: 14,
+  },
+  lib: {
+    backgroundColor: '#C3B0FF',
     width: '100%',
     height: 50,
     display: 'flex',
@@ -133,7 +196,7 @@ const styles = StyleSheet.create({
     marginVertical: 14,
   },
   logout: {
-    backgroundColor: '#C3B0FF',
+    backgroundColor: '#A6E6FF',
     width: '100%',
     height: 50,
     display: 'flex',
@@ -147,11 +210,15 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
   },
   devText: {
-    color: '#00B7FE',
+    color: '#FF6A00',
+    fontFamily: 'Poppins-Medium',
+  },
+  libText: {
+    color: '#551FFF',
     fontFamily: 'Poppins-Medium',
   },
   logoutText: {
-    color: '#551FFF',
+    color: '#00B7FE',
     fontFamily: 'Poppins-Medium',
   },
   btn: {
@@ -162,5 +229,17 @@ const styles = StyleSheet.create({
   },
   versionText: {
     marginBottom: 12,
-  }
+  },
+  checkBoxes: {
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    width: '100%',
+  },
+  checkstyle: {
+    paddingVertical: 10,
+  },
+  checkBoxText: {
+    textDecorationLine: "none",
+  },
 })

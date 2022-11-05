@@ -8,23 +8,10 @@ export const CipherScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/scitech_clubs/cipher/1.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/cipher/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/cipher/3.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/cipher/4.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/cipher/5.jpg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.scitech.cipher;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -34,9 +21,9 @@ export const CipherScreen = () => {
       </View>
 
       <PersonCard name={"Ketan Jakhar"} position={"Coordinator"} phone="+919461721651" email={"19ucc020@lnmiit.ac.in"}/>
+      <PersonCard name={"Meet Patel"} position={"Coordinator"} phone="+917041813479" email={"19ume020@lnmiit.ac.in"}/>
       <PersonCard name={"Vinay Sharma"} position={"Coordinator"} phone="+919549178651" email={"19ume011@lnmiit.ac.in"}/>
       <PersonCard name={"Viren Saroha"} position={"Coordinator"} phone="+919306555214" email={"19ucs152@lnmiit.ac.in"}/>
-      <PersonCard name={"Meet Patel"} position={"Coordinator"} phone="+917041813479" email={"19ume020@lnmiit.ac.in"}/>
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 
@@ -79,7 +66,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

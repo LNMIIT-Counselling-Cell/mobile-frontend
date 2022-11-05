@@ -8,35 +8,10 @@ export const PhoenixScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/1.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/2.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/3.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/4.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/5.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/6.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/7.jpg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/8.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/phoenix/9.jpg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.scitech.phoenix;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -89,7 +64,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

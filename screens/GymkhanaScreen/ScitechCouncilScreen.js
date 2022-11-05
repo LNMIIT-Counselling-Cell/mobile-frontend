@@ -17,14 +17,14 @@ export default function ScitechCouncilScreen({ navigation }) {
       <PersonCard name={"Ayush Sharma"} position={"General secretary"} phone="+919460257928" email={"gsec.science@lnmiit.ac.in"} />
       <PersonCard name={"Muskan Singla"} position={"Associate General Secretary"} phone="+918377089610" email={"20ucc068@lnmiit.ac.in"} />
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.topCard}
         onPress={() => {
           navigation.navigate('Plinth')
         }}
       >
         <Text style={styles.topCardText}>Plinth</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <View style={styles.cardView}>
         <TouchableOpacity
@@ -39,29 +39,29 @@ export default function ScitechCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
+            navigation.navigate('Cipher')
+          }}
+        >
+          <Image source={require('../../assets/scitech/cipher.png')} />
+          <Text style={styles.card2Text}>Cipher</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card3}
+          onPress={() => {
             navigation.navigate('Cybros')
           }}
         >
           <Image source={require('../../assets/scitech/cybros.png')} />
-          <Text style={styles.card2Text}>Cybros</Text>
+          <Text style={styles.card3Text}>Cybros</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.card3}
+          style={styles.card4}
           onPress={() => {
             navigation.navigate('Debsoc')
           }}
         >
           <Image source={require('../../assets/scitech/debsoc.png')} />
-          <Text style={styles.card3Text}>Debsoc</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.card4}
-          onPress={() => {
-            navigation.navigate('Phoenix')
-          }}
-        >
-          <Image source={require('../../assets/scitech/phoenix.png')} />
-          <Text style={styles.card4Text}>Phoenix</Text>
+          <Text style={styles.card4Text}>Debsoc</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card1}
@@ -69,27 +69,28 @@ export default function ScitechCouncilScreen({ navigation }) {
             navigation.navigate('E-Cell')
           }}
         >
-          <Image source={require('../../assets/scitech/e_cell.png')} />
+          <Image source={require('../../assets/scitech/e_cell.png')} style={{ width: 150, height: 100 }} />
           <Text style={styles.card1Text}>E-Cell</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Quizzinga')
+            navigation.navigate('Phoenix')
           }}
         >
-          <Image source={require('../../assets/scitech/quizzinga.png')} />
-          <Text style={styles.card2Text}>Quizzinga</Text>
+          <Image source={require('../../assets/scitech/phoenix.png')} />
+          <Text style={styles.card2Text}>Phoenix</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Cipher')
+            navigation.navigate('Quizzinga')
           }}
         >
-          <Image source={require('../../assets/scitech/cipher.png')} />
-          <Text style={styles.card3Text}>Cipher</Text>
+          <Image source={require('../../assets/scitech/quizzinga.png')} />
+          <Text style={styles.card3Text}>Quizzinga</Text>
         </TouchableOpacity>
+
       </View>
 
     </ScrollView>
@@ -108,10 +109,9 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 120,
-    height: 80,
+    height: 120,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },
@@ -122,7 +122,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 10,
-    borderRadius: 8,
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   topCardText: {
     color: '#3A8A38',
@@ -135,11 +143,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   card1: {
     backgroundColor: '#FFCBA6',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -147,6 +155,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card1Text: {
     color: '#FF6A00',
@@ -158,7 +175,7 @@ const styles = StyleSheet.create({
   },
   card2: {
     backgroundColor: '#C3B0FF',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -166,6 +183,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card2Text: {
     color: '#551FFF',
@@ -177,7 +203,7 @@ const styles = StyleSheet.create({
   },
   card3: {
     backgroundColor: '#A6E6FF',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -185,6 +211,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card3Text: {
     color: '#00B7FE',
@@ -196,7 +231,7 @@ const styles = StyleSheet.create({
   },
   card4: {
     backgroundColor: '#FEB2C3',
-    width: 175,
+    width: '46%',
     height: 200,
     display: 'flex',
     alignItems: 'center',
@@ -204,6 +239,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingTop: 10,
     borderRadius: 15,
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   card4Text: {
     color: '#FD2254',

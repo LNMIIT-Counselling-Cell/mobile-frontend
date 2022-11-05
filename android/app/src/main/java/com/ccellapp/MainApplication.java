@@ -15,6 +15,8 @@ import java.util.List;
 
 import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 
+import cx.evermeet.versioninfo.RNVersionInfoPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -30,7 +32,9 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          // packages.add(new RNDateTimePickerPackage()); // autolinked at build time so not required to add here again.
+          // packages.add(new MainReactPackage());
+//          packages.add(new RNVersionInfoPackage());
+//           packages.add(new RNDateTimePickerPackage()); // autolinked at build time so not required to add here again.
           return packages;
         }
 

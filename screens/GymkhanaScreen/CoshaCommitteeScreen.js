@@ -1,6 +1,6 @@
 import { useTheme } from '@react-navigation/native';
 import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { PersonCard } from '../../components/PersonCard';
 
 export default function CoshaCommitteeScreen({ navigation }) {
@@ -14,42 +14,36 @@ export default function CoshaCommitteeScreen({ navigation }) {
         <Text style={[styles.aboutText, { color: colors.text }]}>A college is composed of many things: students, professors, academic blocks, hostels, mess etc. For the proper functioning of everything lying beneath the biosphere of Hostels, Mess and Canteen, Committee of Students for Hostel Affairs (COSHA) is the way to go. COSHA supervises all matters of common interest to the Hostels, whilst handling queries, complaints and suggestions regarding Mess and Canteen. Be it improving the mess menu, lodging a complaint regarding canteen shops, or raising a query related to the habitable conditions of hostels; Cosha is inculcated with the responsibility of being the voice of students and relaying their valid concerns to the higher authorities. A meeting of COSHA is chaired by the President, and consists of the Convenor of COSHA, Hall Representatives and Chief Warden/Wardens. In a meeting, COSHA puts forward the students’ candid views and tries to establish a common ground. COSHA believes in eliminating all complaints, relaying constructive suggestions and maintaining transparency at all fronts.</Text>
       </View>
 
-      {/* <PersonCard name={"Poojan Gadhiya"} position={"President"} />
-      <PersonCard name={"Tanay Khandelwal"} position={"Finance Convener"} />
-      <PersonCard name={"Om Abash Jha"} position={"Vice-President"} /> */}
+      <PersonCard name={"Shashwat Gupta"} position={"COSHA Head"} phone="+919068117145" email={"cosha@lnmiit.ac.in"} />
 
-      {/* <TouchableOpacity
-        style={styles.topCard}
-      >
-        <Text style={styles.topCardText}>Presidential Council</Text>
-      </TouchableOpacity>
+      <Text style={[styles.headerText, { color: colors.text }]}>Complaint Registration</Text>
 
-      <View style={styles.cardView}>
-        <TouchableOpacity
-          style={styles.card1}
-        >
-          <Image source={require('../../assets/images/cultural_council.png')} />
-          <Text style={styles.card1Text}>Cultural Council</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.card2}
-        >
-          <Image source={require('../../assets/images/scitech_council.png')} />
-          <Text style={styles.card2Text}>Science & Technology Council</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.card3}
-        >
-          <Image source={require('../../assets/images/sports_council.png')} />
-          <Text style={styles.card3Text}>Sports Council</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.card4}
-        >
-          <Image source={require('../../assets/images/mess_menu.png')} />
-          <Text style={styles.card4Text}>COSHA Committee</Text>
-        </TouchableOpacity>
-      </View> */}
+      <View style={styles.subsection}>
+          <TouchableOpacity
+            style={styles.quick1}
+            onPress={() => {
+              Linking.openURL(`https://forms.gle/nGaxWsbt4Yjso7CT8`)
+            }}
+          >
+            <Text style={styles.q1Text}>Canteen</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.quick2}
+            onPress={() => {
+              Linking.openURL(`https://forms.gle/395WGMWEj5th7SZY9`)
+            }}
+          >
+            <Text style={styles.q2Text}>Hostel</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.quick3}
+            onPress={() => {
+              Linking.openURL(`https://forms.gle/2WtCSAN3ab8pxo1u8`)
+            }}
+          >
+            <Text style={styles.q3Text}>Mess</Text>
+          </TouchableOpacity>
+        </View>
 
     </ScrollView>
   );
@@ -70,7 +64,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },
@@ -170,6 +163,83 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingTop: 10,
     marginTop: 10,
+    fontFamily: 'Poppins-Medium',
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    marginTop: 10,
+    textAlign: 'center',
+  },
+  subsection: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  quick1: {
+    backgroundColor: '#FFCBA6',
+    width: '28%',
+    height: 80,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 10,
+    borderRadius: 15,
+  },
+  quick2: {
+    backgroundColor: '#C3B0FF',
+    width: '28%',
+    height: 80,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 10,
+    borderRadius: 15,
+  },
+  quick3: {
+    backgroundColor: '#A6E6FF',
+    width: '28%',
+    height: 80,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 10,
+    borderRadius: 15,
+  },
+  quick4: {
+    backgroundColor: '#FEB2C3',
+    width: '22.5%',
+    height: 80,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 10,
+    borderRadius: 15,
+  },
+  q1Text: {
+    color: '#FF6A00',
+    textAlign: 'center',
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+  },
+  q2Text: {
+    color: '#551FFF',
+    textAlign: 'center',
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+  },
+  q3Text: {
+    color: '#00B7FE',
+    textAlign: 'center',
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+  },
+  q4Text: {
+    color: '#FD2254',
+    textAlign: 'center',
+    fontSize: 13,
     fontFamily: 'Poppins-Medium',
   },
 })

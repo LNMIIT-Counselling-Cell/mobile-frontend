@@ -8,26 +8,10 @@ export const AstronomyScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/scitech_clubs/astronomy/1.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/astronomy/2.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/astronomy/3.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/astronomy/4.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/astronomy/5.png')
-    },
-    {
-      imgsrc: require('../../assets/scitech_clubs/astronomy/6.png')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.cult.cappricio;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -82,7 +66,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

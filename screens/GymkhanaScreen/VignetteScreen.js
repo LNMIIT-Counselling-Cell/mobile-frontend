@@ -8,23 +8,10 @@ export const VignetteScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/cult_clubs/vignette/1.png')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/vignette/2.png')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/vignette/3.png')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/vignette/4.png')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/vignette/5.png')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.cult.vignette;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -77,7 +64,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

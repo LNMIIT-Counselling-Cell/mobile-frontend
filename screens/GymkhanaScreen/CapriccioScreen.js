@@ -8,26 +8,10 @@ export const CapriccioScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/cult_clubs/capriccio/1.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/capriccio/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/capriccio/3.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/capriccio/4.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/capriccio/5.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/capriccio/6.jpeg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.cult.cappricio;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -36,9 +20,9 @@ export const CapriccioScreen = () => {
         <Text style={[styles.aboutText, { color: colors.text }]}>Welcome to Capriccio, our small musical universe. Capriccio aims to take you on an emotional journey through beautiful melodies, harmonies, rhythms, and in short soulful pleasant music. Our club is made up of singers, instrumentalists, and producers who love music and have the potential to be great artists. It aims to provide you with comprehensive musical knowledge so that you can develop a deeper relationship with music. One thing is for sure, you will get to live the most memorable moments and will get to cherish the best memories of your college life. There are regular meetings among club members so that you can get to know each other and form bonds with others, interact with seniors, and learn about music because we believe Capriccio is a family, not a club.</Text>
       </View>
 
+      <PersonCard name={"Bhavya Srivastava"} position={"Coordinator"} phone="+918957063252" email={"20uec045@lnmiit.ac.in"} />
       <PersonCard name={"Manav Verma"} position={"Coordinator"} phone="+919911013871" email={"20ucc063@lnmiit.ac.in"} />
       <PersonCard name={"Satwik Jain"} position={"Coordinator"} phone="+917610027910" email={"20uec117@lnmiit.ac.in"} />
-      <PersonCard name={"Bhavya Srivastava"} position={"Coordinator"} phone="+918957063252" email={"20uec045@lnmiit.ac.in"} />
       <PersonCard name={"Swatantra Jain"} position={"Coordinator"} phone="+919760314184" email={"20uec136@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
@@ -82,7 +66,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

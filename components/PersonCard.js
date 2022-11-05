@@ -19,7 +19,7 @@ export const PersonCard = ({ name, position, phone, email }) => {
             Linking.openURL(`tel:${phone}`)
           }}
         >
-          <Image source={require('../assets/images/call.png')} />
+          <Image source={require('../assets/icons/call_white.png')} style={styles.ctaiconImg}/>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.ctaicon}
@@ -27,7 +27,7 @@ export const PersonCard = ({ name, position, phone, email }) => {
             Linking.openURL(`mailto:${email}`)
           }}
         >
-          <Image source={require('../assets/images/gmail.png')} />
+          <Image source={require('../assets/icons/mail_white.png')} style={styles.ctaiconImg}/>
         </TouchableOpacity>
       </View>
     </View>
@@ -42,10 +42,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#E8E7E7',
     paddingHorizontal: 10,
+    paddingRight: 5,
     paddingLeft: 15,
     paddingVertical: 3,
-    borderRadius: 8,
+    borderRadius: 12,
     marginBottom: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
+    marginHorizontal: 4,
   },
   name: {
     fontWeight: 'bold',
@@ -60,5 +70,17 @@ const styles = StyleSheet.create({
   },
   ctaicon: {
     marginRight: 10,
+    backgroundColor: 'black',
+    borderRadius: 100,
+    width: 32,
+    height: 32,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#151211'
+  },
+  ctaiconImg: {
+    width: 16,
+    height: 16,
   }
 })

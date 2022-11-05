@@ -19,7 +19,7 @@ export const ImportantContactsScreen = () => {
     },
     {
       name: "Rajeev Saxena",
-      post: "Assistant Registrar - IT Department",
+      post: "Assistant Registrar - Academic",
       phno: '+919829575700',
       emailId: "aracademic@lnmiit.ac.in"
     },

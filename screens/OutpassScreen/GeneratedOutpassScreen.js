@@ -43,8 +43,9 @@ export default function GeneratedOutpassScreen({ navigation, route }) {
         <View style={[styles.form, { backgroundColor: colors.cardBG }]}>
           <Image style={styles.image} source={require("../../assets/images/generated_outpass.png")} />
           <Text style={[styles.outpassgen, { color: colors.text }]}>Outpass Generated</Text>
-          <Text style={[styles.uniqueText, { color: colors.text }]}>Your Unique Token Number</Text>
-          <Text style={[styles.tokenText, { color: colors.text }]}>{objData.token}</Text>
+          {/* <Text style={[styles.uniqueText, { color: colors.text }]}>Your Unique Token Number</Text>
+          <Text style={[styles.tokenText, { color: colors.text }]}>{objData.token}</Text> */}
+          <Text style={[styles.tokenText, { color: colors.text }]}>Approval Pending</Text>
 
           <View style={styles.box}>
             <View style={styles.leftBox}>
@@ -70,12 +71,12 @@ export default function GeneratedOutpassScreen({ navigation, route }) {
           </View>
         </View>
 
-        <View style={styles.rules}>
+        {/* <View style={styles.rules}>
           <Text style={{ color: colors.text }}>Rules & Regulations</Text>
           <Text style={{ color: colors.text }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
           <Text style={{ color: colors.text }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
           <Text style={{ color: colors.text }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   )

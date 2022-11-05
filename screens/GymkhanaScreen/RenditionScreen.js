@@ -8,23 +8,10 @@ export const RenditionScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/cult_clubs/rendition/1.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/rendition/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/rendition/3.png')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/rendition/4.png')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/rendition/5.jpg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.cult.rendition;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -34,7 +21,7 @@ export const RenditionScreen = () => {
         </Text>
       </View>
 
-      <PersonCard name={"Anukriti Srivastava"} position={"Coordinator"} phone="+917014575185" email={"20uec027@lnmiit.ac.in"} />
+      <PersonCard name={"Anukriti Shrivastava"} position={"Coordinator"} phone="+917014575185" email={"20uec027@lnmiit.ac.in"} />
       <PersonCard name={"Pratyush Srivastava"} position={"Coordinator"} phone="+919654590406" email={"20ucc079@lnmiit.ac.in"} />
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
@@ -78,7 +65,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

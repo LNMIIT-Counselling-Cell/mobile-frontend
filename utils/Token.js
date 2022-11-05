@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const getToken = async () => {
   const check = await tokenExpired()
-  if (tokenExpired()) {
+  if (check) {
     const refreshtoken = await AsyncStorage.getItem("refreshToken");
     const accessToken = await AsyncStorage.getItem("accessToken");
     console.log("line 6 refresh token: " + refreshtoken);
@@ -40,7 +40,7 @@ const tokenExpired = async () => {
     console.log("true")
     return true; // token expired
   }
-  
+
   console.log("false")
   return false; // valid token
 };
@@ -48,7 +48,7 @@ const tokenExpired = async () => {
 const getValidTokenFromServer = async (refreshToken) => {
   // get new token from server with refresh token
   try {
-    const request = await fetch("http://192.168.167.252:5000/getValidToken", {
+    const request = await fetch("https://ccelltestapi.herokuapp.com/getValidToken", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

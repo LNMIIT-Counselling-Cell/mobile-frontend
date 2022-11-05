@@ -8,23 +8,10 @@ export const LCScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/cult_clubs/literary_committee/1.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/literary_committee/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/literary_committee/3.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/literary_committee/4.png')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/literary_committee/5.jpeg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.cult.literary_committee;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -78,7 +65,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

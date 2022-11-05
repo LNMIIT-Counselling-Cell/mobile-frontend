@@ -8,23 +8,10 @@ export const ImaginationScreen = () => {
 
   const { colors } = useTheme()
 
-  const imgData = [
-    {
-      imgsrc: require('../../assets/cult_clubs/imagination/1.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/imagination/2.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/imagination/3.jpg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/imagination/4.jpeg')
-    },
-    {
-      imgsrc: require('../../assets/cult_clubs/imagination/5.jpg')
-    }
-  ]
+  const imgData = require("../../assets/json/global.json").organization_img.cult.imagination;
+  imgData.forEach(img => {
+    img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
+  });
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -79,7 +66,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   aboutText: {
-    textAlign: 'justify',
     fontSize: 12,
     marginTop: 10,
   },

@@ -20,15 +20,17 @@ export default function PreviousOutpassScreen({ navigation, route }) {
     return dateIST.toISOString().replace(/T.*/, '').split('-').reverse().join('-');
   }
 
-  const Item = ({ token, date }) => (
+  const Item = ({ token, date, status }) => (
     <View style={[styles.item, { backgroundColor: colors.cardBG }]}>
-      <Text style={{ color: colors.text }}>{getDate(date)}</Text>
-      <Text style={{ color: colors.text }}>{token}</Text>
+      <View style={styles.itemRow}>
+        <Text style={{ color: colors.text }}>{getDate(date)}</Text>
+        <Text style={{ color: colors.text }}>{status === 'Approved' ? token : 'Approval Pending'}</Text>
+      </View>
     </View>
   );
 
   const renderItem = ({ item }) => (
-    <Item token={item.token} date={item.created_at} />
+    <Item token={item.token} date={item.created_at} status={item.status} />
   );
 
   return (
@@ -57,8 +59,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingVertical: 20,
     display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  itemRow: {
+    display: 'flex',
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
   }
 });

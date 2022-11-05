@@ -6,13 +6,18 @@ import PreviousOutpassScreen from '../screens/OutpassScreen/PreviousOutpassScree
 import Header from '../components/Header';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { DevelopersScreen } from '../screens/DevelopersScreen';
+import { OpenSourceLibScreen } from '../screens/OpenSourceLibScreen';
 
 export default function OutpassTab({ navigation }) {
   const OutpassStack = createStackNavigator();
   return (
-    <OutpassStack.Navigator>
+    <OutpassStack.Navigator
+      screenOptions={{
+        presentation: 'modal',
+      }}
+    >
       <OutpassStack.Screen name="Outpass" component={OutpassScreen} options={{
-        headerTitle: () => <Header title={"Outpass"}/>
+        headerTitle: () => <Header title={"Outpass"} />
       }} />
       <OutpassStack.Screen name="Generated Outpass" component={GeneratedOutpassScreen} options={{
         headerTitleAlign: 'center',
@@ -24,6 +29,9 @@ export default function OutpassTab({ navigation }) {
         headerTitleAlign: 'center',
       }} />
       <OutpassStack.Screen name="Meet our Developers" component={DevelopersScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <OutpassStack.Screen name="Open Source Libraries" component={OpenSourceLibScreen} options={{
         headerTitleAlign: 'center',
       }} />
     </OutpassStack.Navigator>

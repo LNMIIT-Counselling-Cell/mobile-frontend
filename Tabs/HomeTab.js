@@ -11,11 +11,16 @@ import { MessMenuScreen } from '../screens/HomeScreen/MessMenuScreen';
 import { BazingaMenuScreen } from '../screens/HomeScreen/BazingaMenuScreen';
 import { TFBMenuScreen } from '../screens/HomeScreen/TFBMenuScreen';
 import { DevelopersScreen } from '../screens/DevelopersScreen';
+import { OpenSourceLibScreen } from '../screens/OpenSourceLibScreen';
 
 export default function HomeTab({ navigation }) {
   const HomeStack = createStackNavigator();
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator
+      screenOptions={{
+        presentation: 'modal',
+      }}
+    >
       <HomeStack.Screen name="Feed" component={HomeScreen} options={{
         headerTitle: () => <Header title={"Home"} />
       }} />
@@ -44,6 +49,9 @@ export default function HomeTab({ navigation }) {
         headerTitleAlign: 'center',
       }} />
       <HomeStack.Screen name="The Food Barn Menu" component={TFBMenuScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <HomeStack.Screen name="Open Source Libraries" component={OpenSourceLibScreen} options={{
         headerTitleAlign: 'center',
       }} />
     </HomeStack.Navigator>

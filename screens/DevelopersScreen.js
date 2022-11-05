@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useTheme } from '@react-navigation/native';
 
 export const DevelopersScreen = () => {
@@ -7,7 +7,7 @@ export const DevelopersScreen = () => {
   const { colors } = useTheme()
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View>
         <Text style={[styles.headerText, { color: colors.text }]}>Core Developers</Text>
         <View style={styles.firstRow}>
@@ -32,7 +32,7 @@ export const DevelopersScreen = () => {
             </View>
           </View>
           <View style={[styles.card, { backgroundColor: '#C3B0FF', borderRadius: 8 }]}>
-            <Image source={require('../assets/images/neev_nagvani.png')} style={styles.cardImg} />
+            <Image source={require('../assets/images/ishan_sharma.jpeg')} style={styles.cardImg} />
             <Text style={[styles.nameText, { color: '#551FFF' }]}>Ishan Sharma</Text>
             <View style={styles.cardCTA}>
               <TouchableOpacity
@@ -54,8 +54,28 @@ export const DevelopersScreen = () => {
         </View>
 
         <View style={styles.secondRow}>
+          <View style={[styles.card, { backgroundColor: '#A6E6FF', borderRadius: 8 }]}>
+            <Image source={require('../assets/images/tushar_jain.jpg')} style={styles.cardImg} />
+            <Text style={[styles.nameText, { color: '#00B7FE' }]}>Tushar Jain</Text>
+            <View style={styles.cardCTA}>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL(`tel: +916350290184`)
+                }}
+              >
+                <Image source={require('../assets/images/call.png')} style={styles.ctaicon} />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL(`mailto: 20ucs211@lnmiit.ac.in`)
+                }}
+              >
+                <Image source={require('../assets/images/gmail.png')} style={styles.ctaicon} />
+              </TouchableOpacity>
+            </View>
+          </View>
           <View style={[styles.card, { backgroundColor: '#FEB2C3', borderRadius: 8 }]}>
-            <Image source={require('../assets/images/neev_nagvani.png')} style={styles.cardImg} />
+            <Image source={require('../assets/images/sourabh_joshi.jpg')} style={styles.cardImg} />
             <Text style={[styles.nameText, { color: '#FD2254' }]}>Sourabh Joshi</Text>
             <View style={styles.cardCTA}>
               <TouchableOpacity
@@ -79,7 +99,7 @@ export const DevelopersScreen = () => {
         <View style={styles.firstRow}>
 
           <View style={styles.card}>
-            <Image source={require('../assets/images/neev_nagvani.png')} style={styles.cardImg} />
+            <Image source={require('../assets/images/neev_nagvani.jpeg')} style={styles.cardImg} />
             <Text style={[styles.nameText, { color: '#FF6A00' }]}>Neev Nagvani</Text>
             <View style={styles.cardCTA}>
               <TouchableOpacity
@@ -99,7 +119,7 @@ export const DevelopersScreen = () => {
             </View>
           </View>
           <View style={[styles.card, { backgroundColor: '#C3B0FF', borderRadius: 8 }]}>
-            <Image source={require('../assets/images/vansh_mahajan.png')} style={styles.cardImg} />
+            <Image source={require('../assets/images/vansh_mahajan.jpeg')} style={styles.cardImg} />
             <Text style={[styles.nameText, { color: '#551FFF' }]}>Vansh Mahajan</Text>
             <View style={styles.cardCTA}>
               <TouchableOpacity
@@ -120,7 +140,7 @@ export const DevelopersScreen = () => {
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
@@ -128,6 +148,8 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     marginHorizontal: 20,
+    height: '100%',
+    paddingBottom: 80,
   },
   headerText: {
     fontSize: 20,
@@ -152,8 +174,8 @@ const styles = StyleSheet.create({
     borderRadius: 100
   },
   nameText: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 16,
+    fontWeight: '400',
   },
   cardCTA: {
     display: 'flex',
@@ -163,6 +185,8 @@ const styles = StyleSheet.create({
   },
   ctaicon: {
     marginRight: 15,
+    width: 24,
+    height: 24,
   },
   firstRow: {
     display: 'flex',
@@ -170,10 +194,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     marginTop: 15,
+    marginBottom: 15,
   },
   secondRow: {
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     marginTop: 15,
   }
