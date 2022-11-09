@@ -23,16 +23,16 @@ const Images = {
             "quizzinga":require('../assets/scitech/quizzinga.png')
         },
         "sports":{
-            "badminton":require('../assets/scitech/astro.png'),
-            "basketball":require('../assets/scitech/cipher.png'),
-            "chess":require('../assets/scitech/cybros.png'),
-            "cricket":require('../assets/scitech/debsoc.png'),
-            "football":require('../assets/scitech/e_cell.png'),
-            "kabaddi":require('../assets/scitech/phoenix.png'),
-            "table_tennis":require('../assets/scitech/quizzinga.png'),
-            "volleyball":require('../assets/scitech/quizzinga.png'),
-            "tennis":require('../assets/scitech/quizzinga.png'),
-            "squash":require('../assets/scitech/quizzinga.png')
+            "badminton":require('../assets/sports/badminton.png'),
+            "basketball":require('../assets/sports/basketball.png'),
+            "chess":require('../assets/sports/chess.png'),
+            "cricket":require('../assets/sports/cricket.png'),
+            "football":require('../assets/sports/football.png'),
+            "kabaddi":require('../assets/sports/kabaddi.png'),
+            "table_tennis":require('../assets/sports/table_tennis.png'),
+            "volleyball":require('../assets/sports/volleyball.png'),
+            "tennis":require('../assets/sports/tennis.png'),
+            "squash":require('../assets/sports/squash.png')
         },
         "fests":{
             "vivacity":require('../assets/cult/vivacity.png'),

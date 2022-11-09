@@ -8,17 +8,7 @@ import ScitechCouncilScreen from '../screens/GymkhanaScreen/ScitechCouncilScreen
 import SportsCouncilScreen from '../screens/GymkhanaScreen/SportsCouncilScreen';
 import CoshaCommitteeScreen from '../screens/GymkhanaScreen/CoshaCommitteeScreen';
 import { DevelopersScreen } from '../screens/DevelopersScreen';
-import { BadmintonScreen } from '../screens/GymkhanaScreen/BadmintonScreen';
-import { BasketballScreen } from '../screens/GymkhanaScreen/BasketballScreen';
-import { ChessScreen } from '../screens/GymkhanaScreen/ChessScreen';
-import { CricketScreen } from '../screens/GymkhanaScreen/CricketScreen';
-import { FootballScreen } from '../screens/GymkhanaScreen/FootballScreen';
-import { KabaddiScreen } from '../screens/GymkhanaScreen/KabaddiScreen';
-import { TableTennisScreen } from '../screens/GymkhanaScreen/TableTennisScreen';
-import { VolleyballScreen } from '../screens/GymkhanaScreen/VolleyballScreen';
 import { OpenSourceLibScreen } from '../screens/OpenSourceLibScreen';
-import { TennisScreen } from '../screens/GymkhanaScreen/TennisScreen';
-import { SquashScreen } from '../screens/GymkhanaScreen/SquashScreen';
 import { ClubFestScreen } from '../screens/GymkhanaScreen/ClubFestScreen';
 
 export default function GymkhanaTab() {
@@ -53,42 +43,6 @@ export default function GymkhanaTab() {
       <GymkhanaStack.Screen name="COSHA Committee" component={CoshaCommitteeScreen} options={{
         headerTitleAlign: 'center',
       }} />
-      <GymkhanaStack.Screen name="Badminton" component={BadmintonScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Basketball" component={BasketballScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Chess" component={ChessScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Cricket" component={CricketScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Football" component={FootballScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Kabaddi" component={KabaddiScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Table Tennis" component={TableTennisScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Tennis" component={TennisScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Squash" component={SquashScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Volleyball" component={VolleyballScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      {/* <GymkhanaStack.Screen name="Gymnasium" component={BadmintonScreen} options={{
-        headerTitleAlign: 'center',
-      }} /> */}
-      {/* <GymkhanaStack.Screen name="Badminton" component={BadmintonScreen} options={{
-        headerTitleAlign: 'center',
-      }} /> */}
       <GymkhanaStack.Screen name="Open Source Libraries" component={OpenSourceLibScreen} options={{
         headerTitleAlign: 'center',
       }} />
