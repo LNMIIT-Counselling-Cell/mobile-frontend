@@ -1,11 +1,13 @@
 import { useTheme } from '@react-navigation/native';
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
 
-export const TimeTableScreen = () => {
+export const TimeTableScreen = ({navigation}) => {
 
   const { colors } = useTheme()
+  const [batchYear, setBatchYear] = useState(1);
 
   const staticData = [
     {
@@ -43,47 +45,62 @@ export const TimeTableScreen = () => {
   ];
 
   return (
-    // <View style={styles.menuScreen}>
-    //   <TouchableOpacity
-    //     style={styles.quick0}
-    //   >
-    //     <Text style={styles.q0Text}>Bus Time Table</Text>
-    //   </TouchableOpacity>
+    <View style={styles.menuScreen}>
+      <TouchableOpacity
+        style={styles.quick0}
+        onPress={()=>{
+          navigation.navigate("ExtraPDF", {headerName:"Bus Time Table", pdfName:"bus_time_table"})
+        }}
+      >
+        <Text style={styles.q0Text}>Bus Time Table</Text>
+      </TouchableOpacity>
 
-    //   <Text style={[styles.headerText, { color: colors.text }]}>Select Year</Text>
+      <Text style={[styles.headerText, { color: colors.text }]}>Select Year</Text>
 
-    //   <BouncyCheckboxGroup
-    //     data={staticData}
-    //     style={styles.checkBoxes}
-    //     onChange={(selectedItem) => {
-    //       console.log("SelectedItem: ", JSON.stringify(selectedItem));
-    //     }}
-    //   />
+      <BouncyCheckboxGroup
+        data={staticData}
+        style={styles.checkBoxes}
+        onChange={(selectedItem) => {
+          setBatchYear(selectedItem.id+1);
+        }}
+      />
 
-    //   <TouchableOpacity
-    //     style={styles.quick1}
-    //   >
-    //     <Text style={styles.q1Text}>Computer Science and Engineering</Text>
-    //   </TouchableOpacity>
-    //   <TouchableOpacity
-    //     style={styles.quick2}
-    //   >
-    //     <Text style={styles.q2Text}>Communication and Computer Engineering</Text>
-    //   </TouchableOpacity>
-    //   <TouchableOpacity
-    //     style={styles.quick3}
-    //   >
-    //     <Text style={styles.q3Text}>Electronics and Communication Engineering</Text>
-    //   </TouchableOpacity>
-    //   <TouchableOpacity
-    //     style={styles.quick4}
-    //   >
-    //     <Text style={styles.q4Text}>Mechanical Engineering</Text>
-    //   </TouchableOpacity>
-    // </View>
-    <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-      <Text>Coming soon</Text>
+      <TouchableOpacity
+        style={styles.quick1}
+        onPress={()=>{
+          navigation.navigate("ExtraPDF", {headerName:"CSE Year-"+batchYear, pdfName:"CSE_"+batchYear})
+        }}
+      >
+        <Text style={styles.q1Text}>Computer Science and Engineering</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.quick2}
+        onPress={()=>{
+          navigation.navigate("ExtraPDF", {headerName:"CCE Year-"+batchYear, pdfName:"CCE_"+batchYear})
+        }}
+      >
+        <Text style={styles.q2Text}>Communication and Computer Engineering</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.quick3}
+        onPress={()=>{
+          navigation.navigate("ExtraPDF", {headerName:"ECE Year-"+batchYear, pdfName:"ECE_"+batchYear})
+        }}
+      >
+        <Text style={styles.q3Text}>Electronics and Communication Engineering</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.quick4}
+        onPress={()=>{
+          navigation.navigate("ExtraPDF", {headerName:"ME Year-"+batchYear, pdfName:"ME_"+batchYear})
+        }}
+      >
+        <Text style={styles.q4Text}>Mechanical Engineering</Text>
+      </TouchableOpacity>
     </View>
+    // <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+    //   <Text>Coming soon</Text>
+    // </View>
   )
 }
 

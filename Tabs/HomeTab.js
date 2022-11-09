@@ -6,12 +6,9 @@ import Header from '../components/Header';
 import { MenuScreen } from '../screens/HomeScreen/MenuScreen';
 import { TimeTableScreen } from '../screens/HomeScreen/TimeTableScreen';
 import { TodayEventScreen } from '../screens/HomeScreen/TodayEventScreen';
-import { CounsellingProcessScreen } from '../screens/HomeScreen/CounsellingProcessScreen';
-import { MessMenuScreen } from '../screens/HomeScreen/MessMenuScreen';
-import { BazingaMenuScreen } from '../screens/HomeScreen/BazingaMenuScreen';
-import { TFBMenuScreen } from '../screens/HomeScreen/TFBMenuScreen';
 import { DevelopersScreen } from '../screens/DevelopersScreen';
 import { OpenSourceLibScreen } from '../screens/OpenSourceLibScreen';
+import { ExtraPDFScreen } from '../screens/HomeScreen/ExtraPDFScreen';
 
 export default function HomeTab({ navigation }) {
   const HomeStack = createStackNavigator();
@@ -36,19 +33,10 @@ export default function HomeTab({ navigation }) {
       <HomeStack.Screen name="Time Tables" component={TimeTableScreen} options={{
         headerTitleAlign: 'center',
       }} />
+      <HomeStack.Screen name="ExtraPDF" component={ExtraPDFScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
       <HomeStack.Screen name="Today's Events" component={TodayEventScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <HomeStack.Screen name="Counselling Process" component={CounsellingProcessScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <HomeStack.Screen name="Mess Menu" component={MessMenuScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <HomeStack.Screen name="Bazinga Menu" component={BazingaMenuScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <HomeStack.Screen name="The Food Barn Menu" component={TFBMenuScreen} options={{
         headerTitleAlign: 'center',
       }} />
       <HomeStack.Screen name="Open Source Libraries" component={OpenSourceLibScreen} options={{

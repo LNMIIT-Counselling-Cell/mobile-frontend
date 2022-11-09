@@ -3,11 +3,12 @@ import { StyleSheet, Dimensions, View } from 'react-native';
 import Pdf from 'react-native-pdf';
 import { useTheme } from '@react-navigation/native';
 
-export const CounsellingProcessScreen = () => {
+export const ExtraPDFScreen = ({route, navigation}) => {
 
   const { colors } = useTheme()
+  navigation.setOptions({ title: route.params?.headerName })
 
-  const source = { uri: 'bundle-assets://pdf/CounsellingProcess.pdf' };
+  const source = { uri: 'bundle-assets://pdf/'+route.params?.pdfName+'.pdf' };
 
   return (
     <View style={styles.container}>

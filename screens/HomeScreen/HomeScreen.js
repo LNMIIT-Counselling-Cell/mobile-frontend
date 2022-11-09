@@ -161,7 +161,7 @@ export default function HomeScreen({ navigation }) {
         <TouchableOpacity
           style={styles.quick3}
           onPress={() => {
-            navigation.navigate("Counselling Process")
+            navigation.navigate("ExtraPDF", {headerName:"Councelling Process", pdfName:"CounsellingProcess"})
           }}
         >
           <Image source={require('../../assets/images/counselling.png')} />

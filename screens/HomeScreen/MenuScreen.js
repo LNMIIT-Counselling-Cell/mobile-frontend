@@ -7,7 +7,7 @@ export const MenuScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.quick1}
         onPress={() => {
-          navigation.navigate('Mess Menu')
+          navigation.navigate("ExtraPDF", {headerName:"Mess Menu", pdfName:"mess_menu"})
         }}
       >
         <Image source={require('../../assets/images/mess_menu.png')} />
@@ -16,7 +16,7 @@ export const MenuScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.quick2}
         onPress={() => {
-          navigation.navigate('Bazinga Menu')
+          navigation.navigate("ExtraPDF", {headerName:"Bazinga Menu", pdfName:"bazinga_menu"})
         }}
       >
         <Image source={require('../../assets/images/bazzinga.png')} />
@@ -25,7 +25,7 @@ export const MenuScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.quick3}
         onPress={() => {
-          navigation.navigate('The Food Barn Menu')
+          navigation.navigate("ExtraPDF", {headerName:"The Food Barn Menu", pdfName:"tfb_menu"})
         }}
       >
         <Image source={require('../../assets/images/tfb.png')} />
