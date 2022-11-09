@@ -21,6 +21,7 @@ import { ImportantLinksScreen } from '../screens/CollegeScreen/ImportantLinksScr
 import { CampusAreaMapScreen } from '../screens/CollegeScreen/CampusAreaMap';
 import { AcademicAreaMapScreen } from '../screens/CollegeScreen/AcademicAreaMap';
 import { OpenSourceLibScreen } from '../screens/OpenSourceLibScreen';
+import { ExtraPDFScreen } from '../screens/GlobalScreen/ExtraPDFScreen';
 
 export default function CollegeTab() {
   const CollegeStack = createStackNavigator();
@@ -40,6 +41,9 @@ export default function CollegeTab() {
         headerTitleAlign: 'center',
       }} />
       <CollegeStack.Screen name="Holiday Calendar" component={HolidayCalenderScreen} options={{
+        headerTitleAlign: 'center',
+      }} />
+      <CollegeStack.Screen name="ExtraPDF" component={ExtraPDFScreen} options={{
         headerTitleAlign: 'center',
       }} />
       <CollegeStack.Screen name="Mess Menu" component={MessMenuScreen} options={{

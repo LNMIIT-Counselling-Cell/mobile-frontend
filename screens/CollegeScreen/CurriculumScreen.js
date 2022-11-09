@@ -7,7 +7,7 @@ export const CurriculumScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.quick1}
         onPress={() => {
-          navigation.navigate("CSE Curriculum")
+          navigation.navigate("ExtraPDF", {headerName:"CSE Curriculum", pdfName:"CSE"})
         }}
       >
         <Text style={styles.q1Text}>Computer Science and Engineering</Text>
@@ -15,7 +15,7 @@ export const CurriculumScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.quick2}
         onPress={() => {
-          navigation.navigate("CCE Curriculum")
+          navigation.navigate("ExtraPDF", {headerName:"CCE Curriculum", pdfName:"CCE"})
         }}
       >
         <Text style={styles.q2Text}>Communication and Computer Engineering</Text>
@@ -23,7 +23,7 @@ export const CurriculumScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.quick3}
         onPress={() => {
-          navigation.navigate("ECE Curriculum")
+          navigation.navigate("ExtraPDF", {headerName:"ECE Curriculum", pdfName:"ECE"})
         }}
       >
         <Text style={styles.q3Text}>Electronics and Communication Engineering</Text>
@@ -31,7 +31,7 @@ export const CurriculumScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.quick4}
         onPress={() => {
-          navigation.navigate("ME Curriculum")
+          navigation.navigate("ExtraPDF", {headerName:"ME Curriculum", pdfName:"ME"})
         }}
       >
         <Text style={styles.q4Text}>Mechanical Engineering</Text>

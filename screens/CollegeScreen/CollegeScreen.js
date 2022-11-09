@@ -23,7 +23,7 @@ export default function CollegeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.quick1}
             onPress={() => {
-              navigation.navigate('Holiday Calendar')
+              navigation.navigate("ExtraPDF", {headerName:"Holiday Calendar", pdfName:"holiday_calendar"})
             }}
           >
             <Text style={styles.q1Text}>Holiday Calendar</Text>
@@ -31,7 +31,7 @@ export default function CollegeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.quick2}
             onPress={() => {
-              navigation.navigate('Bus Time Table')
+              navigation.navigate("ExtraPDF", {headerName:"Bus Time Table", pdfName:"bus_time_table"})
             }}
           >
             <Text style={styles.q2Text}>Bus Time Table</Text>
@@ -39,7 +39,7 @@ export default function CollegeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.quick3}
             onPress={() => {
-              navigation.navigate('Mess Menu')
+              navigation.navigate("ExtraPDF", {headerName:"Mess Menu", pdfName:"mess_menu"})
             }}
           >
             <Text style={styles.q3Text}>Mess Menu</Text>
@@ -47,7 +47,7 @@ export default function CollegeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.quick4}
             onPress={() => {
-              navigation.navigate('Standard Operating Procedures')
+              navigation.navigate("ExtraPDF", {headerName:"Standard Operating Proceedures", pdfName:"sop"})
             }}
           >
             <Text style={styles.q4Text}>SOPs</Text>
@@ -97,7 +97,7 @@ export default function CollegeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.quick1}
             onPress={() => {
-              navigation.navigate("Campus Area Map")
+              navigation.navigate("ExtraPDF", {headerName:"Campus Area Map", pdfName:"CAmap"})
             }}
           >
             <Text style={styles.q1Text}>Campus Map</Text>
@@ -105,7 +105,7 @@ export default function CollegeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.quick2}
             onPress={() => {
-              navigation.navigate("Academic Area Map")
+              navigation.navigate("ExtraPDF", {headerName:"Academic Area Map", pdfName:"AAmap"})
             }}
           >
             <Text style={styles.q2Text}>Academic Area Map</Text>
