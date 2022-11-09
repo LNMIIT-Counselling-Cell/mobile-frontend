@@ -3,25 +3,29 @@ import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { PersonCard } from '../../components/PersonCard';
 import CarouselCards from '../../components/CarouselCards';
+import Images from '../../components/Images';
 
-export const EcellScreen = () => {
-
-  const { colors } = useTheme()
-
-  const imgData = require("../../assets/json/global.json").organization_img.scitech.ecell;
+export const ClubFestScreen = ({ route, navigation }) => {
+  const data = require("../../assets/json/global.json").organization_img[route.params?.clubtype][route.params?.clubname]
+  navigation.setOptions({ title: data.name })
+  const imgData = data.images;
   imgData.forEach(img => {
     img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]
   });
 
+  const { colors } = useTheme()
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.headercontainer}>
-        <Image source={require('../../assets/scitech/e_cell.png')} style={styles.image} />
-        <Text style={[styles.aboutText, { color: colors.text }]}>Future builders that are interested in learning about entrepreneurship, cryptocurrency, the stock market, web3, and several other fields come to this location for all of their learnings. They seek guidance in 5 major domains being event planning, marketing, management, sponsorship, content creation and designing which add up to create a well verse soft skill development and a variety of other subjects, all of which contribute to a child's holistic development and help him grow into a multi-talented adult.The exclusive club at our campus that collaborates with several Tech colleges across India is E-Cell, with its collaboration with Entrepreneurship Development Cell, IIT Roorkee, serving as a prominent example. We organize and participate in various funding events and interact closely with startup founders and make our members understand the crucial stages of start-up ecosystem.</Text>
+        <Image source={Images.gymkhana[route.params?.clubtype][route.params?.clubname]} style={styles.image} />
+        <Text style={[styles.aboutText, { color: colors.text }]}>{data.description}</Text>
       </View>
-
-      <PersonCard name={"Sarthak Kapoor"} position={"Coordinator"} phone="+919838333480" email={"20uec115@lnmiit.ac.in"} />
-      <PersonCard name={"Vaishvi Bansal"} position={"Coordinator"} phone="+918000768730" email={"20uec143@lnmiit.ac.in"} />
+        {data.people.map((items)=>{
+            return(
+                <PersonCard name={items[0]} position={items[1]} phone={items[2]} email={items[3]} key={data.name+""+items[0]}/>
+            )
+        })}
 
       <Text style={[styles.headerText, { color: colors.text }]}>Gallery</Text>
 
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   },
   image: {
-    width: 150,
+    width: 80,
     height: 80,
   },
   aboutText: {

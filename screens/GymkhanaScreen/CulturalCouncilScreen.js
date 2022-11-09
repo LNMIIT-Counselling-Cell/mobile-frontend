@@ -37,7 +37,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('Aaveg, The Nukkad Mandali')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"aaveg"})
           }}
         >
           <Image source={require('../../assets/cult/aaveg.png')} />
@@ -46,7 +46,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Capriccio, The Music Club')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"capriccio"})
           }}
         >
           <Image source={require('../../assets/cult/capriccio.png')} />
@@ -55,7 +55,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Eminence, The Fashion Club')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"eminence"})
           }}
         >
           <Image source={require('../../assets/cult/eminence.png')} />
@@ -64,7 +64,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card4}
           onPress={() => {
-            navigation.navigate('Fundoo Club')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"fundoo"})
           }}
         >
           <Image source={require('../../assets/cult/fundoo.png')} style={styles.orgIcon} />
@@ -73,7 +73,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('Imagination')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"imagination"})
           }}
         >
           <Image source={require('../../assets/cult/imagination.png')} />
@@ -82,7 +82,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Insignia, The Dance Club')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"insignia"})
           }}
         >
           <Image source={require('../../assets/cult/insignia.png')} />
@@ -91,7 +91,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Literary Committee')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"literary_committee"})
           }}
         >
           <Image source={require('../../assets/cult/LC.png')} />
@@ -100,7 +100,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card4}
           onPress={() => {
-            navigation.navigate('Media Cell')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"media_cell"})
           }}
         >
           <Image source={require('../../assets/cult/media_cell.png')} />
@@ -109,7 +109,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('Rendition, The Dramatics Club')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"rendition"})
           }}
         >
           <Image source={require('../../assets/cult/rendition.png')} />
@@ -118,7 +118,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Sankalp Club')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"sankalp"})
           }}
         >
           <Image source={require('../../assets/cult/sankalp.png')} />
@@ -127,7 +127,7 @@ export default function CulturalCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Vignette, The Art Club')
+            navigation.navigate('Club Fest', {clubtype:"cult", clubname:"vignette"})
           }}
         >
           <Image source={require('../../assets/cult/vignette.png')} />

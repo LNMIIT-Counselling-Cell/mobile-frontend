@@ -65,7 +65,7 @@ export default function GymkhanaScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('Vivacity')
+            navigation.navigate('Club Fest', {clubtype:"fests", clubname:"vivacity"})
           }}
         >
           <Image source={require('../../assets/cult/vivacity.png')} />
@@ -74,7 +74,7 @@ export default function GymkhanaScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Plinth')
+            navigation.navigate('Club Fest', {clubtype:"fests", clubname:"plinth"})
           }}
         >
           <Image source={require('../../assets/scitech/plinth.png')} style={styles.orgIcon} />
@@ -84,7 +84,7 @@ export default function GymkhanaScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Desportivos')
+            navigation.navigate('Club Fest', {clubtype:"fests", clubname:"desportivos"})
           }}
         >
           <Image source={require('../../assets/sports/despo.png')} />

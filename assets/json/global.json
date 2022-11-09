@@ -2,7 +2,12 @@
   "organization_icon":"",
   "organization_img":{
     "cult":{
-      "aaveg":[
+      "aaveg":{
+        "name":"Aaveg, The Nukkad Mandali",
+        "description":"Nukkad Natak or Street theater is a form of theatrical performance in outdoor public spaces without a specific paying audience. It is one of the oldest forms of theater used to spread awareness on societal issues. Our club AAVEG - Nukkad Mandli brings you the real side of what nukkad natak exactly is; everything from loud monologues, moving slogans, powerful expressions and captivating music. It is a beautiful way of connecting with people and enlightening them about the issues that we are facing as a society. Our club has raised awareness on topics like body shaming, male/female sexual abuse, rights of LGBTQ community, menstruation, reservation and many more among common people. Over the years, our club has contributed to the society by performing at various locations like World Trade Park, Jaipur (WTP). We have also participated and even won in inter-college competitions of IIT Roorkee, Manipal University Jaipur and many more. Not just that, Aaveg is not only a club, it's a family! Hours and hours of relentless practice, tons of laughter, excitement and a little bit of nervousness have given us the bond that we will cherish for life.",
+        "people":[["Chintan S Makhijani","Coordinator","+918866941609","19ucc138@lnmiit.ac.in"],["Mayank Vyas","Coordinator","+919111607272","19uec065@lnmiit.ac.in"],["Muskan Maheshwari","Coordinator","+917023125605","19ucc146@lnmiit.ac.in"],["Pratyush Chahar","Coordinator","+917078827666","19ucs043@lnmiit.ac.in"]],
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1wIwHgo54696BiNg3Tj1peNaAnrm7V4Uo/view?usp=sharing"
         },
@@ -24,8 +29,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1X88_gQPU1kIQPTlWEjrxbSpwmWHAvMDj/view?usp=share_link"
         }
-      ],
-      "cappricio":[
+      ]},
+      "capriccio":{
+        "name":"Capriccio, The Music Club",
+        "description":"Welcome to Capriccio, our small musical universe. Capriccio aims to take you on an emotional journey through beautiful melodies, harmonies, rhythms, and in short soulful pleasant music. Our club is made up of singers, instrumentalists, and producers who love music and have the potential to be great artists. It aims to provide you with comprehensive musical knowledge so that you can develop a deeper relationship with music. One thing is for sure, you will get to live the most memorable moments and will get to cherish the best memories of your college life. There are regular meetings among club members so that you can get to know each other and form bonds with others, interact with seniors, and learn about music because we believe Capriccio is a family, not a club.",
+        "people":[["Bhavya Srivastava","Coordinator","+918957063252","20uec045@lnmiit.ac.in"], ["Manav Verma","Coordinator","+919911013871","20ucc063@lnmiit.ac.in"], ["Satwik Jain","Coordinator","+917610027910","20uec117@lnmiit.ac.in"], ["Swatantra Jain","Coordinator","+919760314184","20uec136@lnmiit.ac.in"]],
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1xc_jFXyh0pA8pGyZeDfERweXgfpt7BNb/view?usp=share_link"
         },
@@ -44,8 +54,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1LhYuR_IDE4MIDnALfi8GWDmZXx1aDcH8/view?usp=share_link"
         }
-      ],
-      "eminence":[
+      ]},
+      "eminence":{
+        "name":"Eminence, The Fashion Club",
+        "description":"‘Fashion is about dressing according to what’s fashionable. Style is more about being yourself.’ —Oscar de la RentaEminence. Fashion club of The LNMIIT believes in this excerpt from a saying by the legendary Oscar de la Renta and although being a fashion club, style, personality, liveliness and creativity are the club’s four central pillars.You can opt your heart’s desire from ramp walking, make-up, fashion designing and demonstrate your outstanding abilities through talent and self-confidence amalgamation. The vibrant Vogue Fashion Week in Vivacity, and events like gusto pivot more around your confidence and attitude, than what you wear. Organising Rubaroo, the fresher's night, gives you power to avail your aesthetic minds and compose one of your most memorable of days. The club rejoices in portraying vehemence for showing off your best while giving credence to the flaws which never lets its fire and fierceness to cease.",
+        "people":[["Khushi Tiwari","Coordinator","+916376492639","20ucs097@lnmiit.ac.in"], ["Prabhav Jain","Coordinator","+916376492639","20ucc074@lnmiit.ac.in"]],
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/14PL3D2MYVofz5sdMARJ2bTLWuuDdpWeX/view?usp=share_link"
         },
@@ -61,8 +76,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1GBj6F_FFW846PDTONTz7AEn2P6ZDp0CD/view?usp=share_link"
         }
-      ],
-      "imagination":[
+      ]},
+      "imagination":{
+        "name":"Imagination",
+        "description":"IMAGINATION is the photography and cinematography club of The LNM Institute of Information Technology,The club primarily covers any event by capturing them in photo and video formats. It consists of skillful and talented individuals who are extremely passionate in the domains of photography and cinematography. These members are selected after a thorough assessment of their skills. Imagination has four domains: Photography and Photo-editing, Cinematography and Video-editing, Graphics Designing, & Content Writing. The club conducts various events and competitions such as Through the lens, Click Start, Photowalk, workshops, Kalakriti, FMC, etc to upskill its members and also other students can exercise their creativity through these.The club also conducts various workshops like photo editing, video editing, and graphic designing. Anyone who wishes to showcase their talents can participate in the events and workshops.",
+        "people":[["Harshini Aggarwal","Coordinator","+919664328160","20uec056@lnmiit.ac.in"], ["Harshita Ghatiya", "Coordinator", "+919993227261", "20uec060@lnmiit.ac.in"], ["Jatin Sharma","Coordinator","+918278637830","20ucc054@lnmiit.ac.in"], ["Prit Suvagiya", "Coordinator", "+917016534092", "20ucc080@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1e0a70o1ktS6aiONsbNWvJwDQc9m6ti-N/view?usp=share_link"
         },
@@ -78,8 +98,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1VMLtXWVmp2Osaj5xb6vf_dqoYX_qwHsj/view?usp=share_link"
         }
-      ],
-      "insignia":[
+      ]},
+      "insignia":{
+        "name":"Insignia, The Dance Club",
+        "description":"INSIGNIA, was founded by our seniors of the Y11 batch to provide an opportunity to better the dancer in students through constant engagement and to encourage participation in dance events irrespective of the student's degree of talent. We hereby focus on building team coordination, discipline, and individual confidence to bring out the best in our members because winning is not important, shining is! The dance club is one of the most happening clubs of LNMIIT and it helps students stay fit, socialize and learn creative skills through dance. Time management, team management, and mind-body relationship are just to name a few. We adhere and persevere until we conquer! The students who have participated in other colleges have brought glory to our college in various performances, be it solo, group, duo, or dance battles and we continue to strive for more. Our motto? Practice like you never won and perform like you never lost.This is why everyone comprising our team wears an insignia of hard work, dedication, and pure love for dance!",
+        "people":[["Anit Mehta","Coordinator","+919829664944","19ume038@lnmiit.ac.in"], ["Nikita Saboo", "Coordinator", "+919521128477", "19dcs012@lnmiit.ac.in"]],
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1WxIzff3anXb6CvETm4JW5xLWmdKU18eK/view?usp=share_link"
         },
@@ -95,8 +120,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/14KgY-nIOmFpCOzQXQWoLcUYaaDTt8w5q/view?usp=share_link"
         }
-      ],
-      "literary_committee":[
+      ]},
+      "literary_committee":{
+        "name":"Literary Committee",
+        "description":"A club that provides literary enthusiasts with a platform to explore, expand, and exhilarate their psyches with literature and thoughts from the old worlds to the new. A club that draws out the orator, writer, and philosopher in you. A club that brings out the various sides and looks of a writer listener or a person who is sound in terms of knowledge acquainted with literature. Through our various activities and events, we tend to make a creative person a more creative and ingenious one, thus enhancing the on-stage prowess of the person. A club that offers opportunities to appreciate different types of literature and increase their own literary skills. This Literary Club aims at not only refining the literary skills of the students but also developing their logic and curiosity to know more and instil in them the confidence to speak well.",
+        "people":[["Ayush Verma","Coordinator","+919993859792","20ucc031@lnmiit.ac.in"], ["Chiroshree Tiwari", "Coordinator", "+917014694294", "20ucs058@lnmiit.ac.in"], ["Sparsh Kumar", "Coordinator", "+919457790878", "20uec133@lnmiit.ac.in"]],
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1cTN7ZPaiNMt0SZP9fN38RO6Rv3sUdemM/view?usp=share_link"
         },
@@ -112,8 +142,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/11LbVjj-3Bet8zX7QPdH6csXFT_eRPm41/view?usp=share_link"
         }
-      ],
-      "media_cell":[
+      ]},
+      "media_cell":{
+        "name":"Media Cell",
+        "description":"The Media Cell is the media body of LNMIIT who have their eyes and ears everywhere, looking to grasp the most important information; even from the most obscure events. Along with the singularly given responsibility of training anchors and hosts for all the events around the college, the Media Cell calls upon external guidance and internal sessions that train students in general communication and soft skills. Hosting a plethora of flagship events every year has become a part and parcel of the Media Cell. With storytellers, creators, artists, speakers, they are one of the most vibrant body on the campus with the ability to really do EVERYTHING.",
+        "people":[["Akshat Upadhyay","Coordinator","+918299859990","20ucc122@lnmiit.ac.in"], ["Ananya Nautiyal", "Coordinator", "+919636057198", "20uec018@lnmiit.ac.in"], ["Anuj Mantri", "Coordinator", "+918669400756", "20ucc019@lnmiit.ac.in"], ["Himanshi Rangnani", "Coordinator", "+918769364291", "20ucs079@lnmiit.ac.in"]],
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1BAiwWj0eu-LsvFbqRIgixJYHh6GLYSVC/view?usp=share_link"
         },
@@ -129,8 +164,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1LjC_nS_TBQzzF45eJIzf0ODOvZST03hz/view?usp=share_link"
         }
-      ],
-      "rendition":[
+      ]},
+      "rendition":{
+        "name":"Rendition, The Dramatics Club",
+        "description":"“Rendition” - The Theatre Society LNMIIT aims to promote drama education and provide various performances for students. The word ‘Rendition’ in itself emphasises “a performance or interpretation of something. This club has been designed for students fascinated with the aspects of theatre to enhance their interests and boost their skills in the field of acting, stage terminology, set building and costume design. Rendition has always endeavoured to put forth its maximum effort to continue its legacy and maintain its glory by striving on its principles of dedication, discipline and punctuality. This club provides a chance for students to strengthen their leadership skills and cooperation spirits since they need to work hand in hand to run the club, deal with the problems and design plenty of activities. This club always bolsters its members to amplify their self-confidence, poise and understanding of the nuance of emotions.",
+        "people":[["Anukriti Shrivastava","Coordinator","+917014575185","20uec027@lnmiit.ac.in"], ["Pratyush Srivastava", "Coordinator", "+919654590406", "20ucc079@lnmiit.ac.in"]],
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1UQrTyXuFFj5oIAYsC3T33WOjB91DALT4/view?usp=share_link"
         },
@@ -146,8 +186,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1n_kVMqg2QhtZQUpx4lhE9i0qQ6SJxwEH/view?usp=share_link"
         }
-      ],
-      "sankalp":[
+      ]},
+      "sankalp":{
+        "name":"Sankalp Club",
+        "description":"Sankalp, The Social club of LNMIIT Jaipur, laid its foundation on the stiff rocks of helping and giving our valuables and necessities despite being a person who expects to get something in return. Here we work on social causes associated with the college mess workers, problems faced by people in the village near campus, and organizing self-growth and learning sessions for club dignitaries. Events such as 'Sahyog' , 'Make A Meal' and 'Janmashtami Celebration' are some campus events celebrated and organized with full enthusiasm and excitement. At last, be a person with a strong will for contribution.",
+        "people":[["Dhruv Sharma","Coordinator","+919173176850","20ucc038@lnmiit.ac.in"], ["Lakshya Gupta", "Coordinator", "+917878209385", "20uec075@lnmiit.ac.in"], ["Manan Badaya","Coordinator","+916377774832","20ucs109@lnmiit.ac.in"], ["Muskan Singla", "Coordinator", "+918377089610", "20ucc068@lnmiit.ac.in"], ["Saurabh Sharma","Coordinator","+918769643607","20ucs176@lnmiit.ac.in"], ["Shubham Bansal", "Coordinator", "+917737278724", "20uec127@lnmiit.ac.in"]],
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1ctYISDZnLK9ODBIxZ2xf09r8nfZPGWnS/view?usp=share_link"
         },
@@ -163,8 +208,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1X426UgMt_TiIy3La_ZpbiOVVvarzI4w4/view?usp=share_link"
         }
-      ],
-      "vignette":[
+      ]},
+      "vignette":{
+        "name":"Vignette, The Art Club",
+        "description":"Vignette - The LNMIIT Art & Craft Club is responsible for creating an extravagant environment. Creativity is what the Art Club nurtures. It intensifies the beauty of normality into something appreciable. One of the most active clubs of the Cultural Council, Art Club organizes art events throughout the session to bring out the talent in every possible way. From displaying artistic talent to decorating the college for the fests and events to bring the set aura, there isn't a moment when the art club fails to showcase its talent. The club also organizes intra-college events like Art Attack, T-shirt Painting, Face Painting, and more. These events are in the form of competitions where you can showcase your talent and artistic skills on paper, canvas, t-shirt, or even on your face. There are no limitations while being creative; the club flaunts its artwork in various fields like 3-D art, Sketching, Painting, and many more. The club welcomes everyone who aspires to be an artist, where your creative mind can put ideas into reality.",
+        "people":[["Aashi Bansal","Coordinator","+918302053097","20ucs003@lnmiit.ac.in"], ["Bhavya Gupta", "Coordinator", "+917073335504", "20uec044@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1o8FxAMmiXCbcVldalY42SPFaiMYrupWQ/view?usp=share_link"
         },
@@ -180,10 +230,22 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1HVBKKbZmDhEpQ2NxO3Icdkvm0dEHYAvN/view?usp=share_link"
         }
-      ]
+      ]},
+      "fundoo":{
+        "name":"Fundoo Club",
+        "description":"After coming to college, students miss their family most at the time of the festival. So we Fundoo Club tries to celebrate festivals in such a way that students get interested in festivals even in college. We celebrate every festival here as an LNMIIT family.",
+        "people":[["Aditya Goyal","Coordinator","+918278690125","19ucc101@lnmiit.ac.in"], ["Sagar Sheoran", "Coordinator", "+917727839857", "19ucc071@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[]
+      }
     },
     "scitech":{
-      "astro":[
+      "astro":{
+        "name":"Astronomy Club",
+        "description":"The Astronomy Club promotes the interest of students towards the awe-inspiring field of Astronomy and space exploration while striving to increase the craze about the various fields enclosed within. It is one of the most active clubs in LNMIIT. With creative and enthusiastic minds in the club, we try to come up with highly entertaining events for everyone, time to time. With our wide-ranging events throughout the year, we try to keep folks entertained. Afterall that's what college life is, a bit of entertainment, going in hand with academics.",
+        "people":[["Abhishek Suman","Coordinator","+918114589602","20ucs007@lnmiit.ac.in"], ["Mudit Choudhary", "Coordinator", "+917840054325", "20ucc067@lnmiit.ac.in"], ["Radhika Agarwal","Coordinator","+917451847047","20ucc083@lnmiit.ac.in"], ["Shubhankar Bhatt", "Coordinator", "+919997078807", "20uec129@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1xNuugAv8AFyacQu-CxJRD5nTM70O6Geo/view?usp=share_link"
         },
@@ -202,8 +264,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1E66CB8aM0rvfrthIVHinDTj1KRqXYZC3/view?usp=share_link"
         }
-      ],
-      "cipher":[
+      ]},
+      "cipher":{
+        "name":"Cipher",
+        "description":"With the aim of the betterment of the college community, the motive of this club is to bring awareness about the ongoing threats in the Cyber Security world and prevention methods against adversaries and how Blockchain Technology can be used for securing it to the next level. The club’s motive is to create a healthy and knowledgeable environment and achieve various goals listed below that would enhance your performance: To cultivate CyberSecurity and Blockchain culture amongst the students, Introducing the concepts of Smart contracts, Blockchain Technology & Web3, Introducing students to Ethical and Competitive Hacking. CYBER SECURITY AND BLOCKCHAIN are upcoming fields with varied and exciting opportunities. CIPHER will help you dive in and grab the opportunities. It will also create a platform where you can solve problems and have discussions about the same.",
+        "people":[["Ketan Jakhar","Coordinator","+919461721651","19ucc020@lnmiit.ac.in"], ["Meet Patel", "Coordinator", "+917041813479", "19ume020@lnmiit.ac.in"], ["Vinay Sharma","Coordinator","+919549178651","19ume011@lnmiit.ac.in"], ["Viren Saroha", "Coordinator", "+919306555214", "19ucs152@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1E66CB8aM0rvfrthIVHinDTj1KRqXYZC3/view?usp=share_link"
         },
@@ -219,8 +286,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/18_4zW4lmC7xmfssyoh3tHD0XlvOPxLCM/view?usp=share_link"
         }
-      ],
-      "cybros":[
+      ]},
+      "cybros":{
+        "name":"Cybros",
+        "description":"Cybros is a core hub for programmers aiming to keep the booming “coding culture” of LNMIIT reigning. The official coding club, Cybros is composed of top prolific coders whose binding power has rendered many unfathomable achievements. Cybros nurtures and guides fresher batches by forming a spirit of Competitive Programming from the first semester itself. Furthermore, it organises CyTalks which behaves as a multifaceted offline event posing as a resource-packed programming workshop, a motivational chat, or a mentoring session.It is also notorious for holding many contests like CodeLNM: an intra-college contest enjoying mighty participation, and weekly contest series like Placement Series and Beginners Series aimed at senior batches and beginners respectively. In Addition, CyHub — Cybros’ Codeforces group is a one-stop destination for topic-specific resources and archives of the previous contests held. In a nutshell, Cybros acts like a web interlinking enthusiastic learners at LNMIIT and scooping them into the realm of programming.",
+        "people":[["Anshul Garg","Coordinator","+919205287611","19ucc006@lnmiit.ac.in"], ["Harsh Dhingra", "Coordinator", "+918769359530", "19ucc029@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1qPS-Rdxp1N9bEhIYCWVZwyTWC7NuNOKW/view?usp=share_link"
         },
@@ -236,8 +308,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1FX8kOFv3yyj2dxLUgQZ_zFobr1T8AkOO/view?usp=share_link"
         }
-      ],
-      "debsoc":[
+      ]},
+      "debsoc":{
+        "name":"Debsoc",
+        "description":"Lord Byron once said, 'Those who will not reason are bigots, those who cannot are fools, and those who dare not, are slaves.' We believe you come as a learner to the world and live as a person in society. The person in you should be robust to reason and realize the arguments.To inculcate reasoning and unleash the master within, The LNMIIT has a sigma debating club, The Debate Society. DebSoc has always been the charm for debaters with the best in professional suites and orators. The society strives to develop a rational personality among the students by harmoniously promoting debates and discussions in the form of MUNs, Group Discussions, Parliamentary Debates, and Extempores. Acknowledging the value of exposure and dialogue, the DebSoc is one of its kind to mold you as a conclusive lawyer of words.",
+        "people":[["Arjun Saxena","Coordinator","+919571485158","20ucc021@lnmiit.ac.in"], ["Divyanshi Gautam", "Coordinator", "+919462421299", "20ucs066@lnmiit.ac.in"], ["Saumya Kalra", "Coordinator", "+916375548121", "20uec119@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/14tOww5i-nNDdGskCy7fHAdd6mV7lZNFt/view?usp=share_link"
         },
@@ -253,8 +330,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1VvuhGcMdW8TVieRK9SKUDR2qKXrg4wUY/view?usp=share_link"
         }
-      ],
-      "ecell":[
+      ]},
+      "ecell":{
+        "name":"E-Cell",
+        "description":"Future builders that are interested in learning about entrepreneurship, cryptocurrency, the stock market, web3, and several other fields come to this location for all of their learnings. They seek guidance in 5 major domains being event planning, marketing, management, sponsorship, content creation and designing which add up to create a well verse soft skill development and a variety of other subjects, all of which contribute to a child's holistic development and help him grow into a multi-talented adult.The exclusive club at our campus that collaborates with several Tech colleges across India is E-Cell, with its collaboration with Entrepreneurship Development Cell, IIT Roorkee, serving as a prominent example. We organize and participate in various funding events and interact closely with startup founders and make our members understand the crucial stages of start-up ecosystem.",
+        "people":[["Sarthak Kapoor","Coordinator","+919838333480","20uec115@lnmiit.ac.in"], ["Vaishvi Bansal", "Coordinator", "+918000768730", "20uec143@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/14HcYXKj80wcdJqn7RpgZwq-ZH9McXhWA/view?usp=share_link"
         },
@@ -270,8 +352,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1SOrd36bGe5B4NgbUV5spRuF-bPPGP1sn/view?usp=share_link"
         }
-      ],
-      "phoenix":[
+      ]},
+      "phoenix":{
+        "name":"Phoenix",
+        "description":"Phoenix is the club where practicality comes most into reality. Manifesting 2-D designs into 3-D working machinery of various types. The collective knowledge of the latest technology is vast, with in-depth information about various aspects. The Hardware division conducts spectacular events like RC planes, Drone Building, Torque, LFR, and ROBOWAR. It gives you a chance to play with circuits and motors with a child's curiosity. The Software division ventures into domains like AI, ML, Web, Android Development, and more. One should never miss the workshops and events conducted by this division. The Quarks division is the most diverse and inclusive having Content Writing, Graphic Designing, Video Editing and management under its name. Get ready to manage colossal events and make visually depicting posters and videos. Above all, Phoenix plays a significant role in organizing the events in Plinth.",
+        "people":[["Lakshay Setia","Coordinator","+918968442211","20ucs105@lnmiit.ac.in"], ["Prajwal Chittora", "Coordinator", "+916367981595", "20uec093@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1aIjOajN1E8-TeAMJEm8WqMC2Iz2cbk6y/view?usp=share_link"
         },
@@ -287,8 +374,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1A_K1T6HEedH1mj15XENap7Rs1QbMAPY0/view?usp=share_link"
         }
-      ],
-      "quizzinga":[
+      ]},
+      "quizzinga":{
+        "name":"Quizzinga",
+        "description":"Quizzinga is a sheltering tree for individuals harbouring weird facts or having a knack of a specific topic. It is the holy shrine for enthusiasts of anime, sports, biz, cinema, history etc. and serves as a commonplace for geeks to share their interests through quizzing. Being the official quizzing body of LNMIIT, Quizzinga is inculcated with the responsibility of riveting students’ interest in quizzing. It organises events such as First Blood: The Freshers’ Quiz, Mega Quiz, Topic Specific Insta Quizzes and club quizzes for its members. Furthermore, Quizzinga takes the responsibility of holding IPL and Football Auction: adrenaline packed events for strategists to build their own cricket/football team. Dubbed as the club of “national calibre”, Quizzinga has amassed a massive reach by being National Champions in 2019 and National Runner-Ups in 2022 at Tata Crucibles: The Campus Business Quiz. It has also been the winner of inter-college quiz events of MNIT, DAIICT, SRCC, IITD and finished FIRST in SNU InQube 2021.",
+        "people":[["Aditya Singh","Coordinator","+918210933558","20uec008@lnmiit.ac.in"], ["Md. Raiyan Athar", "Coordinator", "+918210149662", "20ume027@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1cedw9R1jC77MY96vwxqHdDp_OrMskbK2/view?usp=share_link"
         },
@@ -304,10 +396,15 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1awtGCAhaoM9Sch5lSGzZbhyZ9vNh3Kdp/view?usp=share_link"
         }
-      ]
+      ]}
     },
     "sports":{
-      "badminton":[
+      "badminton":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1Ya5DP-Nhl866cm8-pFAIsR5t1a9Fi1q9/view?usp=share_link"
         },
@@ -323,8 +420,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/11fhpkYQ9z3y6Ro0BjddHWzM31WZzzwAo/view?usp=share_link"
         }
-      ],
-      "basketball":[
+      ]},
+      "basketball":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/185ANO46KFd0fsktMlUF0aCD6PXBOlJHI/view?usp=share_link"
         },
@@ -340,8 +442,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1611s2S0cmmY__EAPCLgVSvqO5wMd-udQ/view?usp=share_link"
         }
-      ],
-      "chess":[
+      ]},
+      "chess":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1P1vsEGIb_Tq9Rmn50eZCsJZowhOYKy1z/view?usp=share_link"
         },
@@ -357,8 +464,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1xqmrGNf-yyxv2TO6iAbtSb3LrcauNJ80/view?usp=share_link"
         }
-      ],
-      "cricket":[
+      ]},
+      "cricket":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1ufNa95pyMlIM0TcMSukzx-Yn7eb93acv/view?usp=share_link"
         },
@@ -374,8 +486,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1wK_Wa5rJOaJapopszjK1xMPrc07ewdRi/view?usp=share_link"
         }
-      ],
-      "football":[
+      ]},
+      "football":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1HqMiaWlXXAwbQSDF99UehQwAo9mavZBS/view?usp=share_link"
         },
@@ -391,8 +508,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1XOrGgB4vYSHRlQCEcfpxj6XZZrrqqyCN/view?usp=share_link"
         }
-      ],
-      "kabaddi":[
+      ]},
+      "kabaddi":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1rzHrcplDIfibmdx5yKM7eR_NPUj0ko36/view?usp=share_link"
         },
@@ -408,8 +530,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1t094JppV2RtKI88VvOzCj33Esg_y3Gu7/view?usp=share_link"
         }
-      ],
-      "table_tennis":[
+      ]},
+      "table_tennis":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1rrychd5JBTLi5fLkwZ3StSzTrmd_pcJD/view?usp=share_link"
         },
@@ -425,8 +552,13 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1REsMpEOVCiYUU2cEqnTFTz5FD89-frP9/view?usp=share_link"
         }
-      ],
-      "volleyball":[
+      ]},
+      "volleyball":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[
         {
           "imgsrc": "https://drive.google.com/file/d/1sSm325HrMUgQ-Do13hyeWTPe5SYOFm7m/view?usp=share_link"
         },
@@ -442,60 +574,89 @@
         {
           "imgsrc": "https://drive.google.com/file/d/1GNVDwWuKGHPB8J2c4Dmg2hEpEiSGcM4y/view?usp=share_link"
         }
-      ],
-      "tennis":[],
-      "squash":[]
+      ]},
+      "tennis":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[]
+      },
+      "squash":{
+        "name":"",
+        "description":"",
+        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "links":["", "", "", ""],
+        "images":[]
+      }
     },
-    "vivacity":[
-      {
-        "imgsrc": "https://drive.google.com/file/d/1r1iLJbQTs2qzZsgiFvTrfeCIXj-qE0KR/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1vLtIqZzk4QynVvJmP4Cqa1XC3TnaIQIz/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1rObvmBwQi0xO8fktu3x2YEdAnlDjd4Sd/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/14BUs-K24uHYSYdMYQckMwPgy-Kpopxsh/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1RtYgzt0akMuLV4zSktZ-N9cjyj-PnY4a/view?usp=share_link"
-      }
-    ],
-    "plinth":[
-      {
-        "imgsrc": "https://drive.google.com/file/d/15dEIds925xtKvZWCD-nTWa-F87q4QRHt/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1cSvBQ7sAjGqJl0Xh2_z98U7AOfqzZKuQ/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/178AZuhaorLt3kIKq5Cwu1bsloTuxGc9i/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1_nFSjhIRpAwdXc-2CmgxE6hxK7NuWLRG/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1ql2YjABJjBWZjkGHPT3molRD2lp8OTyi/view?usp=share_link"
-      }
-    ],
-    "desportivos":[
-      {
-        "imgsrc": "https://drive.google.com/file/d/10Kxwzg6PJ3c5-9YT3AuLAgoxKyxGhffF/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1VyNwFJvBU-HHbe3CVHNQubJIDlKY4x-a/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1J8qVT4YOhfKwXlnLghZYoW3OJgCx_eIb/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1PMG6qDdM8VgaAt3exL9ikl0nTDJO8H1E/view?usp=share_link"
-      },
-      {
-        "imgsrc": "https://drive.google.com/file/d/1G_1LyZX7G3e0jNiYGq8dz6MlhLqqBBzw/view?usp=share_link"
-      }
-    ]
+    "fests":{
+      "vivacity":{
+          "name":"Vivacity",
+          "description":"Vivacity in its existence stood to justify itself as one of the liveliest and most animated jubilations that youth has ever experienced. Embarked upon in 2007, today the cultural management festival has snowballed to the popularity of gigantic proportions, all of which can be attributed to the acuminous student committee that has piloted this fest in its odyssey so far. It juxtaposes several dances, music, dramatics, literature, and fashion events with informal fun events, authorized workshops, exhibitions, and gaming challenges. The brimming talents judged by distinguished virtuosos contend their way to winning titanic prizes.",
+          "people":[["Piyush Jhawar","Fest Head","+918302465700","19uec037@lnmiit.ac.in"], ["Sagar Sheoran", "Fest Head", "+917727839857", "19ucc071@lnmiit.ac.in"]]       ,
+          "links":["", "", "", ""],
+          "images":[
+        {
+          "imgsrc": "https://drive.google.com/file/d/1r1iLJbQTs2qzZsgiFvTrfeCIXj-qE0KR/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1vLtIqZzk4QynVvJmP4Cqa1XC3TnaIQIz/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1rObvmBwQi0xO8fktu3x2YEdAnlDjd4Sd/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/14BUs-K24uHYSYdMYQckMwPgy-Kpopxsh/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1RtYgzt0akMuLV4zSktZ-N9cjyj-PnY4a/view?usp=share_link"
+        }
+      ]},
+      "plinth":{
+          "name":"Plinth",
+          "description":"PLINTH is the annual Techno-Management Literary fest of The LNMIIT. It is one of the exquisite platforms which help students plunge bring out the creativity skills and for all to witness one of the most beautiful and breath-taking amalgamations PLINTH organizes various events related to ROBOTIX, CYBERNETRIX, Literature and Business. Plinth for the past years has served to be the ideal destination for the millennials to learn, create and experience the beauty of technology. It proudly encompasses and transcends the boundaries of science and technology, providing its audience a completely indelible experience. This festival comprises of a plethora of events as well as talks by eminent personalities in the field of science, technology and management. A wide range of competitions in diverse fields besides exhibitions, workshops and fun challenges tempt a really big number of participants from across the length and breadth of the country. In a nutshell, PLINTH 2023 promises to keep participants from all walks and tastes occupied for an awe-in-spring and absolutely overwhelming. 2-day experience.",
+          "people":[["Gunit Varshney","Fest Head","+918875510652","19ucs188@lnmiit.ac.in"], ["Raja Singh", "Fest Head", "+919680372941", "19ucc019@lnmiit.ac.in"]]       ,
+          "links":["", "", "", ""],
+          "images":[
+        {
+          "imgsrc": "https://drive.google.com/file/d/15dEIds925xtKvZWCD-nTWa-F87q4QRHt/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1cSvBQ7sAjGqJl0Xh2_z98U7AOfqzZKuQ/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/178AZuhaorLt3kIKq5Cwu1bsloTuxGc9i/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1_nFSjhIRpAwdXc-2CmgxE6hxK7NuWLRG/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1ql2YjABJjBWZjkGHPT3molRD2lp8OTyi/view?usp=share_link"
+        }
+      ]},
+      "desportivos":{
+          "name":"Desportivos",
+          "description":"Desportivos is the annual sports festival of LNMIIT Jaipur organized by the Sports Council. It is the most prestigious and largest sports meet in Rajasthan. It attracts a broad spectrum of students from all over the country to showcase their talents and facilitate cross-cultural learning experiences. The fest aims for its students to appreciate our culture's unity and develop a spirit for sports. Desportivos spans for three days that witnesses a multitude of academic and technically oriented students remodel into sports fanatics. The festival incorporates a wide range of outdoor and indoor sports activities like cricket, badminton, volleyball, basketball, football, table tennis, chess, carom, etc. The fest has been a great success with the participation of over 105 colleges and the footfall of more than 3000 students. Enthusiasm and sportsmanship are the key elements that make Desportivos an enthralling experience.",
+          "people":[["Abhishek Tiwari","Fest Head","+919660548942","19ucs028@lnmiit.ac.in"], ["Tanuj Saxena", "Fest Head", "+916393642919", "19ucs030@lnmiit.ac.in"]]       ,
+          "links":["", "", "", ""],
+          "images":[
+        {
+          "imgsrc": "https://drive.google.com/file/d/10Kxwzg6PJ3c5-9YT3AuLAgoxKyxGhffF/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1VyNwFJvBU-HHbe3CVHNQubJIDlKY4x-a/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1J8qVT4YOhfKwXlnLghZYoW3OJgCx_eIb/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1PMG6qDdM8VgaAt3exL9ikl0nTDJO8H1E/view?usp=share_link"
+        },
+        {
+          "imgsrc": "https://drive.google.com/file/d/1G_1LyZX7G3e0jNiYGq8dz6MlhLqqBBzw/view?usp=share_link"
+        }
+      ]}
+    }
   }
 }

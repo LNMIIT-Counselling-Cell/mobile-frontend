@@ -30,7 +30,7 @@ export default function ScitechCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('Astronomy Club')
+            navigation.navigate('Club Fest', {clubtype:"scitech", clubname:"astro"})
           }}
         >
           <Image source={require('../../assets/scitech/astro.png')} />
@@ -39,7 +39,7 @@ export default function ScitechCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Cipher')
+            navigation.navigate('Club Fest', {clubtype:"scitech", clubname:"cipher"})
           }}
         >
           <Image source={require('../../assets/scitech/cipher.png')} />
@@ -48,7 +48,7 @@ export default function ScitechCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Cybros')
+            navigation.navigate('Club Fest', {clubtype:"scitech", clubname:"cybros"})
           }}
         >
           <Image source={require('../../assets/scitech/cybros.png')} />
@@ -57,7 +57,7 @@ export default function ScitechCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card4}
           onPress={() => {
-            navigation.navigate('Debsoc')
+            navigation.navigate('Club Fest', {clubtype:"scitech", clubname:"debsoc"})
           }}
         >
           <Image source={require('../../assets/scitech/debsoc.png')} />
@@ -66,7 +66,7 @@ export default function ScitechCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('E-Cell')
+            navigation.navigate('Club Fest', {clubtype:"scitech", clubname:"ecell"})
           }}
         >
           <Image source={require('../../assets/scitech/e_cell.png')} style={{ width: 150, height: 100 }} />
@@ -75,7 +75,7 @@ export default function ScitechCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Phoenix')
+            navigation.navigate('Club Fest', {clubtype:"scitech", clubname:"phoenix"})
           }}
         >
           <Image source={require('../../assets/scitech/phoenix.png')} />
@@ -84,7 +84,7 @@ export default function ScitechCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Quizzinga')
+            navigation.navigate('Club Fest', {clubtype:"scitech", clubname:"quizzinga"})
           }}
         >
           <Image source={require('../../assets/scitech/quizzinga.png')} />

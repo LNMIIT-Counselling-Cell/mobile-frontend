@@ -40,6 +40,7 @@ import { VolleyballScreen } from '../screens/GymkhanaScreen/VolleyballScreen';
 import { OpenSourceLibScreen } from '../screens/OpenSourceLibScreen';
 import { TennisScreen } from '../screens/GymkhanaScreen/TennisScreen';
 import { SquashScreen } from '../screens/GymkhanaScreen/SquashScreen';
+import { ClubFestScreen } from '../screens/GymkhanaScreen/ClubFestScreen';
 
 export default function GymkhanaTab() {
   const GymkhanaStack = createStackNavigator();
@@ -51,6 +52,9 @@ export default function GymkhanaTab() {
     >
       <GymkhanaStack.Screen name="Students' Gymkhana" component={GymkhanaScreen} options={{
         headerTitle: () => <Header title={"Student's Gymkhana"} />
+      }} />
+      <GymkhanaStack.Screen name="Club Fest" component={ClubFestScreen} options={{
+        headerTitleAlign: 'center',
       }} />
       <GymkhanaStack.Screen name="Settings" component={SettingsScreen} options={{
         headerTitleAlign: 'center',
@@ -68,69 +72,6 @@ export default function GymkhanaTab() {
         headerTitleAlign: 'center',
       }} />
       <GymkhanaStack.Screen name="COSHA Committee" component={CoshaCommitteeScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Aaveg, The Nukkad Mandali" component={AavegScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Capriccio, The Music Club" component={CapriccioScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Eminence, The Fashion Club" component={EminenceScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Fundoo Club" component={FundooScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Imagination" component={ImaginationScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Insignia, The Dance Club" component={InsigniaScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Literary Committee" component={LCScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Media Cell" component={MediaCellScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Rendition, The Dramatics Club" component={RenditionScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Sankalp Club" component={SankalpScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Vignette, The Art Club" component={VignetteScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Astronomy Club" component={AstronomyScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Cybros" component={CybrosScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Debsoc" component={DebsocScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Phoenix" component={PhoenixScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="E-Cell" component={EcellScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Quizzinga" component={QuizzingaScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Cipher" component={CipherScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Vivacity" component={VivacityScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Plinth" component={PlinthScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <GymkhanaStack.Screen name="Desportivos" component={DespoScreen} options={{
         headerTitleAlign: 'center',
       }} />
       <GymkhanaStack.Screen name="Badminton" component={BadmintonScreen} options={{
