@@ -8,7 +8,7 @@ import { TimeTableScreen } from '../screens/HomeScreen/TimeTableScreen';
 import { TodayEventScreen } from '../screens/HomeScreen/TodayEventScreen';
 import { DevelopersScreen } from '../screens/DevelopersScreen';
 import { OpenSourceLibScreen } from '../screens/OpenSourceLibScreen';
-import { ExtraPDFScreen } from '../screens/HomeScreen/ExtraPDFScreen';
+import { ExtraPDFScreen } from '../screens/GlobalScreen/ExtraPDFScreen';
 
 export default function HomeTab({ navigation }) {
   const HomeStack = createStackNavigator();
