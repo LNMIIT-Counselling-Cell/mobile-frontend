@@ -400,9 +400,9 @@
     },
     "sports":{
       "badminton":{
-        "name":"",
+        "name":"Badminton",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Aman Bansal","Coordinator","+919929030584","20ucs018@lnmiit.ac.in"], ["Rajat Bothra","Coordinator","+919998296647","20ucs157@lnmiit.ac.in"], ["Vansh Patel","Coordinator","+919870056089","20ucs217@lnmiit.ac.in"]],
         "links":["", "", "", ""],
         "images":[
         {
@@ -422,9 +422,9 @@
         }
       ]},
       "basketball":{
-        "name":"",
+        "name":"Basketball",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Ankit Gulia","Coordinator","+919812711086","20ucc015@lnmiit.ac.in"], ["Bharghav Patel", "Coordinator", "+918128981684", "20ucs051@lnmiit.ac.in"]]       ,
         "links":["", "", "", ""],
         "images":[
         {
@@ -444,9 +444,9 @@
         }
       ]},
       "chess":{
-        "name":"",
+        "name":"Chess",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Mihir Chaturvedi","Coordinator","+919079825685","20ucs117@lnmiit.ac.in"], ["Mohammad Roshan Abbas", "Coordinator", "+919989751860", "20ucs018@lnmiit.ac.in"]]       ,
         "links":["", "", "", ""],
         "images":[
         {
@@ -466,9 +466,9 @@
         }
       ]},
       "cricket":{
-        "name":"",
+        "name":"Cricket",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Aditya Patil","Coordinator","+917219306211","20ucc007@lnmiit.ac.in"], ["Aditya Soni", "Coordinator", "+919305611376", "20ume003@lnmiit.ac.in"], ["Animesh Kulshreshta", "Coordinator", "+917599384400", "20ucs021@lnmiit.ac.in"], ["Rugwed Bodhankar", "Coordinator", "+919730723242", "20ucs164@lnmiit.ac.in"], ["Vinayak Mishra", "Coordinator", "+916376326754", "20ucs228@lnmiit.ac.in"]]       ,
         "links":["", "", "", ""],
         "images":[
         {
@@ -488,9 +488,9 @@
         }
       ]},
       "football":{
-        "name":"",
+        "name":"Football",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Aryan Gupta","Coordinator","+919643489077","20ucc022@lnmiit.ac.in"], ["Shridhar Somani", "Coordinator", "+916375599701", "20ucs188@lnmiit.ac.in"]]       ,
         "links":["", "", "", ""],
         "images":[
         {
@@ -510,9 +510,9 @@
         }
       ]},
       "kabaddi":{
-        "name":"",
+        "name":"Kabaddi",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Bharat Gupta","Coordinator","+919799348056","20ucs050@lnmiit.ac.in"], ["Ishan Vadalia", "Coordinator", "+919099701922", "20ucs085@lnmiit.ac.in"], ["Vishal Agarwal","Coordinator","+918824578723","20ucs231@lnmiit.ac.in"]]       ,
         "links":["", "", "", ""],
         "images":[
         {
@@ -534,7 +534,7 @@
       "table_tennis":{
         "name":"",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Akshat Verma","Coordinator","+919621379705","20ucs016@lnmiit.ac.in"], ["Krishna Baheti", "Coordinator", "+918949024501", "20uec071@lnmiit.ac.in"], ["Raghav Maheshwari","Coordinator","+919057574884","20ucc085@lnmiit.ac.in"]]       ,
         "links":["", "", "", ""],
         "images":[
         {
@@ -554,9 +554,9 @@
         }
       ]},
       "volleyball":{
-        "name":"",
+        "name":"Volleyball",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Nehal Jain","Coordinator","+919660075007","20uec083@lnmiit.ac.in"], ["Nitesh Singh","Coordinator","+919991929368","20ucs135@lnmiit.ac.in"], ["Ojas Palorkar","Coordinator","+919561739511","20ucs136@lnmiit.ac.in"], ["Rupesh Maheshwari","Coordinator","+917427818446","20ucs165@lnmiit.ac.in"], ["Suhani Sharma","Coordinator","+919758499024","20ucs202@lnmiit.ac.in"]],
         "links":["", "", "", ""],
         "images":[
         {
@@ -578,14 +578,14 @@
       "tennis":{
         "name":"",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Aayush Sheth","Coordinator","+917567794411","20ucs004@lnmiit.ac.in"], ["Kush Desai","Coordinator","+917984275253","20ucs104@lnmiit.ac.in"]],
         "links":["", "", "", ""],
         "images":[]
       },
       "squash":{
         "name":"",
         "description":"",
-        "people":[["","Coordinator","","@lnmiit.ac.in"], ["", "Coordinator", "", "@lnmiit.ac.in"]]       ,
+        "people":[["Hemang Singhal","Coordinator","+919412938525","21ucs092@lnmiit.ac.in"]]       ,
         "links":["", "", "", ""],
         "images":[]
       }

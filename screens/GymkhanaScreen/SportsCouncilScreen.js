@@ -30,7 +30,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('Badminton')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"badminton"})
           }}
         >
           <Image source={require('../../assets/sports/badminton.png')} />
@@ -39,7 +39,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Chess')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"chess"})
           }}
         >
           <Image source={require('../../assets/sports/chess.png')} />
@@ -48,7 +48,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Volleyball')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"volleyball"})
           }}
         >
           <Image source={require('../../assets/sports/volleyball.png')} />
@@ -57,7 +57,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card4}
           onPress={() => {
-            navigation.navigate('Cricket')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"cricket"})
           }}
         >
           <Image source={require('../../assets/sports/cricket.png')} />
@@ -66,7 +66,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('Basketball')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"basketball"})
           }}
         >
           <Image source={require('../../assets/sports/basketball.png')} />
@@ -75,7 +75,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Football')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"football"})
           }}
         >
           <Image source={require('../../assets/sports/football.png')} />
@@ -84,7 +84,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Kabaddi')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"kabaddi"})
           }}
         >
           <Image source={require('../../assets/sports/kabaddi.png')} />
@@ -99,7 +99,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card1}
           onPress={() => {
-            navigation.navigate('Squash')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"squash"})
           }}
         >
           <Image source={require('../../assets/sports/squash.png')} />
@@ -108,7 +108,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card2}
           onPress={() => {
-            navigation.navigate('Tennis')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"tennis"})
           }}
         >
           <Image source={require('../../assets/sports/tennis.png')} />
@@ -117,7 +117,7 @@ export default function SportsCouncilScreen({ navigation }) {
         <TouchableOpacity
           style={styles.card3}
           onPress={() => {
-            navigation.navigate('Table Tennis')
+            navigation.navigate('Club Fest', {clubtype:"sports", clubname:"table_tennis"})
           }}
         >
           <Image source={require('../../assets/sports/table_tennis.png')} />
