@@ -1,5 +1,5 @@
 import { useTheme } from '@react-navigation/native';
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { PersonCard } from '../../components/PersonCard';
 import CarouselCards from '../../components/CarouselCards';
@@ -7,7 +7,9 @@ import Images from '../../components/Images';
 
 export const ClubFestScreen = ({ route, navigation }) => {
   const data = require("../../assets/json/global.json").organization_img[route.params?.clubtype][route.params?.clubname]
-  navigation.setOptions({ title: data.name })
+  useEffect(()=>{
+    navigation.setOptions({ title: data.name })
+  }, [])
   const imgData = data.images;
   imgData.forEach(img => {
     img.imgsrc = img.imgsrc.split("file/d/").join("uc?export=view&id=").split("/view")[0]

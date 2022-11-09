@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { StyleSheet, Dimensions, View } from 'react-native';
 import Pdf from 'react-native-pdf';
 import { useTheme } from '@react-navigation/native';
@@ -6,7 +6,9 @@ import { useTheme } from '@react-navigation/native';
 export const ExtraPDFScreen = ({route, navigation}) => {
 
   const { colors } = useTheme()
-  navigation.setOptions({ title: route.params?.headerName })
+  useEffect(()=>{
+    navigation.setOptions({ title: route.params?.headerName });
+  }, [])
 
   const source = { uri: 'bundle-assets://pdf/'+route.params?.pdfName+'.pdf' };
 
