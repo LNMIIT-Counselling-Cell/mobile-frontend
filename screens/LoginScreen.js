@@ -54,7 +54,7 @@ export default function LoginScreen({ navigation }) {
     GoogleSignin.configure({
       webClientId: '891305350714-becnblrdvdvu6og7qi46f919rckcuev8.apps.googleusercontent.com',
       androidClientId: '891305350714-liornsh72r91g1vklnk4f38s85aphgt4.apps.googleusercontent.com',
-      // iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',
+      iosClientId: '891305350714-nl90a03bm3ish621ngb2q5hs3mfkgeb9.apps.googleusercontent.com',
       offlineAccess: true,
       forceCodeForRefreshToken: true,
     });
