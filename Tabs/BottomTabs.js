@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CollegeTab from './CollegeTab';
 import GymkhanaTab from './GymkhanaTab';
 import HomeTab from './HomeTab';
-import OutpassTab from './OutpassTab';
+import PassTab from './OutpassTab';
 import AboutTab from './AboutTab';
 import { getFocusedRouteNameFromRoute, useTheme } from '@react-navigation/native';
 import CustomIcon from '../components/CustomIcon';
@@ -71,7 +71,7 @@ export default function BottomTabs() {
           tabBarHideOnKeyboard: true,
         }}
       />
-      <Tab.Screen name="OutpassTab" component={OutpassTab}
+      <Tab.Screen name="OutpassTab" component={PassTab}
         options={{
           tabBarLabel: 'Outpass',
           tabBarIcon: ({ focused, color, size }) => (
