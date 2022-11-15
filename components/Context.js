@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { DarkTheme, DefaultTheme, useTheme } from '@react-navigation/native';
-import { Appearance, StatusBar } from 'react-native';
+import { Appearance, StatusBar, Platform } from 'react-native';
 
 export const AuthContext = createContext();
 
@@ -123,7 +123,9 @@ export const AuthProvider = ({ children }) => {
     }
 
   }
-  isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+  if (Platform.OS === 'android'){ 
+    isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+  }
   isDarkTheme ? StatusBar.setBarStyle('light-content') : StatusBar.setBarStyle('dark-content');
 
   const theme = isDarkTheme ? CustomDarkTheme : CustomDefaultTheme;
@@ -135,7 +137,9 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     checkTheme()
-    isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+    if (Platform.OS === 'android'){ 
+      isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+    }
     isDarkTheme ? StatusBar.setBarStyle('light-content') : StatusBar.setBarStyle('dark-content');
     isLoggedIn()
   }, [])
