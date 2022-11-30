@@ -124,7 +124,9 @@ export const AuthProvider = ({ children }) => {
     }
 
   }
-  isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+  if (Platform.OS === 'android'){ 
+    isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+  }
   isDarkTheme ? StatusBar.setBarStyle('light-content') : StatusBar.setBarStyle('dark-content');
 
   const theme = isDarkTheme ? CustomDarkTheme : CustomDefaultTheme;
@@ -136,7 +138,9 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     checkTheme()
-    isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+    if (Platform.OS === 'android'){ 
+      isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
+    }
     isDarkTheme ? StatusBar.setBarStyle('light-content') : StatusBar.setBarStyle('dark-content');
     isLoggedIn()
   }, [])

@@ -16,6 +16,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2114B00393D54BE4A858C336 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ABAF19504F43B496E5F155 /* Poppins-BoldItalic.ttf */; };
 		381DE6AAD59E430E808A5935 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 523C1ECCD5E7486F811CAD14 /* Poppins-SemiBoldItalic.ttf */; };
+		643C3B9B2922E31800B63D78 /* ccellappfonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 643C3B9A2922E31800B63D78 /* ccellappfonts.ttf */; };
+		643C3B9D2922E4B400B63D78 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 643C3B9C2922E4B400B63D78 /* icomoon.ttf */; };
 		64FE361E794C4B02838F5B78 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08D0AB79CFB840F38D45E932 /* Poppins-LightItalic.ttf */; };
 		6CFB2AC7BEEE4F51B5A6ED34 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F435575C8F40848A07918B /* Poppins-BlackItalic.ttf */; };
 		6F58CE994EA3434BA7F7410F /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8B1B7378ABD4165861F0A4D /* Poppins-Black.ttf */; };
@@ -67,6 +69,8 @@
 		5B7EB9410499542E8C5724F5 /* Pods-CCellApp-CCellAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCellApp-CCellAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CCellApp-CCellAppTests/Pods-CCellApp-CCellAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-CCellApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCellApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		603D6ABB1219480A88D4DD79 /* OFL.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = OFL.txt; path = ../assets/fonts/OFL.txt; sourceTree = "<group>"; };
+		643C3B9A2922E31800B63D78 /* ccellappfonts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ccellappfonts.ttf; sourceTree = "<group>"; };
+		643C3B9C2922E4B400B63D78 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = icomoon.ttf; path = ../../assets/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		646602C519C6479B854F9428 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBoldItalic.ttf"; path = "../assets/fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CCellApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-CCellApp-CCellAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCellApp-CCellAppTests.release.xcconfig"; path = "Target Support Files/Pods-CCellApp-CCellAppTests/Pods-CCellApp-CCellAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +148,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		643C3B0D2922CA5A00B63D78 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				643C3B9C2922E4B400B63D78 /* icomoon.ttf */,
+				643C3B9A2922E31800B63D78 /* ccellappfonts.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +167,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				643C3B0D2922CA5A00B63D78 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* CCellApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CCellAppTests */,
@@ -309,6 +323,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				643C3B9B2922E31800B63D78 /* ccellappfonts.ttf in Resources */,
 				6F58CE994EA3434BA7F7410F /* Poppins-Black.ttf in Resources */,
 				6CFB2AC7BEEE4F51B5A6ED34 /* Poppins-BlackItalic.ttf in Resources */,
 				84EA5CE5639B4CDF857CB885 /* Poppins-Bold.ttf in Resources */,
@@ -323,6 +338,7 @@
 				1027171648984414AB0798B9 /* Poppins-Medium.ttf in Resources */,
 				A3B145B783564200891CD1A7 /* Poppins-MediumItalic.ttf in Resources */,
 				A93F6431C4F6462791B87C8C /* Poppins-Regular.ttf in Resources */,
+				643C3B9D2922E4B400B63D78 /* icomoon.ttf in Resources */,
 				7B0F12571D14431481163B3F /* Poppins-SemiBold.ttf in Resources */,
 				381DE6AAD59E430E808A5935 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				849DAD3531CB45B49160B205 /* Poppins-Thin.ttf in Resources */,

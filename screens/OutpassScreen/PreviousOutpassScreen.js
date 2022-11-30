@@ -9,6 +9,7 @@ export default function PreviousOutpassScreen({ navigation, route }) {
   const { objData } = route.params
 
   const DATA = objData
+  console.log(DATA);
 
   const getDate = (createdDate) => {
     var dateUTC = new Date(createdDate);
@@ -24,7 +25,7 @@ export default function PreviousOutpassScreen({ navigation, route }) {
     <View style={[styles.item, { backgroundColor: colors.cardBG }]}>
       <View style={styles.itemRow}>
         <Text style={{ color: colors.text }}>{getDate(date)}</Text>
-        <Text style={{ color: colors.text }}>{status === 'Approved' ? token : 'Approval Pending'}</Text>
+        <Text style={{ color: colors.text }}>{token}</Text>
       </View>
     </View>
   );
@@ -33,14 +34,21 @@ export default function PreviousOutpassScreen({ navigation, route }) {
     <Item token={item.token} date={item.created_at} status={item.status} />
   );
 
-  return (
+  return (<>
+    {/* // <View style={styles.container}> */}
+    {DATA.length === 0 ?
+    <View style={[styles.container, {height:'100%'}]}> 
+      <Text style={[{ color: colors.text }]}> No Outpass(es) Generated for today!</Text>
+    </View>
+    :
     <View style={styles.container}>
       <FlatList
         data={DATA}
         renderItem={renderItem}
         keyExtractor={item => item._id}
       />
-    </View>
+    </View>}
+    </>
   )
 }
 

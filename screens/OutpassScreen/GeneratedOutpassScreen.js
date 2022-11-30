@@ -43,9 +43,9 @@ export default function GeneratedOutpassScreen({ navigation, route }) {
         <View style={[styles.form, { backgroundColor: colors.cardBG }]}>
           <Image style={styles.image} source={require("../../assets/images/generated_outpass.png")} />
           <Text style={[styles.outpassgen, { color: colors.text }]}>Outpass Generated</Text>
-          {/* <Text style={[styles.uniqueText, { color: colors.text }]}>Your Unique Token Number</Text>
-          <Text style={[styles.tokenText, { color: colors.text }]}>{objData.token}</Text> */}
-          <Text style={[styles.tokenText, { color: colors.text }]}>Approval Pending</Text>
+          <Text style={[styles.uniqueText, { color: colors.text }]}>Your Unique Token Number</Text>
+          <Text style={[styles.tokenText, { color: colors.text }]}>{objData.token}</Text>
+          {/* <Text style={[styles.tokenText, { color: colors.text }]}>Approval Pending</Text> */}
 
           <View style={styles.box}>
             <View style={styles.leftBox}>

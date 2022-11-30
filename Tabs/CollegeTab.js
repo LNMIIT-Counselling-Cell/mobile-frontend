@@ -21,7 +21,7 @@ export default function CollegeTab() {
         presentation: 'modal',
       }}
     >
-      <CollegeStack.Screen name="College Administration" component={CollegeScreen} options={{
+      <CollegeStack.Screen name="College" component={CollegeScreen} options={{
         headerTitle: () => <Header title={"College Administration"} />
       }} />
       <CollegeStack.Screen name="Settings" component={SettingsScreen} options={{
