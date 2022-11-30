@@ -14,7 +14,7 @@ export default function AboutTab() {
         presentation: 'modal',
       }}
     >
-      <AboutStack.Screen name="About Us" component={AboutScreen} options={{
+      <AboutStack.Screen name="About" component={AboutScreen} options={{
         headerTitle: () => <Header title={"About Us"} />
       }} />
       <AboutStack.Screen name="Settings" component={SettingsScreen} options={{

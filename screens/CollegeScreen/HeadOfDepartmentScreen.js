@@ -6,40 +6,46 @@ export const HeadOfDepartmentScreen = () => {
 
   const data = [
     {
-      name: "Dr. Preety Singh",
+      name: "Dr. Jayaprakash Kar",
       post: "CSE",
       phno: '',
-      emailId: "preety@lnmiit.ac.in"
+      emailId: "jayaprakashkar@lnmiit.ac.in"
     },
     {
-      name: "Dr. Ashok Kumar Dargar",
-      post: "MME",
-      phno: '+919829686661',
-      emailId: "ashok.dargar@lnmiit.ac.in"
-    },
-    {
-      name: "Dr. Pratibha Garg",
-      post: "MATHEMATICS",
+      name: "Dr. Sunil Kumar",
+      post: "CCE",
       phno: '',
-      emailId: "pratibhag@lnmiit.ac.in"
+      emailId: "sunil@lnmiit.ac.in"
     },
     {
-      name: "Dr. Subhayan Biswas",
-      post: "PHYSICS",
-      phno: '',
-      emailId: "subhayan@lnmiit.ac.in"
-    },
-    {
-      name: "Dr. Usha Kanoongo",
-      post: "HSS",
-      phno: '+919950656775',
-      emailId: 'usha.kanoongo@lnmiit.ac.in'
-    },
-    {
-      name: "Prof. Raghuvir Tomar",
+      name: "Dr. Nikhil Sharma",
       post: "ECE",
       phno: '',
-      emailId: "rtomar@lnmiit.ac.in"
+      emailId: "nikhil.sharma@lnmiit.ac.in"
+    },
+    {
+      name: "Dr. Mohit Makkar",
+      post: "MME",
+      phno: '',
+      emailId: "mohit.makkar@lnmiit.ac.in"
+    },
+    {
+      name: "Dr. Manish Garg",
+      post: "MATHEMATICS",
+      phno: '',
+      emailId: "manishgarg@lnmiit.ac.in"
+    },
+    {
+      name: "Dr. Anjishnu Sarkar",
+      post: "PHYSICS",
+      phno: '',
+      emailId: "anjishnu@lnmiit.ac.in"
+    },
+    {
+      name: "Dr. Surinder Singh Nehra",
+      post: "HSS",
+      phno: '',
+      emailId: 'surinder.nehra@lnmiit.ac.in'
     }
   ]
 

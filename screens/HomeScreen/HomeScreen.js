@@ -79,7 +79,7 @@ export default function HomeScreen({ navigation }) {
         }}>
           <Image source={{ uri: `${imageurl.split("file/d/").join("uc?export=view&id=").split("/view")[0]}` }} style={styles.imageurl} />
           <ImageView
-            images={[{ uri: `${imageurl}` }]}
+            images={[{ uri: `${imageurl.split("file/d/").join("uc?export=view&id=").split("/view")[0]}` }]}
             imageIndex={0}
             visible={eachVisible}
             onRequestClose={() => setEachVisible(false)}

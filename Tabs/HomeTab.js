@@ -18,7 +18,7 @@ export default function HomeTab({ navigation }) {
         presentation: 'modal',
       }}
     >
-      <HomeStack.Screen name="Feed" component={HomeScreen} options={{
+      <HomeStack.Screen name="Home" component={HomeScreen} options={{
         headerTitle: () => <Header title={"Home"} />
       }} />
       <HomeStack.Screen name="Settings" component={SettingsScreen} options={{
