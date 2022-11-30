@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { DarkTheme, DefaultTheme, useTheme } from '@react-navigation/native';
 import { Appearance, StatusBar } from 'react-native';
+import { REACT_APP_PROD_URL } from '@env'
 
 export const AuthContext = createContext();
 
@@ -18,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = ({ userInfo }) => {
     setIsLoading(true);
-    axios.post('https://ccelltestapi.herokuapp.com/signup', { userInfo })
+    axios.post(process.env.REACT_APP_PROD_URL + 'signup', { userInfo })
       .then((response) => {
         // console.log("response: ", response.data)
         const usrInfo = response.data;

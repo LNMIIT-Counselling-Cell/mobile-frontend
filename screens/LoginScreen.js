@@ -9,6 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { getToken } from '../utils/Token';
 import { useTheme } from '@react-navigation/native';
+import { REACT_APP_PROD_URL, REACT_APP_WEB_CLIENT_ID, REACT_APP_ANDROID_CLIENT_ID, REACT_APP_IOS_CLIENT_ID } from '@env'
 
 export default function LoginScreen({ navigation }) {
 
@@ -52,9 +53,9 @@ export default function LoginScreen({ navigation }) {
 
   useEffect(() => {
     GoogleSignin.configure({
-      webClientId: '891305350714-becnblrdvdvu6og7qi46f919rckcuev8.apps.googleusercontent.com',
-      androidClientId: '891305350714-liornsh72r91g1vklnk4f38s85aphgt4.apps.googleusercontent.com',
-      iosClientId: '891305350714-nl90a03bm3ish621ngb2q5hs3mfkgeb9.apps.googleusercontent.com',
+      webClientId: process.env.REACT_APP_WEB_CLIENT_ID,
+      androidClientId: process.env.REACT_APP_ANDROID_CLIENT_ID,
+      iosClientId: process.env.REACT_APP_IOS_CLIENT_ID,
       offlineAccess: true,
       forceCodeForRefreshToken: true,
     });
@@ -89,10 +90,9 @@ export default function LoginScreen({ navigation }) {
 
   const redirect = async (authCode) => {
     try {
-      const request = await axios.post("https://ccelltestapi.herokuapp.com/handleGoogleRedirect", {
+      const request = await axios.post(process.env.REACT_APP_PROD_URL + "handleGoogleRedirect", {
         code: authCode
       });
-      const response = request.data;
       console.log("redirect received ---- ", response);
       const accessToken = response.accessToken;
       console.log("redirect received atk ---- ", accessToken);
