@@ -3,11 +3,19 @@ import { REACT_APP_PROD_URL } from '@env'
 
 export const getToken = async () => {
   const check = await tokenExpired()
+  console.log('token.js check---- ', check)
   if (check) {
-    const refreshtoken = await AsyncStorage.getItem("refreshToken");
-    const accessToken = await AsyncStorage.getItem("accessToken");
-    console.log("line 6 refresh token: " + refreshtoken);
-    console.log("line 8 access token: " + accessToken);
+    let refreshtoken = await AsyncStorage.getItem("refreshToken");
+    let accessToken = await AsyncStorage.getItem("accessToken");
+
+    //! Wailting till SignIn function stores required Token
+    while(refreshtoken === null){
+      refreshtoken = await AsyncStorage.getItem("refreshToken");
+      accessToken = await AsyncStorage.getItem("accessToken");
+    }
+
+    console.log("line 16 refresh token: " + refreshtoken);
+    console.log("line 17 access token: " + accessToken);
     const token = await getValidTokenFromServer(refreshtoken);
     AsyncStorage.setItem("accessToken", token.accessToken);
     AsyncStorage.setItem("usrtok", token.idToken);
@@ -59,6 +67,7 @@ const getValidTokenFromServer = async (refreshToken) => {
       }),
     });
     const token = await request.json();
+    console.log("token.js new token ----- ",token)
     return token;
   } catch (error) {
     throw new Error("Issue getting new token", error.message);

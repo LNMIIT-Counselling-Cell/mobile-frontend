@@ -100,13 +100,14 @@ export default function HomeScreen({ navigation }) {
   const getPosts = async () => {
     setLoading(true);
     const token = await getToken()
-    axios.get(process.env.REACT_APP_PROD_URL + 'allpostsmob', {
+    console.log("Homescreen.js token: " + token);
+    await axios.get(process.env.REACT_APP_PROD_URL + 'allpostsmob', {
       headers: {
         'Authorization': `Bearer ${token}`,
       }
     })
       .then(response => {
-        console.log(response.data.posts);
+        // console.log(response.data.posts);
         setData(response.data.posts)
         setLoading(false)
       })
@@ -119,7 +120,7 @@ export default function HomeScreen({ navigation }) {
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     const token = await getToken()
-    axios.get(process.env.REACT_APP_PROD_URL + 'allpostsmob', {
+    await axios.get(process.env.REACT_APP_PROD_URL + 'allpostsmob', {
       headers: {
         'Authorization': `Bearer ${token}`,
       }

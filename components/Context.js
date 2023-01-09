@@ -17,11 +17,11 @@ export const AuthProvider = ({ children }) => {
 
   const [systheme, setSysTheme] = useState('0');
 
-  const login = ({ userInfo }) => {
+  const login = async ({ userInfo }) => {
     setIsLoading(true);
-    axios.post(process.env.REACT_APP_PROD_URL + 'signup', { userInfo })
+    await axios.post(process.env.REACT_APP_PROD_URL + 'signup', { userInfo })
       .then((response) => {
-        // console.log("response: ", response.data)
+        console.log("response 1: ", response.data)
         const usrInfo = response.data;
         setUsrInfo(usrInfo);
         setUserToken(userInfo.idToken);
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
       })
       .catch(err => {
         setIsLoading(false);
-        console.error("axios error: " + err)
+        console.error("axios error: " + err.message)
       })
   }
 
@@ -73,8 +73,8 @@ export const AuthProvider = ({ children }) => {
       card: '#F5F5F7',
       text: '#000000',
       cardBG: '#E8E7E7',
-      iconColor:'#666666',
-      iconActiveColor:"#000000",
+      iconColor: '#666666',
+      iconActiveColor: "#000000",
     },
   }
 
@@ -87,8 +87,8 @@ export const AuthProvider = ({ children }) => {
       card: '#2F2B54',
       text: '#FFFFFF',
       cardBG: '#5D5986',
-      iconColor:'#BBBBBB',
-      iconActiveColor:"#FFFFFF",
+      iconColor: '#BBBBBB',
+      iconActiveColor: "#FFFFFF",
     },
   }
 
@@ -124,7 +124,7 @@ export const AuthProvider = ({ children }) => {
     }
 
   }
-  if (Platform.OS === 'android'){ 
+  if (Platform.OS === 'android') {
     isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
   }
   isDarkTheme ? StatusBar.setBarStyle('light-content') : StatusBar.setBarStyle('dark-content');
@@ -138,7 +138,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     checkTheme()
-    if (Platform.OS === 'android'){ 
+    if (Platform.OS === 'android') {
       isDarkTheme ? StatusBar.setBackgroundColor('#2F2B54') : StatusBar.setBackgroundColor('#F5F5F7');
     }
     isDarkTheme ? StatusBar.setBarStyle('light-content') : StatusBar.setBarStyle('dark-content');
