@@ -658,5 +658,31 @@
         }
       ]}
     }
-  }
+  },
+  "hostelContacts":[
+    {"name":"Dr. Nabhyendu Das", "position":"Chief Warden", "phone":"+918238968902", "email":"chief-warden@lnmiit.ac.in"},
+    {"name":"Dr. Kanjalochan Jena", "position":"Associate Chief Warden - Boys Hostel", "phone":"", "email":"assoc.cw@lnmiit.ac.in"},
+    {"name":"Dr. Joyeeta Singha", "position":"Associate Chief Warden - Girls Hostel", "phone":"", "email":"assoc.cw-gh@lnmiit.ac.in"},
+    {"name":"Mr. Vishnu Kumar Jabdoliya", "position":"Chief Warden's Office Staff", "phone":"", "email":"cwoffice@lnmiit.ac.in"},
+    {"name":"Dr. Pomita Goshal", "position":"Warden GH", "phone":"", "email":"warden-gh@lnmiit.ac.in"},
+    {"name":"Dr. Shweta Bhandari", "position":"Associate Warden GH", "phone":"", "email":"assoc.warden-gh@lnmiit.ac.in"},
+    {"name":"Dr. Bharavi Mishra", "position":"Warden BH-1", "phone":"", "email":"warden-bh1@lnmiit.ac.in"},
+    {"name":"Mr. Kamta Sharma", "position":"Assistant Warden BH-1", "phone":"", "email":"asst.warden-bh1@lnmiit.ac.in"},
+    {"name":"Dr. Navneet Upadhyay", "position":"Warden BH-2", "phone":"", "email":"warden-bh2@lnmiit.ac.in"},
+    {"name":"Mr. Parweez Ahmad Ansari", "position":"Assistant Warden BH-2", "phone":"", "email":"asst.warden-bh2@lnmiit.ac.in"},
+    {"name":"Dr. Kanjalochan Jena", "position":"Warden BH-3", "phone":"", "email":"warden-bh3@lnmiit.ac.in"},
+    {"name":"Mr. Mukesh K Jadon", "position":"Warden BH-4", "phone":"", "email":"warden-bh4@lnmiit.ac.in"},
+    {"name":"Mr. Kushmakar Sharma", "position":"Assistant Warden BH-4", "phone":"", "email":"asst.warden-bh4@lnmiit.ac.in"},
+    {"name":"Dr. Abhishek Sharma", "position":"Warden Mess", "phone":"", "email":"warden-mess@lnmiit.ac.in"},
+    {"name":"Mr. Nirmal Sivaraman", "position":"Associate Warden Mess", "phone":"", "email":"assoc.warden-mess@lnmiit.ac.in"}
+  ],
+  "headOfDepartments": [
+    {"name": "Dr. Jayaprakash Kar", "position": "CSE", "phone": "", "email": "jayaprakashkar@lnmiit.ac.in"},
+    {"name": "Dr. Sunil Kumar", "position": "CCE", "phone": "", "email": "sunil@lnmiit.ac.in"},
+    {"name": "Dr. Nikhil Sharma", "position": "ECE", "phone": "", "email": "nikhil.sharma@lnmiit.ac.in"},
+    {"name": "Dr. Mohit Makkar", "position": "MME", "phone": "", "email": "mohit.makkar@lnmiit.ac.in"},
+    {"name": "Dr. Manish Garg", "position": "MATHEMATICS", "phone": "", "email": "manishgarg@lnmiit.ac.in"},
+    {"name": "Dr. Anjishnu Sarkar", "position": "PHYSICS", "phone": "", "email": "anjishnu@lnmiit.ac.in"},
+    {"name": "Dr. Surinder Singh Nehra", "position": "HSS", "phone": "", "email": "surinder.nehra@lnmiit.ac.in"}
+  ]
 }

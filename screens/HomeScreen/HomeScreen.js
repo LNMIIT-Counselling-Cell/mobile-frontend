@@ -7,6 +7,7 @@ import { getToken } from '../../utils/Token';
 // import { FlatList } from "react-native-bidirectional-infinite-scroll";
 import ImageView from "react-native-image-viewing";
 import ParsedText from 'react-native-parsed-text';
+import { REACT_APP_PROD_URL } from '@env'
 
 export default function HomeScreen({ navigation }) {
 
@@ -99,13 +100,14 @@ export default function HomeScreen({ navigation }) {
   const getPosts = async () => {
     setLoading(true);
     const token = await getToken()
-    axios.get('https://ccelltestapi.herokuapp.com/allpostsmob', {
+    console.log("Homescreen.js token: " + token);
+    await axios.get(process.env.REACT_APP_PROD_URL + 'allpostsmob', {
       headers: {
         'Authorization': `Bearer ${token}`,
       }
     })
       .then(response => {
-        console.log(response.data.posts);
+        // console.log(response.data.posts);
         setData(response.data.posts)
         setLoading(false)
       })
@@ -118,7 +120,7 @@ export default function HomeScreen({ navigation }) {
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     const token = await getToken()
-    axios.get('https://ccelltestapi.herokuapp.com/allpostsmob', {
+    await axios.get(process.env.REACT_APP_PROD_URL + 'allpostsmob', {
       headers: {
         'Authorization': `Bearer ${token}`,
       }

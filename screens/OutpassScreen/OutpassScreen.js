@@ -8,6 +8,7 @@ import { getToken } from '../../utils/Token';
 import { useTheme } from '@react-navigation/native';
 import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
 import CustomIcon from '../../components/CustomIcon';
+import { REACT_APP_PROD_URL } from '@env'
 
 export default function OutpassScreen({ navigation }) {
 
@@ -425,7 +426,7 @@ export default function OutpassScreen({ navigation }) {
                     text: 'OK', onPress: async () => {
                       toggleLoadingGen()
                       const token = await getToken();
-                      await axios.post('https://ccelltestapi.herokuapp.com/generateoutpass', bodyParameters, {
+                      await axios.post(process.env.REACT_APP_PROD_URL + 'generateoutpass', bodyParameters, {
                         headers: {
                           'Authorization': `Bearer ${token}`,
                         }
@@ -475,7 +476,7 @@ export default function OutpassScreen({ navigation }) {
           onPress={async () => {
             toggleLoadingPrev()
             const token = await getToken()
-            await axios.get('https://ccelltestapi.herokuapp.com/previousoutpass', {
+            await axios.get(process.env.REACT_APP_PROD_URL + 'previousoutpass', {
               headers: {
                 'Authorization': `Bearer ${token}`,
               }

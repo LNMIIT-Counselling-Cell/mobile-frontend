@@ -16,7 +16,9 @@ export const PersonCard = ({ name, position, phone, email }) => {
         <TouchableOpacity
           style={styles.ctaicon}
           onPress={() => {
-            Linking.openURL(`tel:${phone}`)
+            if (phone !== ""){
+              Linking.openURL(`tel:${phone}`)
+            }
           }}
         >
           <Image source={require('../assets/icons/call_white.png')} style={styles.ctaiconImg}/>
@@ -24,7 +26,9 @@ export const PersonCard = ({ name, position, phone, email }) => {
         <TouchableOpacity
           style={styles.ctaicon}
           onPress={() => {
-            Linking.openURL(`mailto:${email}`)
+            if (email !== ""){
+              Linking.openURL(`mailto:${email}`)
+            }
           }}
         >
           <Image source={require('../assets/icons/mail_white.png')} style={styles.ctaiconImg}/>
