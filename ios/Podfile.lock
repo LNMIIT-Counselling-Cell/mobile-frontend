@@ -384,7 +384,7 @@ PODS:
     - React-Core
   - RNDeviceInfo (10.1.1):
     - React-Core
-  - RNGestureHandler (2.5.0):
+  - RNGestureHandler (2.8.0):
     - React-Core
   - RNGoogleSignin (8.0.0):
     - GoogleSignIn (~> 6.2.2)
@@ -638,7 +638,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 0c357f3156fcb16c8589ede67cc036330b6698ca
   RNDateTimePicker: 154f8246e9c32fd663995647a7f9f667a8c6b258
   RNDeviceInfo: 89bc4fe36cf4c8955965609b140d29a335d5350d
-  RNGestureHandler: bad495418bcbd3ab47017a38d93d290ebd406f50
+  RNGestureHandler: 62232ba8f562f7dea5ba1b3383494eb5bf97a4d3
   RNGoogleSignin: b2179ba653c759b936404a7746fc5302f9de6a5a
   RNScreens: 4a1af06327774490d97342c00aee0c2bafb497b7
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8

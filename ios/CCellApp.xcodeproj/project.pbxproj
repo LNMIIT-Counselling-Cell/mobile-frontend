@@ -18,6 +18,7 @@
 		381DE6AAD59E430E808A5935 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 523C1ECCD5E7486F811CAD14 /* Poppins-SemiBoldItalic.ttf */; };
 		643C3B9B2922E31800B63D78 /* ccellappfonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 643C3B9A2922E31800B63D78 /* ccellappfonts.ttf */; };
 		643C3B9D2922E4B400B63D78 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 643C3B9C2922E4B400B63D78 /* icomoon.ttf */; };
+		643DD6D3296C573800598938 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		64FE361E794C4B02838F5B78 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08D0AB79CFB840F38D45E932 /* Poppins-LightItalic.ttf */; };
 		6CFB2AC7BEEE4F51B5A6ED34 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F435575C8F40848A07918B /* Poppins-BlackItalic.ttf */; };
 		6F58CE994EA3434BA7F7410F /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8B1B7378ABD4165861F0A4D /* Poppins-Black.ttf */; };
@@ -56,7 +57,7 @@
 		13B07F961A680F5B00A75B9A /* CCellApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCellApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CCellApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = CCellApp/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CCellApp/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CCellApp/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CCellApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CCellApp/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-CCellApp-CCellAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCellApp-CCellAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				643DD6D3296C573800598938 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,10 +586,14 @@
 			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-CCellApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7RNF74C4B5;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CCellApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,9 +616,13 @@
 			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-CCellApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7RNF74C4B5;
 				INFOPLIST_FILE = CCellApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -678,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -743,7 +753,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
