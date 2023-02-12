@@ -5,7 +5,6 @@ import { SettingsScreen } from '../screens/SettingsScreen';
 import Header from '../components/Header';
 import { MenuScreen } from '../screens/HomeScreen/MenuScreen';
 import { TimeTableScreen } from '../screens/HomeScreen/TimeTableScreen';
-import { TodayEventScreen } from '../screens/HomeScreen/TodayEventScreen';
 import { DevelopersScreen } from '../screens/DevelopersScreen';
 import { OpenSourceLibScreen } from '../screens/OpenSourceLibScreen';
 import { ExtraPDFScreen } from '../screens/GlobalScreen/ExtraPDFScreen';
@@ -34,9 +33,6 @@ export default function HomeTab({ navigation }) {
         headerTitleAlign: 'center',
       }} />
       <HomeStack.Screen name="ExtraPDF" component={ExtraPDFScreen} options={{
-        headerTitleAlign: 'center',
-      }} />
-      <HomeStack.Screen name="Today's Events" component={TodayEventScreen} options={{
         headerTitleAlign: 'center',
       }} />
       <HomeStack.Screen name="Open Source Libraries" component={OpenSourceLibScreen} options={{

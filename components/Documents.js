@@ -28,6 +28,7 @@ const Documents = {
     'mess_menu':require('../assets/pdf/mess_menu.pdf'),
     'sop':require('../assets/pdf/sop.pdf'),
     'tfb_menu':require('../assets/pdf/tfb_menu.pdf'),
+    'academic_calendar':require('../assets/pdf/academic_calendar.pdf'),
 }
 
 export default Documents;

@@ -145,11 +145,11 @@ export default function HomeScreen({ navigation }) {
         <TouchableOpacity
           style={styles.quick1}
           onPress={() => {
-            navigation.navigate("Today's Events")
+            navigation.navigate("ExtraPDF", {headerName:"Academic Calendar", pdfName:"academic_calendar"})
           }}
         >
           <Image source={require('../../assets/images/todays_events.png')} />
-          <Text style={styles.q1Text}>Today's Events</Text>
+          <Text style={styles.q1Text}>Academic Calendar</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.quick2}
