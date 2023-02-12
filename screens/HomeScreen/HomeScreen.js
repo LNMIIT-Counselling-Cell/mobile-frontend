@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { ActivityIndicator, Image, Pressable, RefreshControl, StyleSheet, Text, TouchableOpacity, View, Alert, Linking } from 'react-native';
+import { ActivityIndicator, Image, Pressable, RefreshControl, StyleSheet, Text, TouchableOpacity, View, Alert, Linking, FlatList } from 'react-native';
 import ReadMore from '@fawazahmed/react-native-read-more';
 import { useTheme } from '@react-navigation/native';
 import axios from 'axios';
 import { getToken } from '../../utils/Token';
-import { FlatList } from "react-native-bidirectional-infinite-scroll";
+// import { FlatList } from "react-native-bidirectional-infinite-scroll";
 import ImageView from "react-native-image-viewing";
 import ParsedText from 'react-native-parsed-text';
 import { REACT_APP_PROD_URL } from '@env'
