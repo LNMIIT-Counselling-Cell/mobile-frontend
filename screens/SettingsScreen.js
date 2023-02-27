@@ -4,7 +4,9 @@ import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, ScrollView
 import { AuthContext } from '../components/Context';
 import { useTheme } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
+// import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
+import { CheckBox } from '@rneui/themed';
+// import RadioGroup from 'react-native-radio-buttons-group';
 import VersionInfo from 'react-native-version-info';
 
 export const SettingsScreen = ({ navigation }) => {
@@ -13,6 +15,50 @@ export const SettingsScreen = ({ navigation }) => {
 
   const { logout, checkTheme, systheme } = useContext(AuthContext)
   const [isLoadingSignout, setIsLoadingSignout] = useState(false);
+  const [selectedIndex, setIndex] = useState(0);
+
+  // let radioButtons = [
+  //   {
+  //     id: '1', // acts as primary key, should be unique and non-empty string
+  //     label: "Light",
+  //     value: 'light',
+  //     color: colors.text,
+  //     borderColor: colors.text,
+  //     labelStyle: StyleSheet.create({ color: colors.text, fontFamily: 'Poppins-Medium', fontWeight: 'bold', fontSize: 16 })
+  //   },
+  //   {
+  //     id: '2',
+  //     label: "Dark",
+  //     value: 'dark',
+  //     color: colors.text,
+  //     borderColor: colors.text,
+  //     labelStyle: { fontFamily: 'Poppins-Medium', fontWeight: 'bold', fontSize: 16, color: colors.text },
+  //   },
+  //   {
+  //     id: '3',
+  //     label: "System",
+  //     value: 'system',
+  //     color: colors.text,
+  //     borderColor: colors.text,
+  //     labelStyle: { fontFamily: 'Poppins-Medium', fontWeight: 'bold', fontSize: 16, color: colors.text },
+  //   }
+  // ];
+
+  function onPressRadioButton(radioButtonsArray) {
+    radioButtons = radioButtonsArray;
+    console.log(radioButtons);
+    let selectedTheme = '0';
+    if (radioButtonsArray[0].selected) {
+      selectedTheme = '1';
+    }
+    else if (radioButtonsArray[1].selected) {
+      selectedTheme = '2';
+    }
+    else {
+      selectedTheme = '0';
+    }
+    setSystemTheme(selectedTheme)
+  }
 
   const toggleLoadingSignOut = () => {
     setIsLoadingSignout(!isLoadingSignout);
@@ -71,7 +117,7 @@ export const SettingsScreen = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.themeBox}>
           <Text style={[styles.themeText, { color: colors.text }]}>Theme Management</Text>
-          <BouncyCheckboxGroup
+          {/* <BouncyCheckboxGroup
             initial={parseInt(systheme)}
             data={staticData}
             style={styles.checkBoxes}
@@ -89,7 +135,58 @@ export const SettingsScreen = ({ navigation }) => {
               }
               setSystemTheme(selectedTheme)
             }}
-          />
+          /> */}
+          <View style={{display: 'flex', flexDirection: 'row'}}>
+
+            <CheckBox
+              checked={selectedIndex === 1}
+              onPress={() => {
+                setIndex(1)
+                setSystemTheme('1')
+              }}
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              title="Light"
+              textStyle={{ color: colors.text }}
+              fontFamily="Poppins-Medium"
+              size={35}
+              containerStyle={{ backgroundColor: 'transparent' }}
+            />
+            <CheckBox
+              title="Dark"
+              textStyle={{ color: colors.text }}
+              checked={selectedIndex === 2}
+              onPress={() => {
+                setIndex(2)
+                setSystemTheme('2')
+              }}
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              size={35}
+              containerStyle={{ backgroundColor: 'transparent' }}
+              />
+            <CheckBox
+              title="System"
+              textStyle={{ color: colors.text }}
+              checked={selectedIndex === 0}
+              onPress={() => {
+                setIndex(0)
+                setSystemTheme('0')
+              }}
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              size={35}
+              containerStyle={{ backgroundColor: 'transparent' }}
+            />
+          </View>
+
+          {/* <RadioGroup
+            radioButtons={radioButtons}
+            onPress={onPressRadioButton}
+            layout='row'
+            containerStyle={{ justifyContent: 'space-between', marginVertical: 12 }}
+          /> */}
+
         </View>
         <View style={styles.themeBox}>
           <Text style={[styles.themeText, { color: colors.text }]}>About the Developers</Text>

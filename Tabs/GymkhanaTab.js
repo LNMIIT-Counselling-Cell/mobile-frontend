@@ -19,7 +19,7 @@ export default function GymkhanaTab() {
         presentation: 'modal',
       }}
     >
-      <GymkhanaStack.Screen name="Students' Gymkhana" component={GymkhanaScreen} options={{
+      <GymkhanaStack.Screen name="Gymkhana" component={GymkhanaScreen} options={{
         headerTitle: () => <Header title={"Student's Gymkhana"} />
       }} />
       <GymkhanaStack.Screen name="Club Fest" component={ClubFestScreen} options={{

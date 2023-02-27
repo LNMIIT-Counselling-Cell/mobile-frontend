@@ -58,7 +58,7 @@
       "eminence":{
         "name":"Eminence, The Fashion Club",
         "description":"‘Fashion is about dressing according to what’s fashionable. Style is more about being yourself.’ —Oscar de la RentaEminence. Fashion club of The LNMIIT believes in this excerpt from a saying by the legendary Oscar de la Renta and although being a fashion club, style, personality, liveliness and creativity are the club’s four central pillars.You can opt your heart’s desire from ramp walking, make-up, fashion designing and demonstrate your outstanding abilities through talent and self-confidence amalgamation. The vibrant Vogue Fashion Week in Vivacity, and events like gusto pivot more around your confidence and attitude, than what you wear. Organising Rubaroo, the fresher's night, gives you power to avail your aesthetic minds and compose one of your most memorable of days. The club rejoices in portraying vehemence for showing off your best while giving credence to the flaws which never lets its fire and fierceness to cease.",
-        "people":[["Khushi Tiwari","Coordinator","+916376492639","20ucs097@lnmiit.ac.in"], ["Prabhav Jain","Coordinator","+916376492639","20ucc074@lnmiit.ac.in"]],
+        "people":[["Khushi Tiwari","Coordinator","+916376492639","20ucs097@lnmiit.ac.in"], ["Prabhav Jain","Coordinator","+917088772441","20ucc074@lnmiit.ac.in"]],
         "links":["", "", "", ""],
         "images":[
         {
@@ -658,5 +658,31 @@
         }
       ]}
     }
-  }
+  },
+  "hostelContacts":[
+    {"name":"Dr. Nabhyendu Das", "position":"Chief Warden", "phone":"+918238968902", "email":"chief-warden@lnmiit.ac.in"},
+    {"name":"Dr. Kanjalochan Jena", "position":"Associate Chief Warden - Boys Hostel", "phone":"", "email":"assoc.cw@lnmiit.ac.in"},
+    {"name":"Dr. Joyeeta Singha", "position":"Associate Chief Warden - Girls Hostel", "phone":"", "email":"assoc.cw-gh@lnmiit.ac.in"},
+    {"name":"Mr. Vishnu Kumar Jabdoliya", "position":"Chief Warden's Office Staff", "phone":"", "email":"cwoffice@lnmiit.ac.in"},
+    {"name":"Dr. Pomita Goshal", "position":"Warden GH", "phone":"", "email":"warden-gh@lnmiit.ac.in"},
+    {"name":"Dr. Shweta Bhandari", "position":"Associate Warden GH", "phone":"", "email":"assoc.warden-gh@lnmiit.ac.in"},
+    {"name":"Dr. Bharavi Mishra", "position":"Warden BH-1", "phone":"", "email":"warden-bh1@lnmiit.ac.in"},
+    {"name":"Mr. Kamta Sharma", "position":"Assistant Warden BH-1", "phone":"", "email":"asst.warden-bh1@lnmiit.ac.in"},
+    {"name":"Dr. Navneet Upadhyay", "position":"Warden BH-2", "phone":"", "email":"warden-bh2@lnmiit.ac.in"},
+    {"name":"Mr. Parweez Ahmad Ansari", "position":"Assistant Warden BH-2", "phone":"", "email":"asst.warden-bh2@lnmiit.ac.in"},
+    {"name":"Dr. Kanjalochan Jena", "position":"Warden BH-3", "phone":"", "email":"warden-bh3@lnmiit.ac.in"},
+    {"name":"Mr. Mukesh K Jadon", "position":"Warden BH-4", "phone":"", "email":"warden-bh4@lnmiit.ac.in"},
+    {"name":"Mr. Kushmakar Sharma", "position":"Assistant Warden BH-4", "phone":"", "email":"asst.warden-bh4@lnmiit.ac.in"},
+    {"name":"Dr. Abhishek Sharma", "position":"Warden Mess", "phone":"", "email":"warden-mess@lnmiit.ac.in"},
+    {"name":"Mr. Nirmal Sivaraman", "position":"Associate Warden Mess", "phone":"", "email":"assoc.warden-mess@lnmiit.ac.in"}
+  ],
+  "headOfDepartments": [
+    {"name": "Dr. Jayaprakash Kar", "position": "CSE", "phone": "", "email": "jayaprakashkar@lnmiit.ac.in"},
+    {"name": "Dr. Sunil Kumar", "position": "CCE", "phone": "", "email": "sunil@lnmiit.ac.in"},
+    {"name": "Dr. Nikhil Sharma", "position": "ECE", "phone": "", "email": "nikhil.sharma@lnmiit.ac.in"},
+    {"name": "Dr. Mohit Makkar", "position": "MME", "phone": "", "email": "mohit.makkar@lnmiit.ac.in"},
+    {"name": "Dr. Manish Garg", "position": "MATHEMATICS", "phone": "", "email": "manishgarg@lnmiit.ac.in"},
+    {"name": "Dr. Anjishnu Sarkar", "position": "PHYSICS", "phone": "", "email": "anjishnu@lnmiit.ac.in"},
+    {"name": "Dr. Surinder Singh Nehra", "position": "HSS", "phone": "", "email": "surinder.nehra@lnmiit.ac.in"}
+  ]
 }

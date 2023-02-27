@@ -1,12 +1,15 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Alert, ActivityIndicator } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView, Alert, ActivityIndicator, Platform } from 'react-native';
 import { AuthContext } from '../../components/Context';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
+import DateTimePicker from '@react-native-community/datetimepicker'
 import axios from 'axios';
 import { getToken } from '../../utils/Token';
 import { useTheme } from '@react-navigation/native';
-import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
+// import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
+import { CheckBox } from '@rneui/themed';
 import CustomIcon from '../../components/CustomIcon';
+import { REACT_APP_PROD_URL } from '@env'
 
 export default function OutpassScreen({ navigation }) {
 
@@ -17,6 +20,8 @@ export default function OutpassScreen({ navigation }) {
   const [transport, setTransport] = useState('');
 
   const { usrInfo } = useContext(AuthContext)
+
+  const [show, setShow] = useState(true);
 
   const [fromDate, setFromDate] = useState(new Date());
   const [toDate, setToDate] = useState(new Date());
@@ -33,33 +38,49 @@ export default function OutpassScreen({ navigation }) {
     setIsLoadingPrev(!isLoadingPrev);
   };
 
+  const showModeFrom = (currentMode) => {
+    if (Platform.OS === 'android') {
+      setShow(false);
+      // for iOS, add a button that closes the picker
+    }
+  };
+
+  const showModeTo = (currentMode) => {
+    if (Platform.OS === 'android') {
+      setShow(false);
+      // for iOS, add a button that closes the picker
+    }
+  };
+
   const onChangeFrom = (event, selectedDate) => {
     const currentDate = selectedDate;
+    // setShow(false);
     setFromDate(currentDate);
   };
 
   const onChangeTo = (event, selectedDate) => {
     const currentDate = selectedDate;
+    // setShow(false);
     setToDate(currentDate);
   };
 
-  const showModeFrom = (currentMode) => {
-    DateTimePickerAndroid.open({
-      value: fromDate,
-      onChange: onChangeFrom,
-      mode: currentMode,
-      is24Hour: false,
-    });
-  };
+  // const showModeFrom = (currentMode) => {
+  //   DateTimePickerAndroid.open({
+  //     value: fromDate,
+  //     onChange: onChangeFrom,
+  //     mode: currentMode,
+  //     is24Hour: false,
+  //   });
+  // };
 
-  const showModeTo = (currentMode) => {
-    DateTimePickerAndroid.open({
-      value: toDate,
-      onChange: onChangeTo,
-      mode: currentMode,
-      is24Hour: false,
-    });
-  };
+  // const showModeTo = (currentMode) => {
+  //   DateTimePickerAndroid.open({
+  //     value: toDate,
+  //     onChange: onChangeTo,
+  //     mode: currentMode,
+  //     is24Hour: false,
+  //   });
+  // };
 
   // const showDatepicker = () => {
   //   showMode('date');
@@ -67,12 +88,51 @@ export default function OutpassScreen({ navigation }) {
 
   const showTimepickerFrom = () => {
     showModeFrom('time');
-
+    // setShow(true);
   };
 
   const showTimepickerTo = () => {
     showModeTo('time');
+    // setShow(true);
   };
+
+  const onChangeFromAndroid = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setFromDate(currentDate);
+  };
+
+  const onChangeToAndroid = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setToDate(currentDate);
+  };
+
+  const showModeFromAndroid = (currentMode) => {
+    DateTimePickerAndroid.open({
+      value: fromDate,
+      onChange: onChangeFromAndroid,
+      mode: currentMode,
+      is24Hour: false,
+    });
+  };
+
+  const showModeToAndroid = (currentMode) => {
+    DateTimePickerAndroid.open({
+      value: toDate,
+      onChange: onChangeToAndroid,
+      mode: currentMode,
+      is24Hour: false,
+    });
+  };
+
+  const showTimepickerFromAndroid = () => {
+    showModeFromAndroid('time');
+
+  };
+
+  const showTimepickerToAndroid = () => {
+    showModeToAndroid('time');
+  };
+
 
   const formatAMPM = (date) => {
     var hours = date.getHours();
@@ -203,7 +263,7 @@ export default function OutpassScreen({ navigation }) {
             <Text style={[{ color: colors.text }]}>Hostel :</Text>
             {/* {renderLabel()} */}
 
-            <BouncyCheckboxGroup
+            {/* <BouncyCheckboxGroup
               data={staticData}
               style={styles.checkBoxes}
               checkboxProps={styles.checkstyle}
@@ -211,7 +271,71 @@ export default function OutpassScreen({ navigation }) {
                 setHostel(selectedItem.text)
                 console.log("SelectedItem: ", selectedItem.text);
               }}
-            />
+            /> */}
+
+            <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+              <CheckBox
+                title="BH1"
+                textStyle={{ color: colors.text }}
+                checked={hostel === "BH 1"}
+                onPress={() => {
+                  setHostel("BH 1")
+                }}
+                checkedIcon="dot-circle-o"
+                uncheckedIcon="circle-o"
+                size={35}
+                containerStyle={{ backgroundColor: 'transparent' }}
+              />
+              <CheckBox
+                title="BH2"
+                textStyle={{ color: colors.text }}
+                checked={hostel === "BH 2"}
+                onPress={() => {
+                  setHostel("BH 2")
+                }}
+                checkedIcon="dot-circle-o"
+                uncheckedIcon="circle-o"
+                size={35}
+                containerStyle={{ backgroundColor: 'transparent' }}
+              />
+              <CheckBox
+                title="BH3"
+                textStyle={{ color: colors.text }}
+                checked={hostel === "BH 3"}
+                onPress={() => {
+                  setHostel("BH 3")
+                }}
+                checkedIcon="dot-circle-o"
+                uncheckedIcon="circle-o"
+                size={35}
+                containerStyle={{ backgroundColor: 'transparent' }}
+              />
+              <CheckBox
+                title="BH4"
+                textStyle={{ color: colors.text }}
+                checked={hostel === "BH 4"}
+                onPress={() => {
+                  setHostel("BH 4")
+                }}
+                checkedIcon="dot-circle-o"
+                uncheckedIcon="circle-o"
+                size={35}
+                containerStyle={{ backgroundColor: 'transparent' }}
+              />
+              <CheckBox
+                checked={hostel === "GH"}
+                onPress={() => {
+                  setHostel("GH")
+                }}
+                checkedIcon="dot-circle-o"
+                uncheckedIcon="circle-o"
+                title="GH"
+                textStyle={{ color: colors.text }}
+                fontFamily="Poppins-Medium"
+                size={35}
+                containerStyle={{ backgroundColor: 'transparent' }}
+              />
+            </View>
 
             {/* <Dropdown
               style={[styles.dropdown, { backgroundColor: colors.cardBG }]}
@@ -270,32 +394,70 @@ export default function OutpassScreen({ navigation }) {
           </View>
           <View style={styles.item}>
             <Text style={[{ color: colors.text }]}>From Time :</Text>
-            <View style={[styles.timeBox, { backgroundColor: colors.background }]}>
-              <Text style={[{ color: colors.text }]}>{formatAMPM(fromDate)}</Text>
-              <TouchableOpacity
-                onPress={showTimepickerFrom}
-              >
-                <CustomIcon
-                  name={'clock'}
-                  size={24}
-                  color={colors.iconActiveColor} />
-              </TouchableOpacity>
-            </View>
+            {Platform.OS === 'android' ?
+              <View style={[styles.timeBox, { backgroundColor: colors.background }]}>
+                <Text style={[{ color: colors.text }]}>{formatAMPM(fromDate)}</Text>
+                <TouchableOpacity
+                  onPress={showTimepickerFromAndroid}
+                >
+                  <CustomIcon
+                    name={'clock'}
+                    size={24}
+                    color={colors.iconActiveColor} />
+                </TouchableOpacity>
+              </View>
+              :
+              <View style={[{ marginHorizontal: 12 }]}>
+                <TouchableOpacity
+                  onPress={showTimepickerFrom}
+                >
+                  {show && (
+                    <DateTimePicker
+                      testID="dateTimePicker"
+                      value={fromDate}
+                      mode={'time'}
+                      is24Hour={false}
+                      onChange={onChangeFrom}
+                      themeVariant={colors.text === '#000000' ? 'light' : 'dark'}
+                    />
+                  )}
+                </TouchableOpacity>
+
+              </View>}
 
           </View>
           <View style={styles.item}>
             <Text style={[{ color: colors.text }]}>To Time :</Text>
-            <View style={[styles.timeBox, { backgroundColor: colors.background }]}>
-              <Text style={[{ color: colors.text }]}>{formatAMPM(toDate)}</Text>
-              <TouchableOpacity
-                onPress={showTimepickerTo}
-              >
-                <CustomIcon
-                  name={'clock'}
-                  size={24}
-                  color={colors.iconActiveColor} />
-              </TouchableOpacity>
-            </View>
+            {Platform.OS === 'android' ?
+              <View style={[styles.timeBox, { backgroundColor: colors.background }]}>
+                <Text style={[{ color: colors.text }]}>{formatAMPM(toDate)}</Text>
+                <TouchableOpacity
+                  onPress={showTimepickerToAndroid}
+                >
+                  <CustomIcon
+                    name={'clock'}
+                    size={24}
+                    color={colors.iconActiveColor} />
+                </TouchableOpacity>
+              </View>
+              :
+              <View style={[{ marginHorizontal: 12 }]}>
+                <TouchableOpacity
+                  onPress={showTimepickerTo}
+                >
+                  {show && (
+                    <DateTimePicker
+                      testID="dateTimePicker"
+                      value={toDate}
+                      mode={'time'}
+                      is24Hour={false}
+                      onChange={onChangeTo}
+                      themeVariant={colors.text === '#000000' ? 'light' : 'dark'}
+                    />
+                  )}
+                </TouchableOpacity>
+
+              </View>}
 
           </View>
           {/* <View style={styles.itemReset}>
@@ -329,7 +491,7 @@ export default function OutpassScreen({ navigation }) {
                     text: 'OK', onPress: async () => {
                       toggleLoadingGen()
                       const token = await getToken();
-                      await axios.post('https://ccelltestapi.herokuapp.com/generateoutpass', bodyParameters, {
+                      await axios.post(process.env.REACT_APP_PROD_URL + 'generateoutpass', bodyParameters, {
                         headers: {
                           'Authorization': `Bearer ${token}`,
                         }
@@ -379,7 +541,7 @@ export default function OutpassScreen({ navigation }) {
           onPress={async () => {
             toggleLoadingPrev()
             const token = await getToken()
-            await axios.get('https://ccelltestapi.herokuapp.com/previousoutpass', {
+            await axios.get(process.env.REACT_APP_PROD_URL + 'previousoutpass', {
               headers: {
                 'Authorization': `Bearer ${token}`,
               }

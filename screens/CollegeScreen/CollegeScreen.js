@@ -47,7 +47,7 @@ export default function CollegeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.quick4}
             onPress={() => {
-              navigation.navigate("ExtraPDF", {headerName:"Standard Operating Proceedures", pdfName:"sop"})
+              navigation.navigate("ExtraPDF", {headerName:"Standard Operating Procedures", pdfName:"sop"})
             }}
           >
             <Text style={styles.q4Text}>SOPs</Text>

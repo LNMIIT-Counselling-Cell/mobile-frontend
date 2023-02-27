@@ -31,32 +31,10 @@ export const DevelopersScreen = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={[styles.card, { backgroundColor: '#C3B0FF', borderRadius: 8 }]}>
-            <Image source={require('../assets/images/ishan_sharma.jpeg')} style={styles.cardImg} />
-            <Text style={[styles.nameText, { color: '#551FFF' }]}>Ishan Sharma</Text>
-            <View style={styles.cardCTA}>
-              <TouchableOpacity
-                onPress={() => {
-                  Linking.openURL(`tel: +917021833803`)
-                }}
-              >
-                <Image source={require('../assets/images/call.png')} style={styles.ctaicon} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  Linking.openURL(`mailto: 20ucs086@lnmiit.ac.in`)
-                }}
-              >
-                <Image source={require('../assets/images/gmail.png')} style={styles.ctaicon} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
 
-        <View style={styles.secondRow}>
-          <View style={[styles.card, { backgroundColor: '#A6E6FF', borderRadius: 8 }]}>
+          <View style={[styles.card, { backgroundColor: '#C3B0FF', borderRadius: 8 }]}>
             <Image source={require('../assets/images/tushar_jain.jpg')} style={styles.cardImg} />
-            <Text style={[styles.nameText, { color: '#00B7FE' }]}>Tushar Jain</Text>
+            <Text style={[styles.nameText, { color: '#551FFF' }]}>Tushar Jain</Text>
             <View style={styles.cardCTA}>
               <TouchableOpacity
                 onPress={() => {
@@ -68,6 +46,29 @@ export const DevelopersScreen = () => {
               <TouchableOpacity
                 onPress={() => {
                   Linking.openURL(`mailto: 20ucs211@lnmiit.ac.in`)
+                }}
+              >
+                <Image source={require('../assets/images/gmail.png')} style={styles.ctaicon} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.secondRow}>
+          <View style={[styles.card, { backgroundColor: '#A6E6FF', borderRadius: 8 }]}>
+            <Image source={require('../assets/images/ishan_sharma.jpeg')} style={styles.cardImg} />
+            <Text style={[styles.nameText, { color: '#00B7FE' }]}>Ishan Sharma</Text>
+            <View style={styles.cardCTA}>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL(`tel: +917021833803`)
+                }}
+              >
+                <Image source={require('../assets/images/call.png')} style={styles.ctaicon} />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL(`mailto: 20ucs086@lnmiit.ac.in`)
                 }}
               >
                 <Image source={require('../assets/images/gmail.png')} style={styles.ctaicon} />

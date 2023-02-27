@@ -9,6 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { getToken } from '../utils/Token';
 import { useTheme } from '@react-navigation/native';
+import { REACT_APP_PROD_URL, REACT_APP_WEB_CLIENT_ID, REACT_APP_ANDROID_CLIENT_ID, REACT_APP_IOS_CLIENT_ID } from '@env'
 
 export default function LoginScreen({ navigation }) {
 
@@ -52,9 +53,9 @@ export default function LoginScreen({ navigation }) {
 
   useEffect(() => {
     GoogleSignin.configure({
-      webClientId: '891305350714-becnblrdvdvu6og7qi46f919rckcuev8.apps.googleusercontent.com',
-      androidClientId: '891305350714-liornsh72r91g1vklnk4f38s85aphgt4.apps.googleusercontent.com',
-      // iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',
+      webClientId: process.env.REACT_APP_WEB_CLIENT_ID,
+      androidClientId: process.env.REACT_APP_ANDROID_CLIENT_ID,
+      iosClientId: process.env.REACT_APP_IOS_CLIENT_ID,
       offlineAccess: true,
       forceCodeForRefreshToken: true,
     });
@@ -89,14 +90,14 @@ export default function LoginScreen({ navigation }) {
 
   const redirect = async (authCode) => {
     try {
-      const request = await axios.post("https://ccelltestapi.herokuapp.com/handleGoogleRedirect", {
+      const request = await axios.post(process.env.REACT_APP_PROD_URL + "handleGoogleRedirect", {
         code: authCode
       });
-      const response = request.data;
+      const response = request;
       console.log("redirect received ---- ", response);
-      const accessToken = response.accessToken;
+      const accessToken = response.data.accessToken;
       console.log("redirect received atk ---- ", accessToken);
-      const refreshToken = response.refreshToken;
+      const refreshToken = response.data.refreshToken;
       console.log("redirect received rtk ---- ", refreshToken);
       const expirationDate = newExpirationDate();
       console.log(" expiration Date  ", expirationDate);
@@ -140,7 +141,7 @@ export default function LoginScreen({ navigation }) {
       const check = await AsyncStorage.getItem("isRedirected")
       console.log("check ------------ ", check)
       if (check === null || check === undefined) {
-        console.log("Redirect true")
+        console.log("Redirect true --- ", userInfo.serverAuthCode)
         redirect(userInfo.serverAuthCode)
         AsyncStorage.setItem("isRedirected", JSON.stringify(true))
       }
@@ -166,7 +167,7 @@ export default function LoginScreen({ navigation }) {
           // redirect(userInfo.serverAuthCode)
           // tok()
         }).catch((error) => {
-          // console.log("ERROR IS: " + JSON.stringify(error));
+          console.log("ERROR IS: " + JSON.stringify(error));
           if (error.code === statusCodes.SIGN_IN_CANCELLED) {
             // user cancelled the login flow
             console.log("ERROR IS: SIGN_IN_CANCELLED")
@@ -181,7 +182,7 @@ export default function LoginScreen({ navigation }) {
             showAlert("Alert!", "Google Play Services is not available. Please install.", "Ok")
           } else {
             // some other error happened
-            console.log("ERROR IS: lnmiit id se aao bhai - ", error)
+            console.log("ERROR IS: lnmiit id se aao bhai - ", error.message)
             showAlert("Alert!", "Login through LNMIIT ID only", "Ok")
           }
         })

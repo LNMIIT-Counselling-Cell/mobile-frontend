@@ -7,6 +7,7 @@ import PassTab from './OutpassTab';
 import AboutTab from './AboutTab';
 import { getFocusedRouteNameFromRoute, useTheme } from '@react-navigation/native';
 import CustomIcon from '../components/CustomIcon';
+import { Platform } from 'react-native';
 
 export default function BottomTabs() {
   const Tab = createBottomTabNavigator();
@@ -28,14 +29,14 @@ export default function BottomTabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarStyle: { height: 55, display: getBottomTabDisplay(route) },
+        tabBarStyle: { height: Platform.OS === 'android' ? 55 : 85, display: getBottomTabDisplay(route) },
         tabBarActiveTintColor: colors.iconActiveColor,
         tabBarInactiveTintColor: colors.iconColor,
       })}
-      initialRouteName="Home"
+      initialRouteName="HomeTab"
       backBehavior='initialRoute'
     >
-      <Tab.Screen name="College" component={CollegeTab}
+      <Tab.Screen name="CollegeTab" component={CollegeTab}
         options={{
           tabBarLabel: 'College',
           tabBarIcon: ({ focused, color, size }) => (
@@ -47,7 +48,7 @@ export default function BottomTabs() {
           tabBarHideOnKeyboard: true,
         }}
       />
-      <Tab.Screen name="Gymkhana" component={GymkhanaTab}
+      <Tab.Screen name="GymkhanaTab" component={GymkhanaTab}
         options={{
           tabBarLabel: 'Gymkhana',
           tabBarIcon: ({ focused, color, size }) => (
@@ -59,7 +60,7 @@ export default function BottomTabs() {
           tabBarHideOnKeyboard: true,
         }}
       />
-      <Tab.Screen name="Home" component={HomeTab}
+      <Tab.Screen name="HomeTab" component={HomeTab}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ focused, color, size }) => (
@@ -83,7 +84,7 @@ export default function BottomTabs() {
           tabBarHideOnKeyboard: true,
         }}
       />
-      <Tab.Screen name="About" component={AboutTab}
+      <Tab.Screen name="AboutTab" component={AboutTab}
         options={{
           tabBarLabel: 'About',
           tabBarIcon: ({ focused, color, size }) => (
